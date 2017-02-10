@@ -1,0 +1,10 @@
+# VHDL Files
+*.o
+*.cf
+*.bak
+
+
+# Latex Files
+*.aux
+*.log
+*.gz

@@ -1,0 +1,117 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/simulation/modelsim
+Edut
+Z1 w1484463647
+R0
+Z2 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/DUT.vhd
+Z3 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/DUT.vhd
+l0
+L4
+Voz>A;Q]lMA6`WjmFl:XbU0
+!s100 GQlPCeCz>k1YJzFKc5hYH0
+Z4 OV;C;10.5b;63
+31
+Z5 !s110 1486473493
+!i10b 1
+Z6 !s108 1486473493.000000
+Z7 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/DUT.vhd|
+Z8 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/DUT.vhd|
+!i113 1
+Z9 o-93 -work work
+Z10 tExplicit 1 CvgOpt 0
+Adutwrap
+DEx4 work 3 dut 0 22 oz>A;Q]lMA6`WjmFl:XbU0
+l14
+L9
+VMK;lCF6DYMD4@^j`c<6;=1
+!s100 J5Hj?WZz`DU4XK1z_JkZJ1
+R4
+31
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+R10
+Etestbench
+Z11 w1486473458
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+R0
+Z13 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/../../EE214 - Experiment 2/Submission/TwoBitAdder/Testbench.vhd
+Z14 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/../../EE214 - Experiment 2/Submission/TwoBitAdder/Testbench.vhd
+l0
+L4
+VQ@EY[dN6O12:RJmMko@Hm0
+!s100 UX9>Cl@RPMzkoVeE2:LJ93
+R4
+31
+R5
+!i10b 1
+R6
+Z15 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/../../EE214 - Experiment 2/Submission/TwoBitAdder/Testbench.vhd|
+Z16 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/../../EE214 - Experiment 2/Submission/TwoBitAdder/Testbench.vhd|
+!i113 1
+R9
+R10
+Abehave
+R12
+DEx4 work 9 testbench 0 22 Q@EY[dN6O12:RJmMko@Hm0
+l37
+L6
+VoC0SR_E>baCS`m?QfoOl]3
+!s100 :SEX`b0=KGF_a?TMbCCWK1
+R4
+31
+R5
+!i10b 1
+R6
+R15
+R16
+!i113 1
+R9
+R10
+Etwobitadder
+Z17 w1486159101
+R0
+Z18 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/TwoBitAdder.vhd
+Z19 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/TwoBitAdder.vhd
+l0
+L1
+V3>:Y5@ZhO434^;@kZcWeB1
+!s100 6a[LeQC36TU6CON9@JSIX1
+R4
+31
+R5
+!i10b 1
+R6
+Z20 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/TwoBitAdder.vhd|
+Z21 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/TwoBitAdder.vhd|
+!i113 1
+R9
+R10
+Aformulas
+DEx4 work 11 twobitadder 0 22 3>:Y5@ZhO434^;@kZcWeB1
+l8
+L6
+V6V;he;Z<F0Gb^<T0I6ELh3
+!s100 oidUQlOOQgz<F?<`C=koS3
+R4
+31
+R5
+!i10b 1
+R6
+R20
+R21
+!i113 1
+R9
+R10

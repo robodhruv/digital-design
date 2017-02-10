@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,bottom=0.8in]{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\pagenumbering{gobble}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\title{An Introduction to VHDL}
+\author{\it Dhruv Ilesh Shah}
+\date{January 12-13, 2017}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+{\bf VHDL} $\rightarrow$ VHSIC {\em(Very High Speed Integrated Chip)} Hardware Description Language \\
+A great resource/guide would be \href{http://home.gna.org/ghdl/ghdl/index.html}{The GHDL Homepage}
+\end{center}
+\section*{Important Features}
+\begin{itemize}
+	\item Ports and Signals are pretty much the same, as far as the usage in a {\em driver} is concerned. Simply carry a literal of the data-type mentioned.
+	\item An input port cannot be assigned a value by a concurrent statement. Similarly, an output port cannot serve as an input to another driver. To do so, another port type called {\em buffer} must be used.
+	\item A driver event is triggered only when one of the dependencies undergo a change in value, unlike sequential execution of a program.
+	\item Each uninitialised signal has a default value corresponding to the the left-most value in description. (\texttt{type bit: \{'0', '1'\}}).
+	\item For explicit definition, you can declare it like  \texttt{signal w: bit := '0'}.
+	\item VHDL treats each continuous sequence of values of the ports/signals as a waveform. The transactions are piled up in a {\em queue}. The algorithm is as follows.
+	\begin{itemize}
+		\item 	Once you execute (compile?) the events at $t=0$, you create a bunch of transactions that need to be performed. These are pushed into a T-queue.
+		\item The pointer moves to the head of the queue and implements the transactions at that point in time. The resultant driver changes make further additions to the T-queue, and the loop goes on forever.
+		\item Delay $\delta$ can be explicitly mentioned. \texttt{a <= not a after 5ns;}
+		\item The approach is kind of a breadth-first approach. All the transactions/events at the current point in time executed before moving at a point in time.
+	\end{itemize}
+	\item The standard way of simulation works only on a fixed value of inputs as defined. What we'd want is to create events on the inputs, to capture the complete picture. For this, we create a {\em testbench}.
+	\item Testbench is self-contained, with no entities.
+	\begin{itemize}
+		\item In the interior, we have the 6 signals that are the entities of the DUT.
+		\item To this, we also add a component (which is the DUT), which is defined separately
+		\item A port map is defined, which maps the signals of the testbench to the ports of the component.
+\end{itemize}		
+	\item Comments in the code begin with \texttt{--}.
+	\item {\bf Simulators}: \texttt{GHDL} (free), \texttt{ModelSim} (proprietary).
+\end{itemize}
+
+\section*{Hands-On}
+\begin{itemize}
+	\item The \texttt{compile\_ghdl.sh} file provided lists all the files that need to be compiled, which basically includes the main file and testbench.
+	\item The testbench reads the file \texttt{TRACEFILE} and writes the output in \texttt{OUTPUTS}. This basically automates all possible test cases and checks whether the simulation is working fine.
+	\item For usage instructions on the changes to be made, refer to \texttt{../Generic Testbench/README.txt}
+\end{itemize}
+
+\section*{Running The Code}
+Using the generic testbench provided for the \texttt{TwoBitAdder}, any circuit of the sort 8-input, 2-output can be synthesised. In this case, the changes required would be:
+\begin{itemize}
+	\item Let us say the entity is \texttt{component}, declared in \texttt{file.vhd}. Note that the definitions in the testbench and DUT would be of the \texttt{component}, and the filename is only used for the compilation.
+	\item The definition of the circuit changes in the \texttt{file.vhd}, which is the real logic definition of the circuit.
+	\item The testbench holds for this (if the DUT is used, the Testbench is pretty generic, as the name suggests). However, \texttt{TRACEFILE} needs to be updated, so that verification can be done.
+	\item In case of a failure, check the \texttt{OUTPUT} can be used to verify what went wrong.
+	\item \texttt{compile\_ghdl.sh} is a wrapper to compile all the required \texttt{.vhd} files. This must include the following: (\texttt{-a} mode is for analysing; \texttt{-m} mode is for )
+	\begin{itemize}
+		\item The file \texttt{file.vhd}
+		\item The generic testbench
+		\item DUT declarations, for port mapping
+		\item Running the testbench executable?
+	\end{itemize}
+	\item {\em ... to be continued.}
+\end{itemize}
+
+\end{document}

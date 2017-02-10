@@ -1,0 +1,65 @@
+|DUT
+input_vector[0] => PriorityEncoder:add_instance.x0
+input_vector[1] => PriorityEncoder:add_instance.x1
+input_vector[2] => PriorityEncoder:add_instance.x2
+input_vector[3] => PriorityEncoder:add_instance.x3
+input_vector[4] => PriorityEncoder:add_instance.x4
+input_vector[5] => PriorityEncoder:add_instance.x5
+input_vector[6] => PriorityEncoder:add_instance.x6
+input_vector[7] => PriorityEncoder:add_instance.x7
+output_vector[0] << PriorityEncoder:add_instance.N
+output_vector[1] << PriorityEncoder:add_instance.s0
+output_vector[2] << PriorityEncoder:add_instance.s1
+output_vector[3] << PriorityEncoder:add_instance.s2
+
+
+|DUT|PriorityEncoder:add_instance
+x7 => N.IN0
+x7 => s2.IN0
+x6 => N.IN1
+x6 => s2.IN0
+x6 => s2.IN1
+x5 => N.IN1
+x5 => s2.IN0
+x5 => s2.IN1
+x5 => s2.IN1
+x4 => N.IN1
+x4 => s2.IN0
+x4 => s2.IN1
+x4 => s2.IN1
+x4 => s2.IN1
+x3 => N.IN1
+x3 => s1.IN0
+x3 => s2.IN1
+x3 => s2.IN1
+x3 => s2.IN1
+x3 => s2.IN1
+x2 => N.IN1
+x2 => s1.IN0
+x2 => s2.IN1
+x2 => s2.IN1
+x2 => s2.IN1
+x2 => s2.IN1
+x2 => s1.IN1
+x1 => N.IN1
+x1 => s0.IN0
+x1 => s2.IN1
+x1 => s2.IN1
+x1 => s2.IN1
+x1 => s2.IN1
+x1 => s1.IN1
+x1 => s1.IN1
+x0 => N.IN1
+x0 => s2.IN1
+x0 => s2.IN1
+x0 => s2.IN1
+x0 => s2.IN1
+x0 => s1.IN1
+x0 => s1.IN1
+x0 => s0.IN1
+s2 <= s2.DB_MAX_OUTPUT_PORT_TYPE
+s1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s0 <= s0.DB_MAX_OUTPUT_PORT_TYPE
+N <= N.DB_MAX_OUTPUT_PORT_TYPE
+
+

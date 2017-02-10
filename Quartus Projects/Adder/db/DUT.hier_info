@@ -1,0 +1,24 @@
+|DUT
+input_vector[0] => TwoBitAdder:add_instance.x0
+input_vector[1] => TwoBitAdder:add_instance.x1
+input_vector[2] => TwoBitAdder:add_instance.y0
+input_vector[3] => TwoBitAdder:add_instance.y1
+output_vector[0] <= TwoBitAdder:add_instance.s0
+output_vector[1] <= TwoBitAdder:add_instance.s1
+
+
+|DUT|TwoBitAdder:add_instance
+x1 => w.IN0
+x1 => w.IN0
+x0 => s0.IN0
+x0 => z.IN0
+x0 => s0.IN0
+y1 => w.IN1
+y1 => w.IN1
+y0 => s0.IN1
+y0 => z.IN1
+y0 => s0.IN1
+s1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s0 <= s0.DB_MAX_OUTPUT_PORT_TYPE
+
+

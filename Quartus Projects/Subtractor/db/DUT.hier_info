@@ -1,0 +1,20 @@
+|DUT
+input_vector[0] => TwoBitSubtractor:add_instance.y0
+input_vector[1] => TwoBitSubtractor:add_instance.y1
+input_vector[2] => TwoBitSubtractor:add_instance.x0
+input_vector[3] => TwoBitSubtractor:add_instance.x1
+output_vector[0] << TwoBitSubtractor:add_instance.b0
+output_vector[1] << TwoBitSubtractor:add_instance.b1
+
+
+|DUT|TwoBitSubtractor:add_instance
+x1 => s0.IN0
+x0 => b0.IN0
+x0 => s1.IN0
+y1 => s0.IN1
+y0 => b0.IN1
+y0 => s1.IN1
+b1 <= b1.DB_MAX_OUTPUT_PORT_TYPE
+b0 <= b0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,8 @@
+Part 1: Simulating the TwoBitAdder
+
+The 2-bit adder was given as an example. The task is to simulate it using VHDL.
+The process is as follows:
+
+./compile_ghdl.sh
+./testbench --stop-time=100ns --vcd=adder.vcd
+gtkwave adder.vcd

@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/TwoBitAdder.vhd
+source_file = 1, /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 2/Submission/TwoBitAdder/DUT.vhd
+source_file = 1, /home/dhruv-shah/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/dhruv-shah/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/dhruv-shah/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/dhruv-shah/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Adder/db/DUT.cbx.xml
+design_name = DUT
+instance = comp, \input_vector[2]~I\, input_vector[2], DUT, 1
+instance = comp, \input_vector[0]~I\, input_vector[0], DUT, 1
+instance = comp, \add_instance|s0~0\, add_instance|s0~0, DUT, 1
+instance = comp, \input_vector[3]~I\, input_vector[3], DUT, 1
+instance = comp, \input_vector[1]~I\, input_vector[1], DUT, 1
+instance = comp, \add_instance|s1~0\, add_instance|s1~0, DUT, 1
+instance = comp, \output_vector[0]~I\, output_vector[0], DUT, 1
+instance = comp, \output_vector[1]~I\, output_vector[1], DUT, 1

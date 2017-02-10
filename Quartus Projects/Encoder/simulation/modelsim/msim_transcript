@@ -1,0 +1,59 @@
+# do DUT_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying /home/dhruv-shah/intelFPGA_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {DUT.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:41:42 on Feb 08,2017
+# vcom -reportprogress 300 -93 -work work DUT.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity DUT
+# -- Compiling architecture structure of DUT
+# End time: 16:41:42 on Feb 08,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Encoder/../../EE214 - Experiment 2/Submission/PriorityEncoder/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:41:42 on Feb 08,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Encoder/../../EE214 - Experiment 2/Submission/PriorityEncoder/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 16:41:42 on Feb 08,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /dut_instance=DUT_vhd.sdo -L maxv -L gate_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -sdftyp /dut_instance=DUT_vhd.sdo -L maxv -L gate_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 16:41:42 on Feb 08,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading work.testbench(behave)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.dut(structure)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "input_vector".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut_instance File: DUT.vho Line: 37
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./DUT_run_msim_gate_vhdl.do PAUSED at line 12
+# End time: 16:41:46 on Feb 08,2017, Elapsed time: 0:00:04
+# Errors: 1, Warnings: 0
