@@ -10,8 +10,8 @@ architecture Form of subtractor is
 	signal xor_i: std_logic;
 	signal hold: std_logic;
 	component myXOR is
-	port(x,y: in std_logic;
-		s: out std_logic);
+		port(x,y: in std_logic;
+			s: out std_logic);
 	end component;
 begin
 	out_instance_1: myXOR
@@ -19,11 +19,6 @@ begin
 	out_instance_2: myXOR
 		port map(xor_i, di, so);
 
-	--hold_instance: myXOR
-	--	port map(di,xi,hold);
-	--final_instance: myXOR
-	--	port map(hold, yi, do);
-	--do <= (((not xi) and di) or ((not xi) and yi) or (xi and yi));
 	do <= (((not xi) and (yi)) or (di and (not xor_i)));
 
 end Form;

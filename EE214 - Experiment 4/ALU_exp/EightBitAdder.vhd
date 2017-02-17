@@ -11,8 +11,8 @@ architecture Summer of EightBitAdder is
 	signal c : std_logic_vector(7 downto 0);
 	signal etc: std_logic;
 	component full_adder is
-	port(ci,xi,yi: in std_logic;
-		co,so: out std_logic);
+		port(ci,xi,yi: in std_logic;
+			co,so: out std_logic);
 	end component;
 
 begin
@@ -33,4 +33,5 @@ begin
 		port map (c(6),x(6),y(6),c(7),z(6));
 	bit_8: full_adder
 		port map (c(7),x(7),y(7),etc,z(7));
+
 end Summer;

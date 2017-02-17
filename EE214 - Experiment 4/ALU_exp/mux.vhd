@@ -7,7 +7,6 @@ entity mux is
 end entity;
 
 architecture choose of mux is
-
 begin
 	b <= ((s and n1) or ((not s) and n0));
 end choose;

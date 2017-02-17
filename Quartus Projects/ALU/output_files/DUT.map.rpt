@@ -1,0 +1,392 @@
+Analysis & Synthesis report for DUT
+Tue Feb 14 15:00:28 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux8:final"
+ 10. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_7"
+ 11. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_6"
+ 12. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_7"
+ 13. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_4"
+ 14. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_5"
+ 15. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_6"
+ 16. Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7"
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Feb 14 15:00:28 2017       ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 25                                          ;
+; Total pins                  ; 24                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; DUT                ; DUT                ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                           ; Library ;
++------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; ../../EE214 - Experiment 4/ALU_exp/DUT_indi.vhd      ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT_indi.vhd      ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/right_shifter.vhd ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd   ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd   ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd   ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux8.vhd          ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd          ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux.vhd           ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd           ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/left_shifter.vhd  ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd  ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/8bit_rev.vhd      ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd      ;         ;
++------------------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Total logic elements                        ; 25              ;
+;     -- Combinational with no register       ; 25              ;
+;     -- Register only                        ; 0               ;
+;     -- Combinational with a register        ; 0               ;
+;                                             ;                 ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 18              ;
+;     -- 3 input functions                    ; 5               ;
+;     -- 2 input functions                    ; 2               ;
+;     -- 1 input functions                    ; 0               ;
+;     -- 0 input functions                    ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 25              ;
+;     -- arithmetic mode                      ; 0               ;
+;     -- qfbk mode                            ; 0               ;
+;     -- register cascade mode                ; 0               ;
+;     -- synchronous clear/load mode          ; 0               ;
+;     -- asynchronous clear/load mode         ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+; I/O pins                                    ; 24              ;
+; Maximum fan-out node                        ; input_vector[1] ;
+; Maximum fan-out                             ; 13              ;
+; Total fan-out                               ; 99              ;
+; Average fan-out                             ; 2.02            ;
++---------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                            ; Entity Name   ; Library Name ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+---------------+--------------+
+; |DUT                              ; 25 (0)      ; 0            ; 0          ; 24   ; 0            ; 25 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                                                                           ; DUT           ; work         ;
+;    |left_shifter:add_sll|         ; 25 (0)      ; 0            ; 0          ; 0    ; 0            ; 25 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll                                                      ; left_shifter  ; work         ;
+;       |right_shifter:right_shift| ; 25 (2)      ; 0            ; 0          ; 0    ; 0            ; 25 (2)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift                            ; right_shifter ; work         ;
+;          |mux8:final|             ; 17 (0)      ; 0            ; 0          ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final                 ; mux8          ; work         ;
+;             |mux:mux_0|           ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_0       ; mux           ; work         ;
+;             |mux:mux_1|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_1       ; mux           ; work         ;
+;             |mux:mux_2|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_2       ; mux           ; work         ;
+;             |mux:mux_3|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_3       ; mux           ; work         ;
+;             |mux:mux_4|           ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_4       ; mux           ; work         ;
+;             |mux:mux_5|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_5       ; mux           ; work         ;
+;             |mux:mux_6|           ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_6       ; mux           ; work         ;
+;             |mux:mux_7|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_7       ; mux           ; work         ;
+;          |mux_chain_2:lev2|       ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2           ; mux_chain_2   ; work         ;
+;             |mux:mux_1|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_1 ; mux           ; work         ;
+;             |mux:mux_2|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_2 ; mux           ; work         ;
+;             |mux:mux_3|           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_3 ; mux           ; work         ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux8:final" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; my   ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_7" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_6" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_7" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_4" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_5" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_6" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Tue Feb 14 14:59:54 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EightBitAdder -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT_indi.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT_indi.vhd Line: 15
+    Info (12023): Found entity 1: DUT File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT_indi.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd
+    Info (12022): Found design unit 1: subtractor-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd Line: 9
+    Info (12023): Found entity 1: subtractor File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd
+    Info (12022): Found design unit 1: right_shifter-logical_right File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 9
+    Info (12023): Found entity 1: right_shifter File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd
+    Info (12022): Found design unit 1: mux_chain_3-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_3 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd
+    Info (12022): Found design unit 1: mux_chain_2-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd
+    Info (12022): Found design unit 1: mux_chain_1-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_1 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd
+    Info (12022): Found design unit 1: mux_chain-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd
+    Info (12022): Found design unit 1: mux8-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd Line: 10
+    Info (12023): Found entity 1: mux8 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd Line: 4
+Warning (12090): Entity "mux" obtained from "../../EE214 - Experiment 4/ALU_exp/mux.vhd" instead of from Quartus Prime megafunction library File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd
+    Info (12022): Found design unit 1: mux-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 9
+    Info (12023): Found entity 1: mux File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd
+    Info (12022): Found design unit 1: EightBitSub-Diff File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 11
+    Info (12023): Found entity 1: EightBitSub File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd
+    Info (12022): Found design unit 1: left_shifter-rtl File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 9
+    Info (12023): Found entity 1: left_shifter File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd
+    Info (12022): Found design unit 1: reverse-reverse File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd Line: 9
+    Info (12023): Found entity 1: reverse File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd
+    Info (12022): Found design unit 1: full_adder-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd Line: 9
+    Info (12023): Found entity 1: full_adder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd
+    Info (12022): Found design unit 1: myXOR-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd Line: 9
+    Info (12023): Found entity 1: myXOR File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd
+    Info (12022): Found design unit 1: EightBitAdder-Summer File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 10
+    Info (12023): Found entity 1: EightBitAdder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/Testbench_indi.vhd
+    Info (12022): Found design unit 1: Testbench-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/Testbench_indi.vhd Line: 12
+    Info (12023): Found entity 1: Testbench File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/Testbench_indi.vhd Line: 10
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "left_shifter" for hierarchy "left_shifter:add_sll" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT_indi.vhd Line: 61
+Info (12128): Elaborating entity "reverse" for hierarchy "left_shifter:add_sll|reverse:reverse_input" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 22
+Info (12128): Elaborating entity "right_shifter" for hierarchy "left_shifter:add_sll|right_shifter:right_shift" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 24
+Info (12128): Elaborating entity "mux_chain_1" for hierarchy "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 38
+Info (12128): Elaborating entity "mux" for hierarchy "left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 18
+Info (12128): Elaborating entity "mux_chain_2" for hierarchy "left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 41
+Info (12128): Elaborating entity "mux_chain_3" for hierarchy "left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 44
+Info (12128): Elaborating entity "mux8" for hierarchy "left_shifter:add_sll|right_shifter:right_shift|mux8:final" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 51
+Info (21057): Implemented 49 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 25 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 945 megabytes
+    Info: Processing ended: Tue Feb 14 15:00:28 2017
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:01:04
+
+

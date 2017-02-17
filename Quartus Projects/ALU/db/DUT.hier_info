@@ -1,0 +1,508 @@
+|DUT
+input_vector[0] => left_shifter:add_sll.y[0]
+input_vector[1] => left_shifter:add_sll.y[1]
+input_vector[2] => left_shifter:add_sll.y[2]
+input_vector[3] => left_shifter:add_sll.y[3]
+input_vector[4] => left_shifter:add_sll.y[4]
+input_vector[5] => left_shifter:add_sll.y[5]
+input_vector[6] => left_shifter:add_sll.y[6]
+input_vector[7] => left_shifter:add_sll.y[7]
+input_vector[8] => left_shifter:add_sll.x[8]
+input_vector[9] => left_shifter:add_sll.x[9]
+input_vector[10] => left_shifter:add_sll.x[10]
+input_vector[11] => left_shifter:add_sll.x[11]
+input_vector[12] => left_shifter:add_sll.x[12]
+input_vector[13] => left_shifter:add_sll.x[13]
+input_vector[14] => left_shifter:add_sll.x[14]
+input_vector[15] => left_shifter:add_sll.x[15]
+output_vector[0] <= left_shifter:add_sll.s[0]
+output_vector[1] <= left_shifter:add_sll.s[1]
+output_vector[2] <= left_shifter:add_sll.s[2]
+output_vector[3] <= left_shifter:add_sll.s[3]
+output_vector[4] <= left_shifter:add_sll.s[4]
+output_vector[5] <= left_shifter:add_sll.s[5]
+output_vector[6] <= left_shifter:add_sll.s[6]
+output_vector[7] <= left_shifter:add_sll.s[7]
+
+
+|DUT|left_shifter:add_sll
+x[0] => reverse:reverse_input.x[0]
+x[1] => reverse:reverse_input.x[1]
+x[2] => reverse:reverse_input.x[2]
+x[3] => reverse:reverse_input.x[3]
+x[4] => reverse:reverse_input.x[4]
+x[5] => reverse:reverse_input.x[5]
+x[6] => reverse:reverse_input.x[6]
+x[7] => reverse:reverse_input.x[7]
+y[0] => right_shifter:right_shift.y[0]
+y[1] => right_shifter:right_shift.y[1]
+y[2] => right_shifter:right_shift.y[2]
+y[3] => right_shifter:right_shift.y[3]
+y[4] => right_shifter:right_shift.y[4]
+y[5] => right_shifter:right_shift.y[5]
+y[6] => right_shifter:right_shift.y[6]
+y[7] => right_shifter:right_shift.y[7]
+s[0] <= reverse:reverse_output.y[0]
+s[1] <= reverse:reverse_output.y[1]
+s[2] <= reverse:reverse_output.y[2]
+s[3] <= reverse:reverse_output.y[3]
+s[4] <= reverse:reverse_output.y[4]
+s[5] <= reverse:reverse_output.y[5]
+s[6] <= reverse:reverse_output.y[6]
+s[7] <= reverse:reverse_output.y[7]
+
+
+|DUT|left_shifter:add_sll|reverse:reverse_input
+x[0] => y[7].DATAIN
+x[1] => y[6].DATAIN
+x[2] => y[5].DATAIN
+x[3] => y[4].DATAIN
+x[4] => y[3].DATAIN
+x[5] => y[2].DATAIN
+x[6] => y[1].DATAIN
+x[7] => y[0].DATAIN
+y[0] <= x[7].DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= x[6].DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= x[5].DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= x[4].DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= x[3].DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= x[2].DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= x[1].DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= x[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift
+x[0] => mux_chain_1:lev1.inp[0]
+x[1] => mux_chain_1:lev1.inp[1]
+x[2] => mux_chain_1:lev1.inp[2]
+x[3] => mux_chain_1:lev1.inp[3]
+x[4] => mux_chain_1:lev1.inp[4]
+x[5] => mux_chain_1:lev1.inp[5]
+x[6] => mux_chain_1:lev1.inp[6]
+x[7] => mux_chain_1:lev1.inp[7]
+y[0] => mux_chain_3:lev3.sel3
+y[1] => mux_chain_2:lev2.sel2
+y[2] => mux_chain_1:lev1.sel
+y[3] => zero_check.IN0
+y[4] => zero_check.IN1
+y[5] => zero_check.IN1
+y[6] => zero_check.IN1
+y[7] => zero_check.IN1
+s[0] <= mux8:final.mo[0]
+s[1] <= mux8:final.mo[1]
+s[2] <= mux8:final.mo[2]
+s[3] <= mux8:final.mo[3]
+s[4] <= mux8:final.mo[4]
+s[5] <= mux8:final.mo[5]
+s[6] <= mux8:final.mo[6]
+s[7] <= mux8:final.mo[7]
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1
+inp[0] => mux:mux_0.n0
+inp[1] => mux:mux_1.n0
+inp[2] => mux:mux_2.n0
+inp[3] => mux:mux_3.n0
+inp[4] => mux:mux_4.n0
+inp[4] => mux:mux_0.n1
+inp[5] => mux:mux_5.n0
+inp[5] => mux:mux_1.n1
+inp[6] => mux:mux_6.n0
+inp[6] => mux:mux_2.n1
+inp[7] => mux:mux_7.n0
+inp[7] => mux:mux_3.n1
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+outp[0] <= mux:mux_0.b
+outp[1] <= mux:mux_1.b
+outp[2] <= mux:mux_2.b
+outp[3] <= mux:mux_3.b
+outp[4] <= mux:mux_4.b
+outp[5] <= mux:mux_5.b
+outp[6] <= mux:mux_6.b
+outp[7] <= mux:mux_7.b
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2
+inp2[0] => mux:mux_0.n0
+inp2[1] => mux:mux_1.n0
+inp2[2] => mux:mux_2.n0
+inp2[2] => mux:mux_0.n1
+inp2[3] => mux:mux_3.n0
+inp2[3] => mux:mux_1.n1
+inp2[4] => mux:mux_4.n0
+inp2[4] => mux:mux_2.n1
+inp2[5] => mux:mux_5.n0
+inp2[5] => mux:mux_3.n1
+inp2[6] => mux:mux_6.n0
+inp2[6] => mux:mux_4.n1
+inp2[7] => mux:mux_7.n0
+inp2[7] => mux:mux_5.n1
+sel2 => mux:mux_7.s
+sel2 => mux:mux_6.s
+sel2 => mux:mux_5.s
+sel2 => mux:mux_4.s
+sel2 => mux:mux_3.s
+sel2 => mux:mux_2.s
+sel2 => mux:mux_1.s
+sel2 => mux:mux_0.s
+outp2[0] <= mux:mux_0.b
+outp2[1] <= mux:mux_1.b
+outp2[2] <= mux:mux_2.b
+outp2[3] <= mux:mux_3.b
+outp2[4] <= mux:mux_4.b
+outp2[5] <= mux:mux_5.b
+outp2[6] <= mux:mux_6.b
+outp2[7] <= mux:mux_7.b
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3
+inp3[0] => mux:mux_0.n0
+inp3[1] => mux:mux_1.n0
+inp3[1] => mux:mux_0.n1
+inp3[2] => mux:mux_2.n0
+inp3[2] => mux:mux_1.n1
+inp3[3] => mux:mux_3.n0
+inp3[3] => mux:mux_2.n1
+inp3[4] => mux:mux_4.n0
+inp3[4] => mux:mux_3.n1
+inp3[5] => mux:mux_5.n0
+inp3[5] => mux:mux_4.n1
+inp3[6] => mux:mux_6.n0
+inp3[6] => mux:mux_5.n1
+inp3[7] => mux:mux_7.n0
+inp3[7] => mux:mux_6.n1
+sel3 => mux:mux_7.s
+sel3 => mux:mux_6.s
+sel3 => mux:mux_5.s
+sel3 => mux:mux_4.s
+sel3 => mux:mux_3.s
+sel3 => mux:mux_2.s
+sel3 => mux:mux_1.s
+sel3 => mux:mux_0.s
+outp3[0] <= mux:mux_0.b
+outp3[1] <= mux:mux_1.b
+outp3[2] <= mux:mux_2.b
+outp3[3] <= mux:mux_3.b
+outp3[4] <= mux:mux_4.b
+outp3[5] <= mux:mux_5.b
+outp3[6] <= mux:mux_6.b
+outp3[7] <= mux:mux_7.b
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|right_shifter:right_shift|mux8:final|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|left_shifter:add_sll|reverse:reverse_output
+x[0] => y[7].DATAIN
+x[1] => y[6].DATAIN
+x[2] => y[5].DATAIN
+x[3] => y[4].DATAIN
+x[4] => y[3].DATAIN
+x[5] => y[2].DATAIN
+x[6] => y[1].DATAIN
+x[7] => y[0].DATAIN
+y[0] <= x[7].DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= x[6].DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= x[5].DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= x[4].DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= x[3].DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= x[2].DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= x[1].DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= x[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

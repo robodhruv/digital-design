@@ -9,13 +9,13 @@ end entity;
 architecture Form of full_adder is
 	signal xor_i: std_logic;
 	component myXOR is
-	port(x,y: in std_logic;
-		s: out std_logic);
+		port(x,y: in std_logic;
+			s: out std_logic);
 	end component;
 begin
-	--s <= (ci xor xi) xor yi
 	add_instance_s0_1: myXOR
 		port map (xi,yi,xor_i);
+		
 	add_instance_s0_2: myXOR
 		port map (xor_i,ci,so);
 

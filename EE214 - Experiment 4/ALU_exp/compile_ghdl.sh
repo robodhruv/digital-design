@@ -13,6 +13,7 @@ ghdl -a mux8.vhd
 ghdl -a right_shifter.vhd
 ghdl -a 8bit_rev.vhd
 ghdl -a left_shifter.vhd
+ghdl -a my_alu.vhd
 ghdl -a DUT.vhd
 ghdl -a Testbench.vhd
 ghdl -m Testbench

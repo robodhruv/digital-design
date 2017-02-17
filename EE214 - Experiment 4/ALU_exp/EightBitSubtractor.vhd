@@ -2,20 +2,17 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity EightBitSub is
-	--constant size : integer := 8;
 	port(x,y: in std_logic_vector(7 downto 0);
 		z: out std_logic_vector(7 downto 0));
 end entity;
-
 
 architecture Diff of EightBitSub is
 	signal d : std_logic_vector(7 downto 0);
 	signal etc: std_logic;
 	component subtractor is
-	port(di,xi,yi: in std_logic;
-		do,so: out std_logic);
+		port(di,xi,yi: in std_logic;
+			do,so: out std_logic);
 	end component;
-
 
 begin
 	d(0) <= '0';

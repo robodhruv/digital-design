@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Feb 14 15:00:32 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : DUT
+Top-level Entity Name : DUT
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 25 / 1,270 ( 2 % )
+Total pins : 24 / 114 ( 21 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

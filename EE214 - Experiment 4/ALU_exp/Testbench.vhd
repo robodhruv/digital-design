@@ -11,28 +11,19 @@ entity Testbench is
 end entity;
 architecture Behave of Testbench is
 
-  ----------------------------------------------------------------
-  --  edit the following lines to set the number of i/o's of your
-  --  DUT.
-  ----------------------------------------------------------------
-  constant number_of_inputs  : integer := 16;  -- # input bits to your design. 
+  constant number_of_inputs  : integer := 18;  -- # input bits to your design. 
   constant number_of_outputs : integer := 8;  -- # output bits from your design.
 
-  -- component port widths..
   component DUT is
    port(input_vector: in std_logic_vector(number_of_inputs-1  downto 0);    
        	output_vector: out std_logic_vector(number_of_outputs-1 downto 0));
   end component;
 
-  -- end editing.
-  ----------------------------------------------------------------
-  ----------------------------------------------------------------
-
   signal input_vector  : bit_vector(number_of_inputs-1 downto 0);
   signal output_vector : bit_vector(number_of_outputs-1 downto 0);
   signal std_output_vector : std_logic_vector(number_of_outputs-1 downto 0);
 
-  -- create a constrained string outof
+
   function to_string(x: string) return string is
       variable ret_val: string(1 to x'length);
       alias lx : string (1 to x'length) is x;
@@ -44,18 +35,14 @@ architecture Behave of Testbench is
 begin
   process 
     variable err_flag : boolean := false;
-    File INFILE: text open read_mode is "tracefiles/leftshift_TRACEFILE.txt";
-    FILE OUTFILE: text  open write_mode is "tracefiles/leftshift_OUTPUTS.txt";
+    File INFILE: text open read_mode is "~/tracefiles/alu_TRACEFILE.txt";
+    FILE OUTFILE: text  open write_mode is "~/tracefiles/alu_OUTPUTS.txt";
 
-    ---------------------------------------------------
-    -- edit the next two lines to customize
-    ---------------------------------------------------
     variable input_vector_var: bit_vector (number_of_inputs-1 downto 0);
     variable output_vector_var: bit_vector (number_of_outputs-1 downto 0);
     variable output_mask_var: bit_vector (number_of_outputs-1 downto 0);
     variable output_comp_var: bit_vector (number_of_outputs-1 downto 0);
     constant ZZZZ : bit_vector(number_of_outputs-1 downto 0) := (others => '0');
-    ----------------------------------------------------
 
     variable INPUT_LINE: Line;
     variable OUTPUT_LINE: Line;
@@ -63,28 +50,19 @@ begin
 
     
   begin
-    while not endfile(INFILE) loop 
-	  -- will read a new line every 5ns, apply input,
-	  -- wait for 1 ns for circuit to settle.
-	  -- read output.
-
+    while not endfile(INFILE) loop
 
           LINE_COUNT := LINE_COUNT + 1;
 
-
-	  -- read input at current time.
 	  readLine (INFILE, INPUT_LINE);
           read (INPUT_LINE, input_vector_var);
           read (INPUT_LINE, output_vector_var);
           read (INPUT_LINE, output_mask_var);
 	
-	  -- apply input.
           input_vector <= input_vector_var;
 
-	  -- wait for the circuit to settle 
 	  wait for 1 ns;
 
-	  -- check output.
           output_comp_var := (output_mask_var and (output_vector xor output_vector_var));
 	  if (output_comp_var  /= ZZZZ) then
              write(OUTPUT_LINE,to_string("ERROR: line "));
@@ -98,7 +76,6 @@ begin
           write(OUTPUT_LINE, output_vector);
           writeline(OUTFILE, OUTPUT_LINE);
 
-	  -- advance time by 4 ns.
 	  wait for 4 ns;
     end loop;
 
