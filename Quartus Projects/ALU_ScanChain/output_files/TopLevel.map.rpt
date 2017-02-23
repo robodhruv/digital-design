@@ -1,0 +1,594 @@
+Analysis & Synthesis report for TopLevel
+Fri Feb 17 14:32:00 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance
+ 12. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg
+ 13. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+ 14. Port Connectivity Checks: "alu:dut|EightBitSub:d|subtractor:bit_8"
+ 15. Port Connectivity Checks: "alu:dut|EightBitSub:d|subtractor:bit_1"
+ 16. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final"
+ 17. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_7"
+ 18. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_6"
+ 19. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_7"
+ 20. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_4"
+ 21. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_5"
+ 22. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_6"
+ 23. Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7"
+ 24. Port Connectivity Checks: "alu:dut|EightBitAdder:a|full_adder:bit_8"
+ 25. Port Connectivity Checks: "alu:dut|EightBitAdder:a|full_adder:bit_1"
+ 26. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"
+ 27. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg"
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Feb 17 14:32:00 2017       ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; TopLevel                                    ;
+; Top-level Entity Name       ; TopLevel                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 161                                         ;
+; Total pins                  ; 5                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; TopLevel           ; TopLevel           ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                    ;
++---------------------------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                    ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                          ; Library ;
++---------------------------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; ../../EE214 - Experiment 4/ALU_exp/subtractor.vhd                   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd                   ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/right_shifter.vhd                ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd                ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/my_alu.vhd                       ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd                       ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd                  ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd                  ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd                  ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd                  ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd                  ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd                  ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux8.vhd                         ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd                         ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/mux.vhd                          ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd                          ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/left_shifter.vhd                 ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd                 ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/full_adder.vhd                   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd                   ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd           ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd           ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd                ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd                ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/8bit_rev.vhd                     ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd                     ;         ;
+; ../../EE214 - Experiment 4/ALU_exp/xor.vhd                          ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd                          ;         ;
+; ../../EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl   ;         ;
+; ../../EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_reg.vhdl   ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_reg.vhdl   ;         ;
+; ../../EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl ;         ;
++---------------------------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 161   ;
+;     -- Combinational with no register       ; 112   ;
+;     -- Register only                        ; 1     ;
+;     -- Combinational with a register        ; 48    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 80    ;
+;     -- 3 input functions                    ; 40    ;
+;     -- 2 input functions                    ; 40    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 154   ;
+;     -- arithmetic mode                      ; 7     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 8     ;
+;     -- asynchronous clear/load mode         ; 5     ;
+;                                             ;       ;
+; Total registers                             ; 49    ;
+; Total logic cells in carry chains           ; 8     ;
+; I/O pins                                    ; 5     ;
+; Maximum fan-out node                        ; TRST  ;
+; Maximum fan-out                             ; 111   ;
+; Total fan-out                               ; 619   ;
+; Average fan-out                             ; 3.73  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node            ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                   ; Entity Name   ; Library Name ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------+---------------+--------------+
+; |TopLevel                             ; 161 (0)     ; 49           ; 0          ; 5    ; 0            ; 112 (0)      ; 1 (0)             ; 48 (0)           ; 8 (0)           ; 0 (0)      ; |TopLevel                                                                             ; TopLevel      ; work         ;
+;    |Scan_Chain:scan_instance|         ; 89 (7)      ; 49           ; 0          ; 0    ; 0            ; 40 (2)       ; 1 (1)             ; 48 (4)           ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance                                                    ; Scan_Chain    ; work         ;
+;       |Scan_Reg:In_Reg|               ; 54 (54)     ; 36           ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 36 (36)          ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg                                    ; Scan_Reg      ; work         ;
+;       |Scan_Reg:Out_Reg|              ; 28 (28)     ; 8            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg                                   ; Scan_Reg      ; work         ;
+;    |alu:dut|                          ; 72 (0)      ; 0            ; 0          ; 0    ; 0            ; 72 (0)       ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |TopLevel|alu:dut                                                                     ; alu           ; work         ;
+;       |EightBitAdder:a|               ; 10 (0)      ; 0            ; 0          ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitAdder:a                                                     ; EightBitAdder ; work         ;
+;          |full_adder:bit_1|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitAdder:a|full_adder:bit_1                                    ; full_adder    ; work         ;
+;             |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitAdder:a|full_adder:bit_1|myXOR:add_instance_s0_1            ; myXOR         ; work         ;
+;          |full_adder:bit_2|           ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitAdder:a|full_adder:bit_2                                    ; full_adder    ; work         ;
+;             |myXOR:add_instance_s0_2| ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitAdder:a|full_adder:bit_2|myXOR:add_instance_s0_2            ; myXOR         ; work         ;
+;       |EightBitSub:d|                 ; 16 (0)      ; 0            ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d                                                       ; EightBitSub   ; work         ;
+;          |subtractor:bit_1|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_1                                      ; subtractor    ; work         ;
+;          |subtractor:bit_2|           ; 3 (2)       ; 0            ; 0          ; 0    ; 0            ; 3 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_2                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_2|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_3|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_3                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_3|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_4|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_4                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_4|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_5|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_5                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_5|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_6|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_6                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_6|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_7|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_7                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_7|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;          |subtractor:bit_8|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_8                                      ; subtractor    ; work         ;
+;             |myXOR:out_instance_2|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|EightBitSub:d|subtractor:bit_8|myXOR:out_instance_2                 ; myXOR         ; work         ;
+;       |left_shifter:b|                ; 19 (0)      ; 0            ; 0          ; 0    ; 0            ; 19 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b                                                      ; left_shifter  ; work         ;
+;          |right_shifter:right_shift|  ; 19 (0)      ; 0            ; 0          ; 0    ; 0            ; 19 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift                            ; right_shifter ; work         ;
+;             |mux8:final|              ; 9 (0)       ; 0            ; 0          ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final                 ; mux8          ; work         ;
+;                |mux:mux_0|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_0       ; mux           ; work         ;
+;                |mux:mux_1|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_1       ; mux           ; work         ;
+;                |mux:mux_2|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_2       ; mux           ; work         ;
+;                |mux:mux_3|            ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_3       ; mux           ; work         ;
+;                |mux:mux_4|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_4       ; mux           ; work         ;
+;                |mux:mux_5|            ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_5       ; mux           ; work         ;
+;                |mux:mux_6|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final|mux:mux_6       ; mux           ; work         ;
+;             |mux_chain_1:lev1|        ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1           ; mux_chain_1   ; work         ;
+;                |mux:mux_2|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_2 ; mux           ; work         ;
+;                |mux:mux_3|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_3 ; mux           ; work         ;
+;             |mux_chain_2:lev2|        ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2           ; mux_chain_2   ; work         ;
+;                |mux:mux_1|            ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_1 ; mux           ; work         ;
+;                |mux:mux_2|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_2 ; mux           ; work         ;
+;                |mux:mux_3|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_3 ; mux           ; work         ;
+;                |mux:mux_4|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_4 ; mux           ; work         ;
+;                |mux:mux_5|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_5 ; mux           ; work         ;
+;             |mux_chain_3:lev3|        ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_3:lev3           ; mux_chain_3   ; work         ;
+;                |mux:mux_0|            ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_0 ; mux           ; work         ;
+;       |right_shifter:c|               ; 27 (2)      ; 0            ; 0          ; 0    ; 0            ; 27 (2)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c                                                     ; right_shifter ; work         ;
+;          |mux8:final|                 ; 12 (0)      ; 0            ; 0          ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final                                          ; mux8          ; work         ;
+;             |mux:mux_1|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_1                                ; mux           ; work         ;
+;             |mux:mux_2|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_2                                ; mux           ; work         ;
+;             |mux:mux_3|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_3                                ; mux           ; work         ;
+;             |mux:mux_4|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_4                                ; mux           ; work         ;
+;             |mux:mux_5|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_5                                ; mux           ; work         ;
+;             |mux:mux_6|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_6                                ; mux           ; work         ;
+;             |mux:mux_7|               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux8:final|mux:mux_7                                ; mux           ; work         ;
+;          |mux_chain_1:lev1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_1:lev1                                    ; mux_chain_1   ; work         ;
+;             |mux:mux_2|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_1:lev1|mux:mux_2                          ; mux           ; work         ;
+;          |mux_chain_2:lev2|           ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2                                    ; mux_chain_2   ; work         ;
+;             |mux:mux_1|               ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2|mux:mux_1                          ; mux           ; work         ;
+;             |mux:mux_2|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2|mux:mux_2                          ; mux           ; work         ;
+;             |mux:mux_3|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2|mux:mux_3                          ; mux           ; work         ;
+;             |mux:mux_4|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2|mux:mux_4                          ; mux           ; work         ;
+;             |mux:mux_5|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_2:lev2|mux:mux_5                          ; mux           ; work         ;
+;          |mux_chain_3:lev3|           ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_3:lev3                                    ; mux_chain_3   ; work         ;
+;             |mux:mux_0|               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|alu:dut|right_shifter:c|mux_chain_3:lev3|mux:mux_0                          ; mux           ; work         ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|Scan_Chain:scan_instance|current_state                                                                               ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; Name                    ; current_state.s_update ; current_state.s_shift ; current_state.s_capture ; current_state.s_DR ; current_state.s_idle ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; current_state.s_idle    ; 0                      ; 0                     ; 0                       ; 0                  ; 0                    ;
+; current_state.s_DR      ; 0                      ; 0                     ; 0                       ; 1                  ; 1                    ;
+; current_state.s_capture ; 0                      ; 0                     ; 1                       ; 0                  ; 1                    ;
+; current_state.s_shift   ; 0                      ; 1                     ; 0                       ; 0                  ; 1                    ;
+; current_state.s_update  ; 1                      ; 0                     ; 0                       ; 0                  ; 1                    ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 49    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[16]      ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]       ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[6]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|alu:dut|right_shifter:c|mux_chain_3:lev3|mux:mux_0|b ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; in_pins        ; 18    ; Signed Integer                               ;
+; out_pins       ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; length         ; 18    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; length         ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|EightBitSub:d|subtractor:bit_8"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; do   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|EightBitSub:d|subtractor:bit_1" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; di   ; Input ; Info     ; Stuck at GND                             ;
++------+-------+----------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final" ;
++------+-------+----------+---------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                       ;
++------+-------+----------+---------------------------------------------------------------+
+; my   ; Input ; Info     ; Stuck at GND                                                  ;
++------+-------+----------+---------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_3:lev3|mux:mux_7" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_6" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2|mux:mux_7" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_4" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_5" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_6" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|EightBitAdder:a|full_adder:bit_8"                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; co   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|EightBitAdder:a|full_adder:bit_1" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; po   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; pi   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Fri Feb 17 14:31:33 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_Testing -c TopLevel
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd
+    Info (12022): Found design unit 1: subtractor-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd Line: 9
+    Info (12023): Found entity 1: subtractor File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/subtractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd
+    Info (12022): Found design unit 1: right_shifter-logical_right File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 8
+    Info (12023): Found entity 1: right_shifter File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd
+    Info (12022): Found design unit 1: alu-behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd Line: 13
+    Info (12023): Found entity 1: alu File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd
+    Info (12022): Found design unit 1: mux_chain_3-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_3 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd
+    Info (12022): Found design unit 1: mux_chain_2-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd
+    Info (12022): Found design unit 1: mux_chain_1-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain_1 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd
+    Info (12022): Found design unit 1: mux_chain-chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd Line: 11
+    Info (12023): Found entity 1: mux_chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd
+    Info (12022): Found design unit 1: mux8-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd Line: 10
+    Info (12023): Found entity 1: mux8 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux8.vhd Line: 4
+Warning (12090): Entity "mux" obtained from "../../EE214 - Experiment 4/ALU_exp/mux.vhd" instead of from Quartus Prime megafunction library File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd
+    Info (12022): Found design unit 1: mux-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 9
+    Info (12023): Found entity 1: mux File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd
+    Info (12022): Found design unit 1: left_shifter-rtl File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 9
+    Info (12023): Found entity 1: left_shifter File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd
+    Info (12022): Found design unit 1: full_adder-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd Line: 9
+    Info (12023): Found entity 1: full_adder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd
+    Info (12022): Found design unit 1: EightBitSub-Diff File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 9
+    Info (12023): Found entity 1: EightBitSub File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd
+    Info (12022): Found design unit 1: EightBitAdder-Summer File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 10
+    Info (12023): Found entity 1: EightBitAdder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT.vhd Line: 15
+    Info (12023): Found entity 1: DUT File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/DUT.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd
+    Info (12022): Found design unit 1: reverse-reverse File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd Line: 9
+    Info (12023): Found entity 1: reverse File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/8bit_rev.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd
+    Info (12022): Found design unit 1: myXOR-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd Line: 9
+    Info (12023): Found entity 1: myXOR File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/xor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl
+    Info (12022): Found design unit 1: TopLevel-Struct File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl Line: 21
+    Info (12023): Found entity 1: TopLevel File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_reg.vhdl
+    Info (12022): Found design unit 1: Scan_Reg-behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_reg.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Reg File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_reg.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl
+    Info (12022): Found design unit 1: Scan_Chain-behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl Line: 10
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "Scan_Chain" for hierarchy "Scan_Chain:scan_instance" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl Line: 51
+Warning (10036): Verilog HDL or VHDL warning at scan_chain.vhdl(46): object "unused" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl Line: 46
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:In_Reg" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl Line: 53
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:Out_Reg" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/scan_chain.vhdl Line: 55
+Info (12128): Elaborating entity "alu" for hierarchy "alu:dut" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 5/alu_scan_chain/vhdlfiles/TopLevel.vhdl Line: 61
+Info (12128): Elaborating entity "EightBitAdder" for hierarchy "alu:dut|EightBitAdder:a" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd Line: 37
+Warning (10036): Verilog HDL or VHDL warning at EightBitAdder.vhd(12): object "etc" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 12
+Info (12128): Elaborating entity "full_adder" for hierarchy "alu:dut|EightBitAdder:a|full_adder:bit_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitAdder.vhd Line: 20
+Info (12128): Elaborating entity "myXOR" for hierarchy "alu:dut|EightBitAdder:a|full_adder:bit_1|myXOR:add_instance_s0_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/full_adder.vhd Line: 16
+Info (12128): Elaborating entity "left_shifter" for hierarchy "alu:dut|left_shifter:b" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd Line: 38
+Info (12128): Elaborating entity "reverse" for hierarchy "alu:dut|left_shifter:b|reverse:reverse_input" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 22
+Info (12128): Elaborating entity "right_shifter" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/left_shifter.vhd Line: 24
+Info (12128): Elaborating entity "mux_chain_1" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 32
+Info (12128): Elaborating entity "mux" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_1:lev1|mux:mux_7" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/mux_chain_1.vhd Line: 18
+Info (12128): Elaborating entity "mux_chain_2" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_2:lev2" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 34
+Info (12128): Elaborating entity "mux_chain_3" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift|mux_chain_3:lev3" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 36
+Info (12128): Elaborating entity "mux8" for hierarchy "alu:dut|left_shifter:b|right_shifter:right_shift|mux8:final" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/right_shifter.vhd Line: 39
+Info (12128): Elaborating entity "EightBitSub" for hierarchy "alu:dut|EightBitSub:d" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/my_alu.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at EightBitSubtractor.vhd(11): object "etc" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 11
+Info (12128): Elaborating entity "subtractor" for hierarchy "alu:dut|EightBitSub:d|subtractor:bit_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 4/ALU_exp/EightBitSubtractor.vhd Line: 19
+Info (21057): Implemented 166 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 161 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 939 megabytes
+    Info: Processing ended: Fri Feb 17 14:32:00 2017
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:01:00
+
+

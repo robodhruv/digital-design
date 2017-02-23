@@ -1,0 +1,15 @@
+For the scan chain python script to work without sudo permissions, follow the procedure given below
+
+1. Copy the 99-tiva.rules and install_tiva_rule.sh script file to a folder
+2. navigate to the folder in terminal
+3. give run persmissions to the install_tiva_rule.sh file by typing 
+chmod u+x install_tiva_rule.sh in the terminal
+4. execute the shell script as sudo by typing
+sudo ./install_tiva_rule.sh
+5. if the script runs successfully, the 99-tiva.rules file to 
+/etc/udev/rules.d check if the same has happened
+6. type sudo udevadm control --reload-rules to refresh the udev rules
+restart machine
+7. try running the given scan.py file without root privileges as follows
+python scan.py <input_file> <output_file> tiva
+
