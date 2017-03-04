@@ -6,7 +6,7 @@ use work.EE224_Components.all;
 
 entity knife_hurler is
 	port(x: in std_ulogic_vector(4 downto 0);
-		r, clk: in std_ulogic;
+		reset, clk: in std_ulogic;
 		s: out std_ulogic);
 end entity;
 
@@ -29,11 +29,11 @@ begin
 	INV3: inverter port map (x(3), n3);
 	INV4: inverter port map (x(4), n4);
 
-	A51: and5 port map (n4, x(3), n2, x(1), x(0), k); -- Identifying K
-	A52: and5 port map (n4, x(3), x(2), x(1), n0, n); -- Identifying N
-	A53: and5 port map (n4, x(3), n2, n1, x(0), i); -- Identifying I
-	A54: and5 port map (n4, n3, x(2), n1, x(0), e); -- Identifying E
-	A55: and5 port map (n4, n3, x(2), x(1), n0, f); -- Identifying F
+	A5k: and5 port map (n4, x(3), n2, x(1), x(0), k); -- Identifying K
+	A5n: and5 port map (n4, x(3), x(2), x(1), n0, n); -- Identifying N
+	A5i: and5 port map (n4, x(3), n2, n1, x(0), i); -- Identifying I
+	A5f: and5 port map (n4, n3, x(2), n1, x(0), e); -- Identifying E
+	A5e: and5 port map (n4, n3, x(2), x(1), n0, f); -- Identifying F
 
 	INV5: inverter port	map (q(0), qb(0));
 	INV6: inverter port	map (q(1), qb(1));
@@ -73,8 +73,8 @@ begin
 	A7: and2 port map (knifs, e, s);
 
 	-- Adding the DFF's
-	d0: DFF port map (d => nq(0), clk => clk, q => q(0), r => r);
-	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => r);
-	d2: DFF port map (d => nq(2), clk => clk, q => q(2), r => r);
+	d0: DFF port map (d => nq(0), clk => clk, q => q(0), r => reset);
+	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => reset);
+	d2: DFF port map (d => nq(2), clk => clk, q => q(2), r => reset);
 
 end knife_detector;

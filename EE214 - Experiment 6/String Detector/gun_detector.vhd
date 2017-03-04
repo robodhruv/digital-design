@@ -5,7 +5,7 @@ use work.EE224_Components.all;
 
 entity gunman is
 	port(x: in std_ulogic_vector(4 downto 0);
-		r, clk: in std_ulogic;
+		reset, clk: in std_ulogic;
 		s: out std_ulogic);
 end entity;
 
@@ -54,7 +54,7 @@ begin
 	A8: and2 port map (gus, n, s);
 
 	-- Adding the DFF's
-	d0: DFF port map (d => nq(0), clk => clk, q => q(0), r => r);
-	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => r);
+	d0: DFF port map (d => nq(0), clk => clk, q => q(0), r => reset);
+	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => reset);
 
 end gun_detector;

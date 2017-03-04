@@ -5,7 +5,7 @@ use work.EE224_Components.all;
 
 entity bomber is
 	port(x: in std_ulogic_vector(4 downto 0);
-		r, clk: in std_ulogic;
+		reset, clk: in std_ulogic;
 		s: out std_ulogic);
 end entity;
 
@@ -27,9 +27,7 @@ begin
 	INV4: inverter port map (x(4), n4);
 
 	A5b: and5 port map (n4, n3, n2, x(1), n0, b); -- Identifying B
-
 	A5m: and5 port map (n4, x(3), x(2), n1, x(0), m); -- Identifying M
-
 	A5o: and5 port map (n4, x(3), x(2), x(1), x(0), o); -- Identifying O
 
 
@@ -62,7 +60,7 @@ begin
 	A13: and2 port map (boms, b, s);
 
 	-- Adding DFF's
-	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => r);
-	d0: DFF1 port map (d => nq(0), clk => clk, q => q(0), r => r);
+	d1: DFF port map (d => nq(1), clk => clk, q => q(1), r => reset);
+	d0: DFF1 port map (d => nq(0), clk => clk, q => q(0), r => reset);
 
 end bomb_detector;
