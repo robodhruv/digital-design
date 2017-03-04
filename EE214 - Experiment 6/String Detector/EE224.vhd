@@ -14,6 +14,9 @@ package EE224_Components is
   component AND5 is
   port (a1, a2, a3, a4, a5: in std_logic; c : out std_logic);
    end component;
+  component AND3 is
+  port (a1, a2, a3: in std_logic; c : out std_logic);
+   end component;
    component NAND2 is
 	port (a, b: in std_logic; c : out std_logic);
    end component;
@@ -75,6 +78,21 @@ begin
   AA2: and2 port map (a3, p2, p3);
   AA3: and2 port map (a4, p3, p4);
   AA4: and2 port map (a5, p4, c);
+end Behave;
+
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.EE224_Components.all;
+entity AND3 is
+  port (a1, a2, a3: in std_ulogic;
+         c: out std_ulogic);
+end entity AND3;
+architecture Behave of AND3 is
+  signal p2: std_ulogic;
+begin
+  AA1: and2 port map (a1, a2, p2);
+  AA2: and2 port map (a3, p2, c);
 end Behave;
 
 library ieee;

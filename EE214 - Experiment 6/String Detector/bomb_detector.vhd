@@ -58,7 +58,7 @@ begin
 	O3: or2 port map (q11, q12, q13);
 	O4: or2 port map (q13, bs, nq(1));
 
-	-- Assigning Outputs
+	-- Assigning the Output
 	A13: and2 port map (boms, b, s);
 
 	-- Adding DFF's

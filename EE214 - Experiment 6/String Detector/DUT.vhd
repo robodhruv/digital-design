@@ -20,6 +20,12 @@ component gunman is
 		s: out std_ulogic);
 end component;
 
+component knife_hurler is
+	port(x: in std_ulogic_vector(4 downto 0);
+		r, clk: in std_ulogic;
+		s: out std_ulogic);
+end component;
+
   signal r, bs, gs, ks, ts, clk: std_ulogic;
   signal x: std_ulogic_vector(4 downto 0);
 
@@ -33,5 +39,6 @@ begin
 	
 	B: bomber port map (r => r, x => x, s => bs, clk => clk);
 	G: gunman port map (r => r, x => x, s => gs, clk => clk);
+	K: knife_hurler port map (r => r, x => x, s => ks, clk => clk);
 
 end WRAP;

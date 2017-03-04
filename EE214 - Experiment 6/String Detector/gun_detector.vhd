@@ -13,7 +13,10 @@ architecture gun_detector of gunman is
 	signal q, nq, qb: std_ulogic_vector(1 downto 0);
 	signal n0, n1, n2, n3, n4, g, u, n, gb, nb, ub, gs,
 	gus, phis, g11, g12, g01, g02: std_ulogic;
-
+--State Description
+--phi 		0 0
+--g 		1 0
+--gu 		0 1
 begin
 	INV0: inverter port map (x(0), n0);
 	INV1: inverter port map (x(1), n1);
@@ -47,7 +50,7 @@ begin
 	A7: and2 port map (gus, nb, g02);
 	O2: or2 port map (g01, g02, nq(1));
 
-	-- Assigning Outputs
+	-- Assigning the Output
 	A8: and2 port map (gus, n, s);
 
 	-- Adding the DFF's
