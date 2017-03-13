@@ -59,8 +59,8 @@ begin
 	-- Assigning the Output
 	A13: andi2 port map (boms, b, s);
 
-	-- Adding DFF's
-	d1: DFFi port map (d => nq(1), clk => clk, q => q(1), r => reset);
-	d0: DFF1 port map (d => nq(0), clk => clk, q => q(0), r => reset);
+	-- Adding dffi's
+	d1: dffi port map (d => nq(1), clk => clk, q => q(1), r => reset);
+	d0: dffi1 port map (d => nq(0), clk => clk, q => q(0), r => reset);
 
 end bomb_detector;

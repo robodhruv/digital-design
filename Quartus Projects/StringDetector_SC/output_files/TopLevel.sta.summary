@@ -1,0 +1,57 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'TCLK'
+Slack : -34.610
+TNS   : -122.180
+
+Type  : Setup 'Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]'
+Slack : -17.684
+TNS   : -17.684
+
+Type  : Setup 'TRST'
+Slack : -16.120
+TNS   : -16.120
+
+Type  : Hold 'TRST'
+Slack : -0.515
+TNS   : -0.515
+
+Type  : Hold 'Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]'
+Slack : 1.049
+TNS   : 0.000
+
+Type  : Hold 'TCLK'
+Slack : 1.300
+TNS   : 0.000
+
+Type  : Recovery 'Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]'
+Slack : -20.827
+TNS   : -20.827
+
+Type  : Recovery 'TCLK'
+Slack : -1.269
+TNS   : -6.345
+
+Type  : Removal 'TCLK'
+Slack : 1.215
+TNS   : 0.000
+
+Type  : Removal 'Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]'
+Slack : 4.825
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'TCLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'TRST'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[5]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

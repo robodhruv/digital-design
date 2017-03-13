@@ -1,0 +1,144 @@
+# ERROR: No extended dataflow license exists
+# do TopLevel_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/dhruv-shah/intelFPGA_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TopLevel
+# -- Compiling architecture Struct of TopLevel
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Scan_Reg
+# -- Compiling architecture behave of Scan_Reg
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Scan_Chain
+# -- Compiling architecture behave of Scan_Chain
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package EE224_Components
+# -- Compiling entity INVERTER
+# -- Compiling architecture Behave of INVERTER
+# -- Compiling entity andi2
+# -- Compiling architecture Behave of andi2
+# -- Loading package EE224_Components
+# -- Compiling entity andi5
+# -- Compiling architecture Behave of andi5
+# -- Compiling entity andi3
+# -- Compiling architecture Behave of andi3
+# -- Compiling entity Nandi2
+# -- Compiling architecture Behave of Nandi2
+# -- Compiling entity ori2
+# -- Compiling architecture Behave of ori2
+# -- Compiling entity Nori2
+# -- Compiling architecture Behave of Nori2
+# -- Compiling entity positive_d_latch
+# -- Compiling architecture Equations of positive_d_latch
+# -- Compiling entity negative_d_latch
+# -- Compiling architecture Equations of negative_d_latch
+# -- Compiling entity dffi
+# -- Compiling architecture Struct of dffi
+# -- Compiling entity dffi1
+# -- Compiling architecture Struct of dffi1
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture WRAP of DUT
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity terrorist
+# -- Compiling architecture terror_detector of terrorist
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity knife_hurler
+# -- Compiling architecture knife_detector of knife_hurler
+# End time: 15:50:56 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:56 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity gunman
+# -- Compiling architecture gun_detector of gunman
+# End time: 15:50:57 on Mar 10,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:50:57 on Mar 10,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity bomber
+# -- Compiling architecture bomb_detector of bomber
+# End time: 15:50:57 on Mar 10,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+add wave
+# wrong number of args for "add wave".
+# Usage: add wave [-allowconstants] [-clampanalog {0|1}] [-color <standard_color_name>] [-depth <level>] [-divider <divider_name>...] [-expand <signal_name>] [-filter <f> | -nofilter <f>] [-format <type> | -<format>] [-group <group_name> [<sig_name1>...]] [-height <pixels>] [[-in] [-out] [-inout] | [-ports]] [-internal] [-label <name>] [-max <real_num>] [-min <real_num>] [-noupdate] [-numdynitem <int>] [-position <location>] [-queueends] [-radix <type> | -<radix_type>] [-radixenumnumeric | -radixenumsymbolic] [-recursive] [-startdynitem <int>] [-time] [<object_name>...] [{<object_name> {sig1 sig2 ...}}] 
+add wave .

@@ -1,0 +1,796 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_SC/simulation/modelsim
+Eandi2
+Z1 w1489140606
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd
+Z5 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd
+l0
+L57
+Vg2g>hAz9iAmRN]5ENVO4A2
+!s100 jn3F5@Xk::4V7XP?ceWQa3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1489141256
+!i10b 1
+Z8 !s108 1489141256.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd|
+Z10 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/EE224.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+DEx4 work 5 andi2 0 22 g2g>hAz9iAmRN]5ENVO4A2
+l62
+L61
+VMBe4l;5Nb<ZWZi>[mk=P02
+!s100 R37:M0HoahDQSEj4Yd@<I1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandi3
+R1
+Z13 DPx4 work 16 ee224_components 0 22 H:g5EXL5@Hhl_DQU5NTgf3
+R2
+R3
+R0
+R4
+R5
+l0
+L87
+V`d:IaamZ?3A?42P^4BVBU1
+!s100 Q:SbFF[P9`Kgb@[T=I`5L3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R13
+R2
+R3
+DEx4 work 5 andi3 0 22 `d:IaamZ?3A?42P^4BVBU1
+l93
+L91
+V:A:54JUM1S[zUdSo5=5Pj0
+!s100 eT>UE`Da7mjm@Nz^o_PfQ2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandi5
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L70
+VG3N]SA8R22O7XGHemR9fH1
+!s100 @jCFQBWE`LPTR5HINMKAH3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R13
+R2
+R3
+DEx4 work 5 andi5 0 22 G3N]SA8R22O7XGHemR9fH1
+l76
+L74
+V`]J6[on=WTG>eE3m6EQzh2
+!s100 ^J2a8Vl5]X5`SW`E]]DGo1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ebomber
+Z14 w1489140622
+R13
+R2
+R3
+R0
+Z15 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd
+Z16 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd
+l0
+L6
+Vj;JjKQaEzh`P;TSIK@NkC2
+!s100 lg7AUVo_OM3nYBccQODF=1
+R6
+31
+Z17 !s110 1489141257
+!i10b 1
+Z18 !s108 1489141257.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd|
+Z20 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/bomb_detector.vhd|
+!i113 1
+R11
+R12
+Abomb_detector
+R13
+R2
+R3
+DEx4 work 6 bomber 0 22 j;JjKQaEzh`P;TSIK@NkC2
+l22
+L12
+VielF=i3RaXPMY_5QD@35I2
+!s100 f`OV3AZGE>0a8`ic6T`_j0
+R6
+31
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Edffi
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L162
+Vhe?iczoZn@XlKRkRJfofR2
+!s100 [mSlY6aX>L189cElVGWUz0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astruct
+R13
+R2
+R3
+DEx4 work 4 dffi 0 22 he?iczoZn@XlKRkRJfofR2
+l167
+L165
+V_dE7TLR_J8Bk>cJ0G^R`b0
+!s100 3ej^L_LGQzW2IT::[8D1o2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edffi1
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L180
+V1i>V`_ECD^H?50376:jDW1
+!s100 <bhJZej57i_clz1lcNmaU3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astruct
+R13
+R2
+R3
+DEx4 work 5 dffi1 0 22 1i>V`_ECD^H?50376:jDW1
+l185
+L183
+V74D7f<RB0izbn]o?IBmI:1
+!s100 e;CAO3_G:CE?960hJEPG:2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edut
+Z21 w1489139845
+R2
+R3
+R0
+Z22 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd
+Z23 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd
+l0
+L4
+Veg0Vla0L_@BK4@lh;LiG:2
+!s100 Dh63g6X_4C8CNAFdki9Sk3
+R6
+31
+R7
+!i10b 1
+R8
+Z24 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd|
+Z25 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/DUT.vhd|
+!i113 1
+R11
+R12
+Awrap
+R2
+R3
+DEx4 work 3 dut 0 22 eg0Vla0L_@BK4@lh;LiG:2
+l39
+L10
+VLo3;H;[J9LHTP3Fi@b38]2
+!s100 b456CQ[=;_9@TE3[64cYN3
+R6
+31
+R7
+!i10b 1
+R8
+R24
+R25
+!i113 1
+R11
+R12
+Pee224_components
+R2
+R3
+R1
+R0
+R4
+R5
+l0
+L7
+VH:g5EXL5@Hhl_DQU5NTgf3
+!s100 NPOoMM=gFfhaQKfSzTIz?1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Egunman
+Z26 w1489140614
+R13
+R2
+R3
+R0
+Z27 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd
+Z28 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd
+l0
+L6
+VTW`44[Pn]DgBLYnn9MDg^2
+!s100 C1MMf4Bk0CB]96QK=d]J41
+R6
+31
+R17
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd|
+Z30 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/gun_detector.vhd|
+!i113 1
+R11
+R12
+Agun_detector
+R13
+R2
+R3
+DEx4 work 6 gunman 0 22 TW`44[Pn]DgBLYnn9MDg^2
+l20
+L12
+V9dH:_l@P8FVEUUD0>9mHh1
+!s100 2]e3D00iPG@`NHVzaZhki1
+R6
+31
+R17
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Einverter
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L46
+VRN07o;zhN@nF>2@aDGOzf3
+!s100 nbc^o=13BGbVn7Zn;dKLk0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 8 inverter 0 22 RN07o;zhN@nF>2@aDGOzf3
+l51
+L50
+V[M2bFBX?m;AmEKk@jUAm80
+!s100 X_>:c:MGSDkDb4O7QU;K=0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eknife_hurler
+Z31 w1489140628
+R13
+R2
+R3
+R0
+Z32 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd
+Z33 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd
+l0
+L7
+Vo@DTM[4zZn0VkahG0dcL[2
+!s100 k>;4DZ5lB>=eH3Xl7B?>33
+R6
+31
+R7
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd|
+Z35 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/knife_detector.vhd|
+!i113 1
+R11
+R12
+Aknife_detector
+R13
+R2
+R3
+DEx4 work 12 knife_hurler 0 22 o@DTM[4zZn0VkahG0dcL[2
+l25
+L13
+VH?RH?<j3^4[zj]<z7NO722
+!s100 W8EO_mGVH6@WcBn2n5QW00
+R6
+31
+R7
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
+Enandi2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L100
+VdLLTAf]59NKDDK@1b;b:V0
+!s100 43Khl:OjNWfMO3JOeLVzb2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 6 nandi2 0 22 dLLTAf]59NKDDK@1b;b:V0
+l105
+L104
+VMelC2mV9>dHGm>@HV[o<>3
+!s100 _8BJLiSzlcF<e6TZcondz1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enegative_d_latch
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L148
+VCX[LFIM:3D>OJ_jC@]l?Y1
+!s100 d0aEAgb`2GCRihFGX=Pf31
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R13
+R2
+R3
+DEx4 work 16 negative_d_latch 0 22 CX[LFIM:3D>OJ_jC@]l?Y1
+l153
+L151
+VeF7?RHJ[E>BC?k<0EH3_V2
+!s100 CgLjAk8GL<R0A^N7kf@Tn0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enori2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L122
+Vfk2BeZmR=fQKjlHHfaLRK3
+!s100 S3YX^BDDZHMIh]hISi^1I0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 5 nori2 0 22 fk2BeZmR=fQKjlHHfaLRK3
+l127
+L126
+VH1SMLjI4LMRAlD[Xn:VQj1
+!s100 ce^_RZhmzjz;TEfMP`>?V0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eori2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L111
+VE8_^0]6B3^X5TH]L`>ONb3
+!s100 jOW5LO[_lDAIM@X9d20QP3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 4 ori2 0 22 E8_^0]6B3^X5TH]L`>ONb3
+l116
+L115
+VchA1F7e@f>i3I1FXjBllK0
+!s100 d2LA?lMQok;:TAf1agdUJ1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epositive_d_latch
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L134
+V97OeF;bG?kmXM7<[jTein3
+!s100 lW51_i==BTEDKJmMg]coS0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R13
+R2
+R3
+DEx4 work 16 positive_d_latch 0 22 97OeF;bG?kmXM7<[jTein3
+l139
+L137
+VbE:7D9L^]2`BA>FQGo1]]1
+!s100 ;MKMIo00K>Y;>CnEQU15b2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Escan_chain
+Z36 w1489139944
+Z37 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z38 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl
+Z39 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl
+l0
+L10
+VAlVBYFI5hDH[WHJd2kVEL1
+!s100 EDKS_ZA11R2:C]LfzfaMG0
+R6
+31
+R7
+!i10b 1
+R8
+Z40 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl|
+Z41 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_chain.vhdl|
+!i113 1
+R11
+R12
+Abehave
+R37
+R2
+R3
+DEx4 work 10 scan_chain 0 22 AlVBYFI5hDH[WHJd2kVEL1
+l50
+L26
+VgCTHi5;N[0F8kE9DHT@0K0
+!s100 HbFzfa3^LFYN4Ph0ccY3R3
+R6
+31
+R7
+!i10b 1
+R8
+R40
+R41
+!i113 1
+R11
+R12
+Escan_reg
+R36
+R37
+R2
+R3
+R0
+Z42 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl
+Z43 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl
+l0
+L10
+V3Wi708m]9[VLE]>:WhLJG1
+!s100 fV;z;aQWmoR7bL7c8Oba<0
+R6
+31
+R7
+!i10b 1
+R8
+Z44 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl|
+Z45 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/scan_reg.vhdl|
+!i113 1
+R11
+R12
+Abehave
+R37
+R2
+R3
+DEx4 work 8 scan_reg 0 22 3Wi708m]9[VLE]>:WhLJG1
+l29
+L26
+VToWlIoB5V8MT=K7Sd8n813
+!s100 gGe5fUn90TYSDna;5?hMX2
+R6
+31
+R7
+!i10b 1
+R8
+R44
+R45
+!i113 1
+R11
+R12
+Eterrorist
+Z46 w1489140632
+R13
+R2
+R3
+R0
+Z47 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd
+Z48 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd
+l0
+L7
+VN<BTR?@W]QUPoCfUd0V8L2
+!s100 Miz1nQiFUG>MlRkIH9GoB3
+R6
+31
+R7
+!i10b 1
+R8
+Z49 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd|
+Z50 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/terror_detector.vhd|
+!i113 1
+R11
+R12
+Aterror_detector
+R13
+R2
+R3
+DEx4 work 9 terrorist 0 22 N<BTR?@W]QUPoCfUd0V8L2
+l27
+L13
+VY`9X9<@D4SbEI5oA05e;:0
+!s100 JX`O0aCQdJXIJ3i5HMD;K2
+R6
+31
+R7
+!i10b 1
+R8
+R49
+R50
+!i113 1
+R11
+R12
+Etoplevel
+R36
+R2
+R3
+R0
+Z51 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl
+Z52 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl
+l0
+L11
+V`MfX76`F7bA32^B7AA>?j2
+!s100 >NWU<Qc1QXFDoUXY1;CDl0
+R6
+31
+R7
+!i10b 1
+R8
+Z53 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl|
+Z54 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6-7/String Detector/Scan Chain/TopLevel.vhdl|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 8 toplevel 0 22 `MfX76`F7bA32^B7AA>?j2
+l48
+L21
+Vc1Lg2NAW2Z8_BJ4aE5BjZ2
+!s100 cPioC`2:AZaBOJm7^4ej=2
+R6
+31
+R7
+!i10b 1
+R8
+R53
+R54
+!i113 1
+R11
+R12

@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_Fresh/simulation/modelsim
+Edut
+Z1 w1489136505
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx4 maxv 14 maxv_atom_pack 0 22 ;1RV2PR`ohU@cGlPGO??S1
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx4 maxv 15 maxv_components 0 22 A9;?[=RNW2;D8AoQ_JmN;1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z8 8DUT.vho
+Z9 FDUT.vho
+l0
+L35
+VP4PDh0I0am_6Fgc5=ZO5;1
+!s100 h36Q==hNVo1F7VO4kTjKN1
+Z10 OV;C;10.5b;63
+31
+Z11 !s110 1489136587
+!i10b 1
+Z12 !s108 1489136587.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|DUT.vho|
+Z14 !s107 DUT.vho|
+!i113 1
+Z15 o-93 -work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 3 dut 0 22 P4PDh0I0am_6Fgc5=ZO5;1
+l110
+L45
+VCI[<BPhNh`mXG?eIXOocn3
+!s100 ng<4coTYQ5L`QR@UZ_<U;1
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etestbench
+Z17 w1489136186
+R7
+R6
+R0
+Z18 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_Fresh/../../EE214 - Experiment 6/String Detector/Testbench.vhd
+Z19 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_Fresh/../../EE214 - Experiment 6/String Detector/Testbench.vhd
+l0
+L6
+V@1DQ?cZ=m_l@jj6FL0;5;3
+!s100 7ZbCB^hWbHJQbj^[8jgN]2
+R10
+31
+R11
+!i10b 1
+R12
+Z20 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_Fresh/../../EE214 - Experiment 6/String Detector/Testbench.vhd|
+Z21 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/StringDetector_Fresh/../../EE214 - Experiment 6/String Detector/Testbench.vhd|
+!i113 1
+R15
+R16
+Abehave
+R7
+R6
+DEx4 work 9 testbench 0 22 @1DQ?cZ=m_l@jj6FL0;5;3
+l66
+L8
+V4Ma;d?]ee2m@mV4^cNC7V1
+!s100 cVfNI5TcV5CJdIzV0hLW@0
+R10
+31
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16

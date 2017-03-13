@@ -1,0 +1,390 @@
+TimeQuest Timing Analyzer report for DUT
+Fri Mar 10 14:27:11 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'input_vector[5]'
+ 12. Hold: 'input_vector[5]'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; DUT                                                 ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                           ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; Clock Name      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets             ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; input_vector[5] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { input_vector[5] } ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+
+
++-----------------------------------------------------+
+; Fmax Summary                                        ;
++----------+-----------------+-----------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name      ; Note ;
++----------+-----------------+-----------------+------+
+; 82.7 MHz ; 82.7 MHz        ; input_vector[5] ;      ;
++----------+-----------------+-----------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------+
+; Setup Summary                            ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; input_vector[5] ; -6.458 ; -51.862       ;
++-----------------+--------+---------------+
+
+
++-----------------------------------------+
+; Hold Summary                            ;
++-----------------+-------+---------------+
+; Clock           ; Slack ; End Point TNS ;
++-----------------+-------+---------------+
+; input_vector[5] ; 1.489 ; 0.000         ;
++-----------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++------------------------------------------+
+; Minimum Pulse Width Summary              ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; input_vector[5] ; -2.289 ; -2.289        ;
++-----------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'input_vector[5]'                                                                                                                                                                            ;
++--------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node                                             ; To Node                                               ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+; -6.458 ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; -0.001     ; 5.555      ;
+; -6.099 ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 5.191      ;
+; -6.019 ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 5.111      ;
+; -5.934 ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 5.032      ;
+; -5.546 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; input_vector[5] ; input_vector[5] ; 0.500        ; 0.526      ; 3.064      ;
+; -5.292 ; input_vector[5]                                       ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.500        ; 3.924      ; 7.808      ;
+; -5.242 ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 4.747      ;
+; -5.162 ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 4.667      ;
+; -5.115 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; input_vector[5] ; input_vector[5] ; 0.500        ; 0.532      ; 2.639      ;
+; -4.983 ; input_vector[5]                                       ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.500        ; 3.919      ; 7.737      ;
+; -4.796 ; input_vector[5]                                       ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.500        ; 3.923      ; 7.536      ;
+; -4.792 ; input_vector[5]                                       ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 3.924      ; 7.808      ;
+; -4.755 ; input_vector[5]                                       ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.500        ; 3.924      ; 7.684      ;
+; -4.553 ; input_vector[5]                                       ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.500        ; 3.967      ; 7.118      ;
+; -4.483 ; input_vector[5]                                       ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; 3.919      ; 7.737      ;
+; -4.296 ; input_vector[5]                                       ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; 3.923      ; 7.536      ;
+; -4.255 ; input_vector[5]                                       ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 3.924      ; 7.684      ;
+; -4.227 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; input_vector[5] ; input_vector[5] ; 0.500        ; -0.005     ; 2.831      ;
+; -4.080 ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 3.397      ;
+; -4.053 ; input_vector[5]                                       ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 1.000        ; 3.967      ; 7.118      ;
+; -4.018 ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; input_vector[5] ; input_vector[5] ; 0.500        ; 0.533      ; 2.689      ;
+; -3.955 ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.004      ; 3.276      ;
+; -3.822 ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; input_vector[5] ; input_vector[5] ; 0.500        ; -0.526     ; 1.692      ;
+; -3.653 ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; input_vector[5] ; input_vector[5] ; 0.500        ; -0.001     ; 1.457      ;
+; -3.402 ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; 0.000      ; 2.737      ;
+; -3.337 ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; input_vector[5] ; input_vector[5] ; 0.500        ; 0.532      ; 2.007      ;
+; -3.276 ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 1.000        ; -0.004     ; 2.607      ;
+; -3.018 ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.500        ; -0.532     ; 1.294      ;
+; -3.014 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; input_vector[5] ; input_vector[5] ; 0.500        ; 0.001      ; 1.624      ;
++--------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'input_vector[5]'                                                                                                                                                                            ;
++-------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+; 1.489 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; input_vector[5] ; input_vector[5] ; -0.500       ; 0.526      ; 1.515      ;
+; 1.638 ; input_vector[5]                                       ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; 3.923      ; 5.561      ;
+; 1.711 ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; input_vector[5] ; input_vector[5] ; -0.500       ; 0.533      ; 1.744      ;
+; 1.720 ; input_vector[5]                                       ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 3.967      ; 5.687      ;
+; 1.920 ; input_vector[5]                                       ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 3.924      ; 5.844      ;
+; 1.958 ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; input_vector[5] ; input_vector[5] ; -0.500       ; -0.001     ; 1.457      ;
+; 1.975 ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; input_vector[5] ; input_vector[5] ; -0.500       ; 0.532      ; 2.007      ;
+; 2.123 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; input_vector[5] ; input_vector[5] ; -0.500       ; 0.001      ; 1.624      ;
+; 2.138 ; input_vector[5]                                       ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; -0.500       ; 3.923      ; 5.561      ;
+; 2.220 ; input_vector[5]                                       ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; -0.500       ; 3.967      ; 5.687      ;
+; 2.257 ; knife_hurler:K|DFFi:d0|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; input_vector[5] ; input_vector[5] ; -0.500       ; 0.532      ; 2.289      ;
+; 2.326 ; bomber:B|DFF1:d0|negative_d_latch:master|qsig~2       ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; -0.500       ; -0.532     ; 1.294      ;
+; 2.420 ; input_vector[5]                                       ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; -0.500       ; 3.924      ; 5.844      ;
+; 2.611 ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; -0.004     ; 2.607      ;
+; 2.703 ; input_vector[5]                                       ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; 3.919      ; 6.622      ;
+; 2.718 ; knife_hurler:K|DFFi:d2|negative_d_latch:master|qsig~4 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; input_vector[5] ; input_vector[5] ; -0.500       ; -0.526     ; 1.692      ;
+; 2.737 ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 2.737      ;
+; 2.945 ; bomber:B|DFF1:d0|positive_d_latch:slave|qsig~0        ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; -0.001     ; 2.944      ;
+; 3.016 ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 3.016      ;
+; 3.145 ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 3.145      ;
+; 3.203 ; input_vector[5]                                       ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; -0.500       ; 3.919      ; 6.622      ;
+; 3.272 ; terrorist:T|DFFi:d2|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.004      ; 3.276      ;
+; 3.336 ; knife_hurler:K|DFFi:d2|positive_d_latch:slave|qsig~0  ; knife_hurler:K|DFFi:d0|negative_d_latch:master|qsig~2 ; input_vector[5] ; input_vector[5] ; -0.500       ; -0.005     ; 2.831      ;
+; 3.397 ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; terrorist:T|DFFi:d0|positive_d_latch:slave|qsig~0     ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 3.397      ;
+; 3.440 ; input_vector[5]                                       ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 3.924      ; 7.364      ;
+; 3.940 ; input_vector[5]                                       ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; -0.500       ; 3.924      ; 7.364      ;
+; 4.188 ; gunman:G|DFFi:d1|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 4.188      ;
+; 4.290 ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; gunman:G|DFFi:d0|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 4.290      ;
+; 5.032 ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; bomber:B|DFFi:d1|positive_d_latch:slave|qsig~0        ; input_vector[5] ; input_vector[5] ; 0.000        ; 0.000      ; 5.032      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Transfers                                                               ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; input_vector[5] ; input_vector[5] ; 0        ; 9        ; 17       ; 29       ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------+
+; Hold Transfers                                                                ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; input_vector[5] ; input_vector[5] ; 0        ; 9        ; 17       ; 29       ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 54    ; 54   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 13    ; 13   ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------+
+; Clock Status Summary                                   ;
++-----------------+-----------------+------+-------------+
+; Target          ; Clock           ; Type ; Status      ;
++-----------------+-----------------+------+-------------+
+; input_vector[5] ; input_vector[5] ; Base ; Constrained ;
++-----------------+-----------------+------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; input_vector[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; output_vector[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; input_vector[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; input_vector[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; output_vector[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Fri Mar 10 14:27:09 2017
+Info: Command: quartus_sta StringDetector -c DUT
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 11 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DUT.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name input_vector[5] input_vector[5]
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "T|d0|master|qsig~3|combout"
+    Warning (332126): Node "T|d0|master|qsig~1|datac"
+    Warning (332126): Node "T|d0|master|qsig~1|combout"
+    Warning (332126): Node "T|d0|master|qsig~3|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "T|d2|master|qsig~0|combout"
+    Warning (332126): Node "T|d2|slave|qsig~1|datad"
+    Warning (332126): Node "T|d2|slave|qsig~1|combout"
+    Warning (332126): Node "T|d2|master|qsig~0|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "B|d1|master|qsig~4|combout"
+    Warning (332126): Node "B|d1|master|qsig~2|datab"
+    Warning (332126): Node "B|d1|master|qsig~2|combout"
+    Warning (332126): Node "B|d1|master|qsig~4|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "G|d0|master|qsig~5|combout"
+    Warning (332126): Node "G|d0|slave|qsig~1|datad"
+    Warning (332126): Node "G|d0|slave|qsig~1|combout"
+    Warning (332126): Node "G|d0|master|qsig~5|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "G|d1|master|qsig~3|combout"
+    Warning (332126): Node "G|d1|master|qsig~2|datac"
+    Warning (332126): Node "G|d1|master|qsig~2|combout"
+    Warning (332126): Node "G|d1|master|qsig~3|datac"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.458
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.458             -51.862 input_vector[5] 
+Info (332146): Worst-case hold slack is 1.489
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.489               0.000 input_vector[5] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 input_vector[5] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 743 megabytes
+    Info: Processing ended: Fri Mar 10 14:27:11 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

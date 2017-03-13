@@ -1,0 +1,1719 @@
+|TopLevel
+TDI => Scan_Chain:scan_instance.TDI
+TDO << Scan_Chain:scan_instance.TDO
+TMS => Scan_Chain:scan_instance.TMS
+TCLK => Scan_Chain:scan_instance.TCLK
+TRST => Scan_Chain:scan_instance.TRST
+
+
+|TopLevel|Scan_Chain:scan_instance
+TDI => Scan_reg:In_Reg.SI
+TDO <= Scan_reg:Out_Reg.SO
+TMS => L2_en.DATAB
+TMS => next_state.DATAB
+TMS => next_state.DATAB
+TMS => Selector2.IN2
+TMS => next_state.DATAB
+TMS => Selector3.IN1
+TMS => Selector0.IN1
+TMS => Selector1.IN1
+TCLK => Scan_reg:In_Reg.clock
+TCLK => Scan_reg:Out_Reg.clock
+TCLK => current_state~1.DATAIN
+TRST => Scan_reg:In_Reg.reset
+TRST => Scan_reg:Out_Reg.reset
+TRST => current_state~3.DATAIN
+TRST => L1_en.OUTPUTSELECT
+TRST => L2_en.OUTPUTSELECT
+TRST => cap_shft.OUTPUTSELECT
+TRST => next_state.s_idle.OUTPUTSELECT
+TRST => next_state.s_DR.OUTPUTSELECT
+TRST => next_state.s_capture.OUTPUTSELECT
+TRST => next_state.s_shift.OUTPUTSELECT
+TRST => next_state.s_update.OUTPUTSELECT
+TRST => Scan_reg:In_Reg.sel_reg
+TRST => Scan_reg:Out_Reg.sel_reg
+dut_in[0] <= Scan_reg:In_Reg.PO[0]
+dut_in[1] <= Scan_reg:In_Reg.PO[1]
+dut_in[2] <= Scan_reg:In_Reg.PO[2]
+dut_in[3] <= Scan_reg:In_Reg.PO[3]
+dut_in[4] <= Scan_reg:In_Reg.PO[4]
+dut_in[5] <= Scan_reg:In_Reg.PO[5]
+dut_in[6] <= Scan_reg:In_Reg.PO[6]
+dut_out[0] => Scan_reg:Out_Reg.PI[0]
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[6].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+clock => L2[0].CLK
+clock => L1[0].CLK
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[0].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|DUT:dut_inst
+input_vector[0] => bomber:B.x[0]
+input_vector[0] => gunman:G.x[0]
+input_vector[0] => knife_hurler:K.x[0]
+input_vector[0] => terrorist:T.x[0]
+input_vector[1] => bomber:B.x[1]
+input_vector[1] => gunman:G.x[1]
+input_vector[1] => knife_hurler:K.x[1]
+input_vector[1] => terrorist:T.x[1]
+input_vector[2] => bomber:B.x[2]
+input_vector[2] => gunman:G.x[2]
+input_vector[2] => knife_hurler:K.x[2]
+input_vector[2] => terrorist:T.x[2]
+input_vector[3] => bomber:B.x[3]
+input_vector[3] => gunman:G.x[3]
+input_vector[3] => knife_hurler:K.x[3]
+input_vector[3] => terrorist:T.x[3]
+input_vector[4] => bomber:B.x[4]
+input_vector[4] => gunman:G.x[4]
+input_vector[4] => knife_hurler:K.x[4]
+input_vector[4] => terrorist:T.x[4]
+input_vector[5] => bomber:B.clk
+input_vector[5] => gunman:G.clk
+input_vector[5] => knife_hurler:K.clk
+input_vector[5] => terrorist:T.clk
+input_vector[6] => bomber:B.reset
+input_vector[6] => gunman:G.reset
+input_vector[6] => knife_hurler:K.reset
+input_vector[6] => terrorist:T.reset
+output_vector[0] <= output_vector.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B
+x[0] => INVERTER:INV0.a
+x[0] => andi5:A5m.a5
+x[0] => andi5:A5o.a5
+x[1] => INVERTER:N100.a
+x[1] => andi5:A5b.a4
+x[1] => andi5:A5o.a4
+x[2] => INVERTER:INV2.a
+x[2] => andi5:A5m.a3
+x[2] => andi5:A5o.a3
+x[3] => INVERTER:INV3.a
+x[3] => andi5:A5m.a2
+x[3] => andi5:A5o.a2
+x[4] => INVERTER:INV4.a
+reset => dffi:d1.r
+reset => dffi1:d0.r
+clk => dffi:d1.clk
+clk => dffi1:d0.clk
+s <= andi2:A13.c
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV0
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:N100
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV2
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV3
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV4
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5b
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5b|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5b|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5b|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5b|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5m
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5m|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5m|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5m|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5m|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5o
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5o|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5o|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5o|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi5:A5o|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV5
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV6
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:INV60
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:N7
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|INVERTER:N8
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A7
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A8
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A9
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|ori2:O1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A10
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|ori2:O2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A11
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A12
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|ori2:O3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|ori2:O4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|andi2:A13
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi:d1
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi:d1|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi:d1|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi1:d0
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi1:d0|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|bomber:B|dffi1:d0|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G
+x[0] => INVERTER:INV0.a
+x[0] => andi5:A51.a5
+x[0] => andi5:A52.a5
+x[1] => INVERTER:INV1.a
+x[1] => andi5:A51.a4
+x[1] => andi5:A53.a4
+x[2] => INVERTER:INV2.a
+x[2] => andi5:A51.a3
+x[2] => andi5:A52.a3
+x[2] => andi5:A53.a3
+x[3] => INVERTER:INV3.a
+x[3] => andi5:A53.a2
+x[4] => INVERTER:INV4.a
+x[4] => andi5:A52.a1
+reset => dffi:d0.r
+reset => dffi:d1.r
+clk => dffi:d0.clk
+clk => dffi:d1.clk
+s <= andi2:A8.c
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV0
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV1
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV2
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV3
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV4
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A51
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A51|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A51|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A51|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A51|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A52
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A52|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A52|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A52|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A52|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A53
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A53|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A53|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A53|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi5:A53|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV5
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV6
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV7
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV8
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|INVERTER:INV9
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|ori2:O1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A7
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|ori2:O2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|andi2:A8
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d0
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d0|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d0|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d1
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d1|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|gunman:G|dffi:d1|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K
+x[0] => INVERTER:INV0.a
+x[0] => andi5:A5k.a5
+x[0] => andi5:A5i.a5
+x[0] => andi5:A5f.a5
+x[1] => INVERTER:INV1.a
+x[1] => andi5:A5k.a4
+x[1] => andi5:A5n.a4
+x[1] => andi5:A5e.a4
+x[2] => INVERTER:INV2.a
+x[2] => andi5:A5n.a3
+x[2] => andi5:A5f.a3
+x[2] => andi5:A5e.a3
+x[3] => INVERTER:INV3.a
+x[3] => andi5:A5k.a2
+x[3] => andi5:A5n.a2
+x[3] => andi5:A5i.a2
+x[4] => INVERTER:INV4.a
+reset => dffi:d0.r
+reset => dffi:d1.r
+reset => dffi:d2.r
+clk => dffi:d0.clk
+clk => dffi:d1.clk
+clk => dffi:d2.clk
+s <= andi2:A7.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV0
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV1
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV2
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV3
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV4
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5k
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5k|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5k|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5k|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5k|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5n
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5n|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5n|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5n|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5n|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5i
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5i|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5i|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5i|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5i|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5f
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5f|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5f|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5f|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5f|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5e
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5e|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5e|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5e|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi5:A5e|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV5
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV6
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV7
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV8
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV9
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV10
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV11
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|INVERTER:INV12
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A31
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A31|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A31|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A32
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A32|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A32|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A33
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A33|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A33|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A34
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A34|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A34|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A35
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A35|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi3:A35|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|ori2:O6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|andi2:A7
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d0
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d0|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d0|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d1
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d1|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d1|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d2
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d2|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|knife_hurler:K|dffi:d2|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T
+x[0] => INVERTER:INV0.a
+x[0] => andi5:A5e.a5
+x[0] => andi5:A5o.a5
+x[1] => INVERTER:INV1.a
+x[1] => andi5:A5o.a4
+x[1] => andi5:A5r.a4
+x[2] => INVERTER:INV2.a
+x[2] => andi5:A5e.a3
+x[2] => andi5:A5o.a3
+x[2] => andi5:A5t.a3
+x[3] => INVERTER:INV3.a
+x[3] => andi5:A5o.a2
+x[4] => INVERTER:INV4.a
+x[4] => andi5:A5t.a1
+x[4] => andi5:A5r.a1
+reset => dffi:d0.r
+reset => dffi:d1.r
+reset => dffi:d2.r
+clk => dffi:d0.clk
+clk => dffi:d1.clk
+clk => dffi:d2.clk
+s <= andi2:A7.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV0
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV1
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV2
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV3
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV4
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5e
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5e|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5e|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5e|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5e|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5o
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5o|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5o|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5o|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5o|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5t
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5t|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5t|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5t|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5t|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5r
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+a4 => andi2:AA3.a
+a5 => andi2:AA4.a
+c <= andi2:AA4.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5r|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5r|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5r|andi2:AA3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi5:A5r|andi2:AA4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV5
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV6
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV7
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV8
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV9
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV10
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|INVERTER:INV11
+a => b.DATAIN
+b <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A31
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A31|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A31|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A32
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A32|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A32|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A33
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A33|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A33|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A34
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A34|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A34|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A35
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A35|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A35|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A36
+a1 => andi2:AA1.a
+a2 => andi2:AA1.b
+a3 => andi2:AA2.a
+c <= andi2:AA2.c
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A36|andi2:AA1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi3:A36|andi2:AA2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O11
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|ori2:O6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|andi2:A7
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d0
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d0|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d0|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d1
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d1|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d1|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d2
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d2|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_inst|terrorist:T|dffi:d2|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+

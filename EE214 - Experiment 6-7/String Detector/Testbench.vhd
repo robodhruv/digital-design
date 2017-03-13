@@ -68,8 +68,8 @@ begin
     variable err_flag : boolean := false;
     --File INFILE: text open read_mode is "/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6/String Detector/Tracefiles/tracefile.txt";
     --FILE OUTFILE: text  open write_mode is "/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 6/String Detector/Tracefiles/outputs.txt";
-    File INFILE: text open read_mode is "Tracefiles/tracefile.txt";
-    FILE OUTFILE: text  open write_mode is "Tracefiles/outputs.txt";
+    File INFILE: text open read_mode is "../Tracefiles/tracefile.txt";
+    FILE OUTFILE: text  open write_mode is "../Tracefiles/outputs.txt";
 
     ---------------------------------------------------
     -- edit the next two lines to customize

@@ -75,9 +75,9 @@ begin
 	-- Assigning the Output
 	A7: andi2 port map (terros, r, s);
 
-	-- Adding the DFF's
-	d0: DFFi port map (d => nq(0), clk => clk, q => q(0), r => reset);
-	d1: DFFi port map (d => nq(1), clk => clk, q => q(1), r => reset);
-	d2: DFFi port map (d => nq(2), clk => clk, q => q(2), r => reset);
+	-- Adding the dffi's
+	d0: dffi port map (d => nq(0), clk => clk, q => q(0), r => reset);
+	d1: dffi port map (d => nq(1), clk => clk, q => q(1), r => reset);
+	d2: dffi port map (d => nq(2), clk => clk, q => q(2), r => reset);
 
 end terror_detector;

@@ -17,7 +17,7 @@ package EE224_Components is
   component andi3 is
   port (a1, a2, a3: in std_logic; c : out std_logic);
    end component;
-   component z is
+   component Nandi2 is
 	port (a, b: in std_logic; c : out std_logic);
    end component;
    component ori2 is
@@ -32,10 +32,10 @@ package EE224_Components is
    component negative_d_latch is
 	port (d, clk: in std_logic; q : out std_logic);
    end component;
-   component DFFi is
+   component dffi is
 	port (d, clk, r: in std_logic; q : out std_logic);
    end component;
-      component DFF1 is
+      component dffi1 is
   port (d, clk, r: in std_logic; q : out std_logic);
    end component;
 
@@ -91,17 +91,17 @@ end entity andi3;
 architecture Behave of andi3 is
   signal p2: std_ulogic;
 begin
-  AA1: z port map (a1, a2, p2);
-  AA2: z port map (a3, p2, c);
+  AA1: andi2 port map (a1, a2, p2);
+  AA2: andi2 port map (a3, p2, c);
 end Behave;
 
 library ieee;
 use ieee.std_logic_1164.all;
-entity z is
+entity Nandi2 is
   port (a, b: in std_ulogic;
          c: out std_ulogic);
-end entity z;
-architecture Behave of z is
+end entity Nandi2;
+architecture Behave of Nandi2 is
 begin
   c <= not(a and b);
 end Behave;
@@ -159,10 +159,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use work.EE224_Components.all; 
 
-entity DFFi is
+entity dffi is
   port (d, clk, r: in std_ulogic; q: out std_ulogic);
-end entity DFFi;
-architecture Struct of DFFi is
+end entity dffi;
+architecture Struct of dffi is
    signal U, o: std_logic;
 begin
   master: negative_d_latch
@@ -177,10 +177,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use work.EE224_Components.all; 
 
-entity DFF1 is
+entity dffi1 is
   port (d, clk, r: in std_ulogic; q: out std_ulogic);
-end entity DFF1;
-architecture Struct of DFF1 is
+end entity dffi1;
+architecture Struct of dffi1 is
    signal U, o: std_logic;
 begin
   master: negative_d_latch
