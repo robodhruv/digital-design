@@ -1,0 +1,487 @@
+Analysis & Synthesis report for TopLevel
+Sat Mar 18 15:34:35 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance
+ 12. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg
+ 13. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+ 14. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3"
+ 15. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2"
+ 16. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1"
+ 17. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1"
+ 18. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3"
+ 19. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2"
+ 20. Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1"
+ 21. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"
+ 22. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg"
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Mar 18 15:34:35 2017       ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; TopLevel                                    ;
+; Top-level Entity Name       ; TopLevel                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 88                                          ;
+; Total pins                  ; 5                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; TopLevel           ; TopLevel           ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
++------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; ../../EE214 - Midsem/xor.vhd             ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/xor.vhd             ;         ;
+; ../../EE214 - Midsem/TopLevel.vhdl       ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl       ;         ;
+; ../../EE214 - Midsem/scan_reg.vhdl       ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_reg.vhdl       ;         ;
+; ../../EE214 - Midsem/scan_chain.vhdl     ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl     ;         ;
+; ../../EE214 - Midsem/full_counter.vhd    ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd    ;         ;
+; ../../EE214 - Midsem/full_adder.vhd      ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_adder.vhd      ;         ;
+; ../../EE214 - Midsem/FourBitAdder.vhd    ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/FourBitAdder.vhd    ;         ;
+; ../../EE214 - Midsem/four_bit_linear.vhd ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/four_bit_linear.vhd ;         ;
+; ../../EE214 - Midsem/DUT.vhd             ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/DUT.vhd             ;         ;
++------------------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 88    ;
+;     -- Combinational with no register       ; 47    ;
+;     -- Register only                        ; 1     ;
+;     -- Combinational with a register        ; 40    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 32    ;
+;     -- 3 input functions                    ; 36    ;
+;     -- 2 input functions                    ; 19    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 88    ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 4     ;
+;     -- asynchronous clear/load mode         ; 5     ;
+;                                             ;       ;
+; Total registers                             ; 41    ;
+; I/O pins                                    ; 5     ;
+; Maximum fan-out node                        ; TRST  ;
+; Maximum fan-out                             ; 66    ;
+; Total fan-out                               ; 358   ;
+; Average fan-out                             ; 3.85  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                            ;
++------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node               ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                           ; Entity Name     ; Library Name ;
++------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |TopLevel                                ; 88 (0)      ; 41           ; 0          ; 5    ; 0            ; 47 (0)       ; 1 (0)             ; 40 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel                                                                                                     ; TopLevel        ; work         ;
+;    |DUT:dut_inst|                        ; 44 (0)      ; 0            ; 0          ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst                                                                                        ; DUT             ; work         ;
+;       |full_counter:counter_inst|        ; 44 (0)      ; 0            ; 0          ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst                                                              ; full_counter    ; work         ;
+;          |FourBitAdder:adder1|           ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1                                          ; FourBitAdder    ; work         ;
+;             |full_adder:bit_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:bit_2|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_2|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;             |full_adder:bit_3|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_3|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |FourBitAdder:adder2|           ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2                                          ; FourBitAdder    ; work         ;
+;             |full_adder:bit_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_1                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_1|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:bit_2|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_2|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;             |full_adder:bit_3|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_3|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |FourBitAdder:adder3|           ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3                                          ; FourBitAdder    ; work         ;
+;             |full_adder:bit_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_1                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_1|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:bit_2|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_2|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;             |full_adder:bit_3|           ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_3|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;             |full_adder:bit_4|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_4                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_4|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |four_bit_linear:quad0|         ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0                                        ; four_bit_linear ; work         ;
+;             |full_adder:fa2|             ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa3|             ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa4|             ; 4 (2)       ; 0            ; 0          ; 0    ; 0            ; 4 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa4                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa4|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |four_bit_linear:quad1|         ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1                                        ; four_bit_linear ; work         ;
+;             |full_adder:fa1|             ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa1                         ; full_adder      ; work         ;
+;             |full_adder:fa2|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa2|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa3|             ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa3|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa4|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa4                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa4|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |four_bit_linear:quad2|         ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2                                        ; four_bit_linear ; work         ;
+;             |full_adder:fa1|             ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa1                         ; full_adder      ; work         ;
+;             |full_adder:fa2|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa2|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa3|             ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa3|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa4|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa4                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa4|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;          |four_bit_linear:quad3|         ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3                                        ; four_bit_linear ; work         ;
+;             |full_adder:fa1|             ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa1                         ; full_adder      ; work         ;
+;             |full_adder:fa2|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa2                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa2|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa3|             ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa3                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_1| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa3|myXOR:add_instance_s0_1 ; myXOR           ; work         ;
+;             |full_adder:fa4|             ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa4                         ; full_adder      ; work         ;
+;                |myXOR:add_instance_s0_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa4|myXOR:add_instance_s0_2 ; myXOR           ; work         ;
+;    |Scan_Chain:scan_instance|            ; 44 (6)      ; 41           ; 0          ; 0    ; 0            ; 3 (1)        ; 1 (1)             ; 40 (4)           ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance                                                                            ; Scan_Chain      ; work         ;
+;       |Scan_Reg:In_Reg|                  ; 33 (33)     ; 32           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg                                                            ; Scan_Reg        ; work         ;
+;       |Scan_Reg:Out_Reg|                 ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg                                                           ; Scan_Reg        ; work         ;
++------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|Scan_Chain:scan_instance|current_state                                                                               ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; Name                    ; current_state.s_update ; current_state.s_shift ; current_state.s_capture ; current_state.s_DR ; current_state.s_idle ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; current_state.s_idle    ; 0                      ; 0                     ; 0                       ; 0                  ; 0                    ;
+; current_state.s_DR      ; 0                      ; 0                     ; 0                       ; 1                  ; 1                    ;
+; current_state.s_capture ; 0                      ; 0                     ; 1                       ; 0                  ; 1                    ;
+; current_state.s_shift   ; 0                      ; 1                     ; 0                       ; 0                  ; 1                    ;
+; current_state.s_update  ; 1                      ; 0                     ; 0                       ; 0                  ; 1                    ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 41    ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[5]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg|L1[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; in_pins        ; 16    ; Signed Integer                               ;
+; out_pins       ; 4     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; length         ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; length         ; 4     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder3"                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; z[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder2"                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; z[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1"                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; z[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1" ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                       ;
++------+-------+----------+-------------------------------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                                                  ;
++------+-------+----------+-------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; po   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; pi   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Sat Mar 18 15:34:10 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BitCounter_SC -c TopLevel
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/xor.vhd
+    Info (12022): Found design unit 1: myXOR-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/xor.vhd Line: 9
+    Info (12023): Found entity 1: myXOR File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/xor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl
+    Info (12022): Found design unit 1: TopLevel-Struct File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl Line: 21
+    Info (12023): Found entity 1: TopLevel File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_reg.vhdl
+    Info (12022): Found design unit 1: Scan_Reg-behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_reg.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Reg File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_reg.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl
+    Info (12022): Found design unit 1: Scan_Chain-behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Chain File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd
+    Info (12022): Found design unit 1: full_counter-count File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd Line: 10
+    Info (12023): Found entity 1: full_counter File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_adder.vhd
+    Info (12022): Found design unit 1: full_adder-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_adder.vhd Line: 9
+    Info (12023): Found entity 1: full_adder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_adder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/FourBitAdder.vhd
+    Info (12022): Found design unit 1: FourBitAdder-add_all File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/FourBitAdder.vhd Line: 9
+    Info (12023): Found entity 1: FourBitAdder File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/FourBitAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/four_bit_linear.vhd
+    Info (12022): Found design unit 1: four_bit_linear-add4 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/four_bit_linear.vhd Line: 9
+    Info (12023): Found entity 1: four_bit_linear File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/four_bit_linear.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/DUT.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/DUT.vhd Line: 13
+    Info (12023): Found entity 1: DUT File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/DUT.vhd Line: 8
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "Scan_Chain" for hierarchy "Scan_Chain:scan_instance" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl Line: 54
+Warning (10036): Verilog HDL or VHDL warning at scan_chain.vhdl(46): object "unused" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl Line: 46
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:In_Reg" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl Line: 53
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:Out_Reg" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/scan_chain.vhdl Line: 55
+Info (12128): Elaborating entity "DUT" for hierarchy "DUT:dut_inst" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/TopLevel.vhdl Line: 65
+Info (12128): Elaborating entity "full_counter" for hierarchy "DUT:dut_inst|full_counter:counter_inst" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/DUT.vhd Line: 22
+Info (12128): Elaborating entity "four_bit_linear" for hierarchy "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd Line: 26
+Info (12128): Elaborating entity "full_adder" for hierarchy "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/four_bit_linear.vhd Line: 16
+Info (12128): Elaborating entity "myXOR" for hierarchy "DUT:dut_inst|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1|myXOR:add_instance_s0_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_adder.vhd Line: 16
+Info (12128): Elaborating entity "FourBitAdder" for hierarchy "DUT:dut_inst|full_counter:counter_inst|FourBitAdder:adder1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Midsem/full_counter.vhd Line: 32
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 88 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 940 megabytes
+    Info: Processing ended: Sat Mar 18 15:34:35 2017
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:58
+
+

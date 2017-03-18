@@ -35,8 +35,8 @@ begin
 	A5f: andi5 port map (n4, n3, x(2), n1, x(0), e); -- Identifying E
 	A5e: andi5 port map (n4, n3, x(2), x(1), n0, f); -- Identifying F
 
-	INV5: inverter port	map (q(0), qb(0));
-	INV6: inverter port	map (q(1), qb(1));
+	INV5: inverter port map (q(0), qb(0));
+	INV6: inverter port map (q(1), qb(1));
 	INV7: inverter port map (q(2), qb(2));
 	INV8: inverter port map (k, kb);
 	INV9: inverter port map (n, nb);

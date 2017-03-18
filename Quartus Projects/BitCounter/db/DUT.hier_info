@@ -1,0 +1,978 @@
+|DUT
+input_vector[0] => full_counter:counter_inst.b0
+input_vector[1] => full_counter:counter_inst.b1
+input_vector[2] => full_counter:counter_inst.b2
+input_vector[3] => full_counter:counter_inst.b3
+input_vector[4] => full_counter:counter_inst.b4
+input_vector[5] => full_counter:counter_inst.b5
+input_vector[6] => full_counter:counter_inst.b6
+input_vector[7] => full_counter:counter_inst.b7
+input_vector[8] => full_counter:counter_inst.b8
+input_vector[9] => full_counter:counter_inst.b9
+input_vector[10] => full_counter:counter_inst.b10
+input_vector[11] => full_counter:counter_inst.b11
+input_vector[12] => full_counter:counter_inst.b12
+input_vector[13] => full_counter:counter_inst.b13
+input_vector[14] => full_counter:counter_inst.b14
+input_vector[15] => full_counter:counter_inst.b15
+output_vector[0] << full_counter:counter_inst.s0
+output_vector[1] << full_counter:counter_inst.s1
+output_vector[2] << full_counter:counter_inst.s2
+output_vector[3] << full_counter:counter_inst.s3
+
+
+|DUT|full_counter:counter_inst
+b15 => four_bit_linear:quad0.a
+b14 => four_bit_linear:quad0.b
+b13 => four_bit_linear:quad0.c
+b12 => four_bit_linear:quad0.d
+b11 => four_bit_linear:quad1.a
+b10 => four_bit_linear:quad1.b
+b9 => four_bit_linear:quad1.c
+b8 => four_bit_linear:quad1.d
+b7 => four_bit_linear:quad2.a
+b6 => four_bit_linear:quad2.b
+b5 => four_bit_linear:quad2.c
+b4 => four_bit_linear:quad2.d
+b3 => four_bit_linear:quad3.a
+b2 => four_bit_linear:quad3.b
+b1 => four_bit_linear:quad3.c
+b0 => four_bit_linear:quad3.d
+s3 <= FourBitAdder:adder3.z[3]
+s2 <= FourBitAdder:adder3.z[2]
+s1 <= FourBitAdder:adder3.z[1]
+s0 <= FourBitAdder:adder3.z[0]
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0
+a => full_adder:fa1.xi
+b => full_adder:fa1.yi
+c => full_adder:fa2.xi
+d => full_adder:fa2.yi
+s[0] <= full_adder:fa3.so
+s[1] <= full_adder:fa4.so
+s[2] <= full_adder:fa4.co
+s[3] <= <GND>
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad0|full_adder:fa4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1
+a => full_adder:fa1.xi
+b => full_adder:fa1.yi
+c => full_adder:fa2.xi
+d => full_adder:fa2.yi
+s[0] <= full_adder:fa3.so
+s[1] <= full_adder:fa4.so
+s[2] <= full_adder:fa4.co
+s[3] <= <GND>
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad1|full_adder:fa4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2
+a => full_adder:fa1.xi
+b => full_adder:fa1.yi
+c => full_adder:fa2.xi
+d => full_adder:fa2.yi
+s[0] <= full_adder:fa3.so
+s[1] <= full_adder:fa4.so
+s[2] <= full_adder:fa4.co
+s[3] <= <GND>
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad2|full_adder:fa4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3
+a => full_adder:fa1.xi
+b => full_adder:fa1.yi
+c => full_adder:fa2.xi
+d => full_adder:fa2.yi
+s[0] <= full_adder:fa3.so
+s[1] <= full_adder:fa4.so
+s[2] <= full_adder:fa4.co
+s[3] <= <GND>
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|four_bit_linear:quad3|full_adder:fa4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1
+x[0] => full_adder:bit_1.xi
+x[1] => full_adder:bit_2.xi
+x[2] => full_adder:bit_3.xi
+x[3] => full_adder:bit_4.xi
+y[0] => full_adder:bit_1.yi
+y[1] => full_adder:bit_2.yi
+y[2] => full_adder:bit_3.yi
+y[3] => full_adder:bit_4.yi
+z[0] <= full_adder:bit_1.so
+z[1] <= full_adder:bit_2.so
+z[2] <= full_adder:bit_3.so
+z[3] <= full_adder:bit_4.so
+z[4] <= full_adder:bit_4.co
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder1|full_adder:bit_4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2
+x[0] => full_adder:bit_1.xi
+x[1] => full_adder:bit_2.xi
+x[2] => full_adder:bit_3.xi
+x[3] => full_adder:bit_4.xi
+y[0] => full_adder:bit_1.yi
+y[1] => full_adder:bit_2.yi
+y[2] => full_adder:bit_3.yi
+y[3] => full_adder:bit_4.yi
+z[0] <= full_adder:bit_1.so
+z[1] <= full_adder:bit_2.so
+z[2] <= full_adder:bit_3.so
+z[3] <= full_adder:bit_4.so
+z[4] <= full_adder:bit_4.co
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder2|full_adder:bit_4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3
+x[0] => full_adder:bit_1.xi
+x[1] => full_adder:bit_2.xi
+x[2] => full_adder:bit_3.xi
+x[3] => full_adder:bit_4.xi
+y[0] => full_adder:bit_1.yi
+y[1] => full_adder:bit_2.yi
+y[2] => full_adder:bit_3.yi
+y[3] => full_adder:bit_4.yi
+z[0] <= full_adder:bit_1.so
+z[1] <= full_adder:bit_2.so
+z[2] <= full_adder:bit_3.so
+z[3] <= full_adder:bit_4.so
+z[4] <= full_adder:bit_4.co
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_1
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_1|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_1|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_2
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_2|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_2|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_3
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_3|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_3|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_4
+ci => co.IN0
+ci => co.IN0
+ci => myXOR:add_instance_s0_2.y
+xi => co.IN0
+xi => co.IN1
+xi => myXOR:add_instance_s0_1.x
+yi => co.IN1
+yi => co.IN1
+yi => myXOR:add_instance_s0_1.y
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:add_instance_s0_2.s
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_4|myXOR:add_instance_s0_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|full_counter:counter_inst|FourBitAdder:adder3|full_adder:bit_4|myXOR:add_instance_s0_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
