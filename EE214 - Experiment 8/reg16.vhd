@@ -13,6 +13,7 @@ end entity;
 
 architecture register16 of reg16 is
 	signal n_dout: std_ulogic_vector(15 downto 0);
+	signal a: std_ulogic;
 
 	component mux16 is
 		port(mx1, my1: in std_ulogic_vector(15 downto 0);
@@ -36,7 +37,7 @@ begin
 	dff13: DFFi port map (d => n_dout(13), clk => clk, q => DOUT(13),r => reset);
 	dff14: DFFi port map (d => n_dout(14), clk => clk, q => DOUT(14), r => reset);
 	dff15: DFFi port map (d => n_dout(15), clk => clk, q => DOUT(15), r=> reset);
-
+	
 	-- Enable Feature
 	enable_check: mux16 port map (DIN, n_dout, DOUT, enable);
 

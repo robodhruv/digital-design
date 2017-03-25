@@ -3,7 +3,11 @@ ghdl -a mux.vhd
 ghdl -a mux8.vhd
 ghdl -a mux16.vhd
 ghdl -a reg16.vhd
+ghdl -a reg4.vhd
 ghdl -a xor.vhd
 ghdl -a subtractor.vhd
 ghdl -a EightBitSubtractor.vhd
 ghdl -a sub16.vhd
+ghdl -a comparator.vhd
+ghdl -a countdown.vhd
+ghdl -a divider.vhd
