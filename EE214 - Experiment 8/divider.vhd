@@ -34,7 +34,7 @@ architecture division of unsigned_divider is
 	signal q0, q1, count0, sign_bit, inits, computes, outs, nq0, nq1,
 		compute_ready, count_etc, Qi, Qsi, compute_done, not_done: std_ulogic;
 	signal count_int: integer;
-	signal D, R, Rs, nRcom, nR, Q, Qs, nQ, M, N, nC, zeros, ones: std_ulogic_vector(15 downto 0);
+	signal D, R, Rs, nRcom, nR, Cs, Q, Qs, nQ, M, N, nC, zeros, ones: std_ulogic_vector(15 downto 0);
 	signal count: std_ulogic_vector(15 downto 0) := "1111111111111111";
 	component reg16 is
 		port (DIN: in std_ulogic_vector(15 downto 0);
@@ -93,15 +93,15 @@ begin
 	end generate;
 	count_int <= to_integer(signed(count));
 	
-	Rs(0) <= N(count_int);
+	Rs(0) <= N(0);
 	
 	fullsub: sub16 port map (Rs, D, sign_bit, M);
 
 	-- Update Qs if R >= D
 	-- Note that this has been done sep. because enable is diff.
-	Qi <= Q(count_int);
-	update_Qs: mux port map (Qi, '1', sign_bit, Qsi);
-	Qs(count_int) <= Qsi;
+	--Qi <= Q(count_int);
+	update_Qs: mux port map ('0', '1', sign_bit, Qsi);
+	Qs(0) <= Qsi;
 
 	not_done <= computes or inits;
 
@@ -111,17 +111,19 @@ begin
 	reset_R: mux16 port map (zeros, nRcom, nR, inits);
 	update_R: reg16 port map (nR, '0', not_done, clk, R);
 
-	reset_count: reg16 port map (ones, '0', inits, clk, count);
+	--reset_count: reg16 port map (ones, '0', inits, clk, count);
+
 	-- Countdown, when in computes
-	next_count: countdown port map (count, nC);
-	update_count: reg16 port map (nC, '0', computes, clk, count);
+	next_count: countdown port map (count, Cs);
+	reset_count: mux16 port map (ones, Cs, nC, inits);
+	update_count: reg16 port map (nC, '0', not_done, clk, count);
 
 	-- Update Q, when in computes (and R >= D taken care of by Qs)
 	reset_Q: mux16 port map (zeros, Qs, nQ, inits);
 	update_Q: reg16 port map (nQ, '0', not_done, clk, Q);
 
 	compute_done <= count0 and computes;
-	
+
 	-- Actions in the outs state. This can be assigned without delays as
 	-- quotient and remainder outputs were changed at count0! Saved a clk! :D
 	output_ready <= outs;

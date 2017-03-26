@@ -11,3 +11,6 @@ ghdl -a sub16.vhd
 ghdl -a comparator.vhd
 ghdl -a countdown.vhd
 ghdl -a divider.vhd
+ghdl -a Testbench.vhd
+ghdl -a DUT.vhd
+ghdl -m Testbench
