@@ -1,0 +1,245 @@
+# ERROR: No extended dataflow license exists
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/dhruv-shah/intelFPGA_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:14 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity myXOR
+# -- Compiling architecture Form of myXOR
+# End time: 19:09:14 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:14 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity subtractor
+# -- Compiling architecture Form of subtractor
+# End time: 19:09:14 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:14 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux16
+# -- Compiling architecture choose of mux16
+# End time: 19:09:14 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:14 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux8
+# -- Compiling architecture choose of mux8
+# End time: 19:09:14 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:14 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux
+# -- Compiling architecture choose of mux
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EightBitSub
+# -- Compiling architecture Diff of EightBitSub
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package EE224_Components
+# -- Compiling entity INVERTER
+# -- Compiling architecture Behave of INVERTER
+# -- Compiling entity andi2
+# -- Compiling architecture Behave of andi2
+# -- Loading package EE224_Components
+# -- Compiling entity andi5
+# -- Compiling architecture Behave of andi5
+# -- Compiling entity andi3
+# -- Compiling architecture Behave of andi3
+# -- Compiling entity Nandi2
+# -- Compiling architecture Behave of Nandi2
+# -- Compiling entity ori2
+# -- Compiling architecture Behave of ori2
+# -- Compiling entity Nori2
+# -- Compiling architecture Behave of Nori2
+# -- Compiling entity positive_d_latch
+# -- Compiling architecture Equations of positive_d_latch
+# -- Compiling entity negative_d_latch
+# -- Compiling architecture Equations of negative_d_latch
+# -- Compiling entity dffi
+# -- Compiling architecture Struct of dffi
+# -- Compiling entity dffi1
+# -- Compiling architecture Struct of dffi1
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture WRAP of DUT
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity sub16
+# -- Compiling architecture subractor of sub16
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity reg16
+# -- Compiling architecture register16 of reg16
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity equate
+# -- Compiling architecture equality of equate
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Loading package NUMERIC_STD
+# -- Compiling entity unsigned_divider
+# -- Compiling architecture division of unsigned_divider
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity countdown
+# -- Compiling architecture reduce of countdown
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:09:15 on Mar 25,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 19:09:15 on Mar 25,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 19:09:15 on Mar 25,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# ** Warning: (vsim-7) Failed to open VHDL file "../Tracefiles/tracefile.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench
+# ** Warning: (vsim-7) Failed to open VHDL file "../Tracefiles/outputs.txt" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench
+# Loading work.dut(wrap)
+# Loading work.ee224_components
+# Loading ieee.numeric_std(body)
+# Loading work.unsigned_divider(division)
+# Loading work.reg16(register16)
+# Loading work.equate(equality)
+# Loading work.sub16(subractor)
+# Loading work.eightbitsub(diff)
+# Loading work.subtractor(form)
+# Loading work.myxor(form)
+# Loading work.mux(choose)
+# Loading work.mux16(choose)
+# Loading work.mux8(choose)
+# Loading work.countdown(reduce)
+# Loading work.dffi(struct)
+# Loading work.negative_d_latch(equations)
+# Loading work.positive_d_latch(equations)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut_instance/divide
+# ** Fatal: (vsim-7) Failed to open VHDL file "../Tracefiles/tracefile.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Process: /testbench/line__68 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd
+# Fatal error in Process line__68 at /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd line 91
+# 
+# HDL call sequence:
+# Stopped at /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd 91 Process line__68
+# 
+# End time: 19:09:49 on Mar 25,2017, Elapsed time: 0:00:34
+# Errors: 2, Warnings: 3

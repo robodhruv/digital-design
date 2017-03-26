@@ -1,0 +1,3410 @@
+|DUT
+input_vector[0] => unsigned_divider:divide.output_accept
+input_vector[1] => unsigned_divider:divide.inputs_ready
+input_vector[2] => unsigned_divider:divide.divisor[0]
+input_vector[3] => unsigned_divider:divide.divisor[1]
+input_vector[4] => unsigned_divider:divide.divisor[2]
+input_vector[5] => unsigned_divider:divide.divisor[3]
+input_vector[6] => unsigned_divider:divide.divisor[4]
+input_vector[7] => unsigned_divider:divide.divisor[5]
+input_vector[8] => unsigned_divider:divide.divisor[6]
+input_vector[9] => unsigned_divider:divide.divisor[7]
+input_vector[10] => unsigned_divider:divide.divisor[8]
+input_vector[11] => unsigned_divider:divide.divisor[9]
+input_vector[12] => unsigned_divider:divide.divisor[10]
+input_vector[13] => unsigned_divider:divide.divisor[11]
+input_vector[14] => unsigned_divider:divide.divisor[12]
+input_vector[15] => unsigned_divider:divide.divisor[13]
+input_vector[16] => unsigned_divider:divide.divisor[14]
+input_vector[17] => unsigned_divider:divide.divisor[15]
+input_vector[18] => unsigned_divider:divide.dividend[0]
+input_vector[19] => unsigned_divider:divide.dividend[1]
+input_vector[20] => unsigned_divider:divide.dividend[2]
+input_vector[21] => unsigned_divider:divide.dividend[3]
+input_vector[22] => unsigned_divider:divide.dividend[4]
+input_vector[23] => unsigned_divider:divide.dividend[5]
+input_vector[24] => unsigned_divider:divide.dividend[6]
+input_vector[25] => unsigned_divider:divide.dividend[7]
+input_vector[26] => unsigned_divider:divide.dividend[8]
+input_vector[27] => unsigned_divider:divide.dividend[9]
+input_vector[28] => unsigned_divider:divide.dividend[10]
+input_vector[29] => unsigned_divider:divide.dividend[11]
+input_vector[30] => unsigned_divider:divide.dividend[12]
+input_vector[31] => unsigned_divider:divide.dividend[13]
+input_vector[32] => unsigned_divider:divide.dividend[14]
+input_vector[33] => unsigned_divider:divide.dividend[15]
+input_vector[34] => unsigned_divider:divide.reset
+input_vector[35] => unsigned_divider:divide.clk
+output_vector[0] << unsigned_divider:divide.output_ready
+output_vector[1] << unsigned_divider:divide.remainder[0]
+output_vector[2] << unsigned_divider:divide.remainder[1]
+output_vector[3] << unsigned_divider:divide.remainder[2]
+output_vector[4] << unsigned_divider:divide.remainder[3]
+output_vector[5] << unsigned_divider:divide.remainder[4]
+output_vector[6] << unsigned_divider:divide.remainder[5]
+output_vector[7] << unsigned_divider:divide.remainder[6]
+output_vector[8] << unsigned_divider:divide.remainder[7]
+output_vector[9] << unsigned_divider:divide.remainder[8]
+output_vector[10] << unsigned_divider:divide.remainder[9]
+output_vector[11] << unsigned_divider:divide.remainder[10]
+output_vector[12] << unsigned_divider:divide.remainder[11]
+output_vector[13] << unsigned_divider:divide.remainder[12]
+output_vector[14] << unsigned_divider:divide.remainder[13]
+output_vector[15] << unsigned_divider:divide.remainder[14]
+output_vector[16] << unsigned_divider:divide.remainder[15]
+output_vector[17] << unsigned_divider:divide.quotient[0]
+output_vector[18] << unsigned_divider:divide.quotient[1]
+output_vector[19] << unsigned_divider:divide.quotient[2]
+output_vector[20] << unsigned_divider:divide.quotient[3]
+output_vector[21] << unsigned_divider:divide.quotient[4]
+output_vector[22] << unsigned_divider:divide.quotient[5]
+output_vector[23] << unsigned_divider:divide.quotient[6]
+output_vector[24] << unsigned_divider:divide.quotient[7]
+output_vector[25] << unsigned_divider:divide.quotient[8]
+output_vector[26] << unsigned_divider:divide.quotient[9]
+output_vector[27] << unsigned_divider:divide.quotient[10]
+output_vector[28] << unsigned_divider:divide.quotient[11]
+output_vector[29] << unsigned_divider:divide.quotient[12]
+output_vector[30] << unsigned_divider:divide.quotient[13]
+output_vector[31] << unsigned_divider:divide.quotient[14]
+output_vector[32] << unsigned_divider:divide.quotient[15]
+output_vector[33] << unsigned_divider:divide.divider_ready
+
+
+|DUT|unsigned_divider:divide
+clk => reg16:load_divisor.clk
+clk => reg16:load_dividend.clk
+clk => reg16:update_R.clk
+clk => reg16:update_count.clk
+clk => reg16:update_Q.clk
+clk => reg16:update_quotient.clk
+clk => reg16:update_remainder.clk
+clk => dffi:ready.clk
+clk => dffi:d1.clk
+clk => dffi:d0.clk
+reset => dffi:ready.r
+reset => dffi:d1.r
+reset => dffi:d0.r
+dividend[0] => reg16:load_dividend.DIN[0]
+dividend[1] => reg16:load_dividend.DIN[1]
+dividend[2] => reg16:load_dividend.DIN[2]
+dividend[3] => reg16:load_dividend.DIN[3]
+dividend[4] => reg16:load_dividend.DIN[4]
+dividend[5] => reg16:load_dividend.DIN[5]
+dividend[6] => reg16:load_dividend.DIN[6]
+dividend[7] => reg16:load_dividend.DIN[7]
+dividend[8] => reg16:load_dividend.DIN[8]
+dividend[9] => reg16:load_dividend.DIN[9]
+dividend[10] => reg16:load_dividend.DIN[10]
+dividend[11] => reg16:load_dividend.DIN[11]
+dividend[12] => reg16:load_dividend.DIN[12]
+dividend[13] => reg16:load_dividend.DIN[13]
+dividend[14] => reg16:load_dividend.DIN[14]
+dividend[15] => reg16:load_dividend.DIN[15]
+divisor[0] => reg16:load_divisor.DIN[0]
+divisor[1] => reg16:load_divisor.DIN[1]
+divisor[2] => reg16:load_divisor.DIN[2]
+divisor[3] => reg16:load_divisor.DIN[3]
+divisor[4] => reg16:load_divisor.DIN[4]
+divisor[5] => reg16:load_divisor.DIN[5]
+divisor[6] => reg16:load_divisor.DIN[6]
+divisor[7] => reg16:load_divisor.DIN[7]
+divisor[8] => reg16:load_divisor.DIN[8]
+divisor[9] => reg16:load_divisor.DIN[9]
+divisor[10] => reg16:load_divisor.DIN[10]
+divisor[11] => reg16:load_divisor.DIN[11]
+divisor[12] => reg16:load_divisor.DIN[12]
+divisor[13] => reg16:load_divisor.DIN[13]
+divisor[14] => reg16:load_divisor.DIN[14]
+divisor[15] => reg16:load_divisor.DIN[15]
+inputs_ready => compute_ready.IN1
+inputs_ready => nq0.IN1
+divider_ready <= dffi:ready.q
+quotient[0] <= reg16:update_quotient.DOUT[0]
+quotient[1] <= reg16:update_quotient.DOUT[1]
+quotient[2] <= reg16:update_quotient.DOUT[2]
+quotient[3] <= reg16:update_quotient.DOUT[3]
+quotient[4] <= reg16:update_quotient.DOUT[4]
+quotient[5] <= reg16:update_quotient.DOUT[5]
+quotient[6] <= reg16:update_quotient.DOUT[6]
+quotient[7] <= reg16:update_quotient.DOUT[7]
+quotient[8] <= reg16:update_quotient.DOUT[8]
+quotient[9] <= reg16:update_quotient.DOUT[9]
+quotient[10] <= reg16:update_quotient.DOUT[10]
+quotient[11] <= reg16:update_quotient.DOUT[11]
+quotient[12] <= reg16:update_quotient.DOUT[12]
+quotient[13] <= reg16:update_quotient.DOUT[13]
+quotient[14] <= reg16:update_quotient.DOUT[14]
+quotient[15] <= reg16:update_quotient.DOUT[15]
+remainder[0] <= reg16:update_remainder.DOUT[0]
+remainder[1] <= reg16:update_remainder.DOUT[1]
+remainder[2] <= reg16:update_remainder.DOUT[2]
+remainder[3] <= reg16:update_remainder.DOUT[3]
+remainder[4] <= reg16:update_remainder.DOUT[4]
+remainder[5] <= reg16:update_remainder.DOUT[5]
+remainder[6] <= reg16:update_remainder.DOUT[6]
+remainder[7] <= reg16:update_remainder.DOUT[7]
+remainder[8] <= reg16:update_remainder.DOUT[8]
+remainder[9] <= reg16:update_remainder.DOUT[9]
+remainder[10] <= reg16:update_remainder.DOUT[10]
+remainder[11] <= reg16:update_remainder.DOUT[11]
+remainder[12] <= reg16:update_remainder.DOUT[12]
+remainder[13] <= reg16:update_remainder.DOUT[13]
+remainder[14] <= reg16:update_remainder.DOUT[14]
+remainder[15] <= reg16:update_remainder.DOUT[15]
+output_ready <= outs.DB_MAX_OUTPUT_PORT_TYPE
+output_accept => dffi:ready.d
+output_accept => nq1.IN1
+
+
+|DUT|unsigned_divider:divide|reg16:load_divisor
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:load_dividend
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate
+x[0] => sub16:fullsub.x[0]
+x[1] => sub16:fullsub.x[1]
+x[2] => sub16:fullsub.x[2]
+x[3] => sub16:fullsub.x[3]
+x[4] => sub16:fullsub.x[4]
+x[5] => sub16:fullsub.x[5]
+x[6] => sub16:fullsub.x[6]
+x[7] => sub16:fullsub.x[7]
+x[8] => sub16:fullsub.x[8]
+x[9] => sub16:fullsub.x[9]
+x[10] => sub16:fullsub.x[10]
+x[11] => sub16:fullsub.x[11]
+x[12] => sub16:fullsub.x[12]
+x[13] => sub16:fullsub.x[13]
+x[14] => sub16:fullsub.x[14]
+x[15] => sub16:fullsub.x[15]
+y[0] => sub16:fullsub.y[0]
+y[1] => sub16:fullsub.y[1]
+y[2] => sub16:fullsub.y[2]
+y[3] => sub16:fullsub.y[3]
+y[4] => sub16:fullsub.y[4]
+y[5] => sub16:fullsub.y[5]
+y[6] => sub16:fullsub.y[6]
+y[7] => sub16:fullsub.y[7]
+y[8] => sub16:fullsub.y[8]
+y[9] => sub16:fullsub.y[9]
+y[10] => sub16:fullsub.y[10]
+y[11] => sub16:fullsub.y[11]
+y[12] => sub16:fullsub.y[12]
+y[13] => sub16:fullsub.y[13]
+y[14] => sub16:fullsub.y[14]
+y[15] => sub16:fullsub.y[15]
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub
+x[0] => EightBitSub:sub1.x[0]
+x[1] => EightBitSub:sub1.x[1]
+x[2] => EightBitSub:sub1.x[2]
+x[3] => EightBitSub:sub1.x[3]
+x[4] => EightBitSub:sub1.x[4]
+x[5] => EightBitSub:sub1.x[5]
+x[6] => EightBitSub:sub1.x[6]
+x[7] => EightBitSub:sub1.x[7]
+x[8] => EightBitSub:sub2.x[0]
+x[9] => EightBitSub:sub2.x[1]
+x[10] => EightBitSub:sub2.x[2]
+x[11] => EightBitSub:sub2.x[3]
+x[12] => EightBitSub:sub2.x[4]
+x[13] => EightBitSub:sub2.x[5]
+x[14] => EightBitSub:sub2.x[6]
+x[15] => EightBitSub:sub2.x[7]
+y[0] => EightBitSub:sub1.y[0]
+y[1] => EightBitSub:sub1.y[1]
+y[2] => EightBitSub:sub1.y[2]
+y[3] => EightBitSub:sub1.y[3]
+y[4] => EightBitSub:sub1.y[4]
+y[5] => EightBitSub:sub1.y[5]
+y[6] => EightBitSub:sub1.y[6]
+y[7] => EightBitSub:sub1.y[7]
+y[8] => EightBitSub:sub2.y[0]
+y[9] => EightBitSub:sub2.y[1]
+y[10] => EightBitSub:sub2.y[2]
+y[11] => EightBitSub:sub2.y[3]
+y[12] => EightBitSub:sub2.y[4]
+y[13] => EightBitSub:sub2.y[5]
+y[14] => EightBitSub:sub2.y[6]
+y[15] => EightBitSub:sub2.y[7]
+sign_bit <= EightBitSub:sub2.do
+z[0] <= EightBitSub:sub1.z[0]
+z[1] <= EightBitSub:sub1.z[1]
+z[2] <= EightBitSub:sub1.z[2]
+z[3] <= EightBitSub:sub1.z[3]
+z[4] <= EightBitSub:sub1.z[4]
+z[5] <= EightBitSub:sub1.z[5]
+z[6] <= EightBitSub:sub1.z[6]
+z[7] <= EightBitSub:sub1.z[7]
+z[8] <= EightBitSub:sub2.z[0]
+z[9] <= EightBitSub:sub2.z[1]
+z[10] <= EightBitSub:sub2.z[2]
+z[11] <= EightBitSub:sub2.z[3]
+z[12] <= EightBitSub:sub2.z[4]
+z[13] <= EightBitSub:sub2.z[5]
+z[14] <= EightBitSub:sub2.z[6]
+z[15] <= EightBitSub:sub2.z[7]
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub
+x[0] => EightBitSub:sub1.x[0]
+x[1] => EightBitSub:sub1.x[1]
+x[2] => EightBitSub:sub1.x[2]
+x[3] => EightBitSub:sub1.x[3]
+x[4] => EightBitSub:sub1.x[4]
+x[5] => EightBitSub:sub1.x[5]
+x[6] => EightBitSub:sub1.x[6]
+x[7] => EightBitSub:sub1.x[7]
+x[8] => EightBitSub:sub2.x[0]
+x[9] => EightBitSub:sub2.x[1]
+x[10] => EightBitSub:sub2.x[2]
+x[11] => EightBitSub:sub2.x[3]
+x[12] => EightBitSub:sub2.x[4]
+x[13] => EightBitSub:sub2.x[5]
+x[14] => EightBitSub:sub2.x[6]
+x[15] => EightBitSub:sub2.x[7]
+y[0] => EightBitSub:sub1.y[0]
+y[1] => EightBitSub:sub1.y[1]
+y[2] => EightBitSub:sub1.y[2]
+y[3] => EightBitSub:sub1.y[3]
+y[4] => EightBitSub:sub1.y[4]
+y[5] => EightBitSub:sub1.y[5]
+y[6] => EightBitSub:sub1.y[6]
+y[7] => EightBitSub:sub1.y[7]
+y[8] => EightBitSub:sub2.y[0]
+y[9] => EightBitSub:sub2.y[1]
+y[10] => EightBitSub:sub2.y[2]
+y[11] => EightBitSub:sub2.y[3]
+y[12] => EightBitSub:sub2.y[4]
+y[13] => EightBitSub:sub2.y[5]
+y[14] => EightBitSub:sub2.y[6]
+y[15] => EightBitSub:sub2.y[7]
+sign_bit <= EightBitSub:sub2.do
+z[0] <= EightBitSub:sub1.z[0]
+z[1] <= EightBitSub:sub1.z[1]
+z[2] <= EightBitSub:sub1.z[2]
+z[3] <= EightBitSub:sub1.z[3]
+z[4] <= EightBitSub:sub1.z[4]
+z[5] <= EightBitSub:sub1.z[5]
+z[6] <= EightBitSub:sub1.z[6]
+z[7] <= EightBitSub:sub1.z[7]
+z[8] <= EightBitSub:sub2.z[0]
+z[9] <= EightBitSub:sub2.z[1]
+z[10] <= EightBitSub:sub2.z[2]
+z[11] <= EightBitSub:sub2.z[3]
+z[12] <= EightBitSub:sub2.z[4]
+z[13] <= EightBitSub:sub2.z[5]
+z[14] <= EightBitSub:sub2.z[6]
+z[15] <= EightBitSub:sub2.z[7]
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux:update_Qs
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R
+mx1[0] => mux8:mux82.mx[0]
+mx1[1] => mux8:mux82.mx[1]
+mx1[2] => mux8:mux82.mx[2]
+mx1[3] => mux8:mux82.mx[3]
+mx1[4] => mux8:mux82.mx[4]
+mx1[5] => mux8:mux82.mx[5]
+mx1[6] => mux8:mux82.mx[6]
+mx1[7] => mux8:mux82.mx[7]
+mx1[8] => mux8:mux81.mx[0]
+mx1[9] => mux8:mux81.mx[1]
+mx1[10] => mux8:mux81.mx[2]
+mx1[11] => mux8:mux81.mx[3]
+mx1[12] => mux8:mux81.mx[4]
+mx1[13] => mux8:mux81.mx[5]
+mx1[14] => mux8:mux81.mx[6]
+mx1[15] => mux8:mux81.mx[7]
+my1[0] => mux8:mux82.my[0]
+my1[1] => mux8:mux82.my[1]
+my1[2] => mux8:mux82.my[2]
+my1[3] => mux8:mux82.my[3]
+my1[4] => mux8:mux82.my[4]
+my1[5] => mux8:mux82.my[5]
+my1[6] => mux8:mux82.my[6]
+my1[7] => mux8:mux82.my[7]
+my1[8] => mux8:mux81.my[0]
+my1[9] => mux8:mux81.my[1]
+my1[10] => mux8:mux81.my[2]
+my1[11] => mux8:mux81.my[3]
+my1[12] => mux8:mux81.my[4]
+my1[13] => mux8:mux81.my[5]
+my1[14] => mux8:mux81.my[6]
+my1[15] => mux8:mux81.my[7]
+mo1[0] <= mux8:mux82.mo[0]
+mo1[1] <= mux8:mux82.mo[1]
+mo1[2] <= mux8:mux82.mo[2]
+mo1[3] <= mux8:mux82.mo[3]
+mo1[4] <= mux8:mux82.mo[4]
+mo1[5] <= mux8:mux82.mo[5]
+mo1[6] <= mux8:mux82.mo[6]
+mo1[7] <= mux8:mux82.mo[7]
+mo1[8] <= mux8:mux81.mo[0]
+mo1[9] <= mux8:mux81.mo[1]
+mo1[10] <= mux8:mux81.mo[2]
+mo1[11] <= mux8:mux81.mo[3]
+mo1[12] <= mux8:mux81.mo[4]
+mo1[13] <= mux8:mux81.mo[5]
+mo1[14] <= mux8:mux81.mo[6]
+mo1[15] <= mux8:mux81.mo[7]
+sel1 => mux8:mux81.sel
+sel1 => mux8:mux82.sel
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux81|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:next_R|mux8:mux82|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R
+mx1[0] => mux8:mux82.mx[0]
+mx1[1] => mux8:mux82.mx[1]
+mx1[2] => mux8:mux82.mx[2]
+mx1[3] => mux8:mux82.mx[3]
+mx1[4] => mux8:mux82.mx[4]
+mx1[5] => mux8:mux82.mx[5]
+mx1[6] => mux8:mux82.mx[6]
+mx1[7] => mux8:mux82.mx[7]
+mx1[8] => mux8:mux81.mx[0]
+mx1[9] => mux8:mux81.mx[1]
+mx1[10] => mux8:mux81.mx[2]
+mx1[11] => mux8:mux81.mx[3]
+mx1[12] => mux8:mux81.mx[4]
+mx1[13] => mux8:mux81.mx[5]
+mx1[14] => mux8:mux81.mx[6]
+mx1[15] => mux8:mux81.mx[7]
+my1[0] => mux8:mux82.my[0]
+my1[1] => mux8:mux82.my[1]
+my1[2] => mux8:mux82.my[2]
+my1[3] => mux8:mux82.my[3]
+my1[4] => mux8:mux82.my[4]
+my1[5] => mux8:mux82.my[5]
+my1[6] => mux8:mux82.my[6]
+my1[7] => mux8:mux82.my[7]
+my1[8] => mux8:mux81.my[0]
+my1[9] => mux8:mux81.my[1]
+my1[10] => mux8:mux81.my[2]
+my1[11] => mux8:mux81.my[3]
+my1[12] => mux8:mux81.my[4]
+my1[13] => mux8:mux81.my[5]
+my1[14] => mux8:mux81.my[6]
+my1[15] => mux8:mux81.my[7]
+mo1[0] <= mux8:mux82.mo[0]
+mo1[1] <= mux8:mux82.mo[1]
+mo1[2] <= mux8:mux82.mo[2]
+mo1[3] <= mux8:mux82.mo[3]
+mo1[4] <= mux8:mux82.mo[4]
+mo1[5] <= mux8:mux82.mo[5]
+mo1[6] <= mux8:mux82.mo[6]
+mo1[7] <= mux8:mux82.mo[7]
+mo1[8] <= mux8:mux81.mo[0]
+mo1[9] <= mux8:mux81.mo[1]
+mo1[10] <= mux8:mux81.mo[2]
+mo1[11] <= mux8:mux81.mo[3]
+mo1[12] <= mux8:mux81.mo[4]
+mo1[13] <= mux8:mux81.mo[5]
+mo1[14] <= mux8:mux81.mo[6]
+mo1[15] <= mux8:mux81.mo[7]
+sel1 => mux8:mux81.sel
+sel1 => mux8:mux82.sel
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:update_R
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count
+x[0] => sub16:main.x[0]
+x[1] => sub16:main.x[1]
+x[2] => sub16:main.x[2]
+x[3] => sub16:main.x[3]
+x[4] => sub16:main.x[4]
+x[5] => sub16:main.x[5]
+x[6] => sub16:main.x[6]
+x[7] => sub16:main.x[7]
+x[8] => sub16:main.x[8]
+x[9] => sub16:main.x[9]
+x[10] => sub16:main.x[10]
+x[11] => sub16:main.x[11]
+x[12] => sub16:main.x[12]
+x[13] => sub16:main.x[13]
+x[14] => sub16:main.x[14]
+x[15] => sub16:main.x[15]
+z[0] <= sub16:main.z[0]
+z[1] <= sub16:main.z[1]
+z[2] <= sub16:main.z[2]
+z[3] <= sub16:main.z[3]
+z[4] <= sub16:main.z[4]
+z[5] <= sub16:main.z[5]
+z[6] <= sub16:main.z[6]
+z[7] <= sub16:main.z[7]
+z[8] <= sub16:main.z[8]
+z[9] <= sub16:main.z[9]
+z[10] <= sub16:main.z[10]
+z[11] <= sub16:main.z[11]
+z[12] <= sub16:main.z[12]
+z[13] <= sub16:main.z[13]
+z[14] <= sub16:main.z[14]
+z[15] <= sub16:main.z[15]
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main
+x[0] => EightBitSub:sub1.x[0]
+x[1] => EightBitSub:sub1.x[1]
+x[2] => EightBitSub:sub1.x[2]
+x[3] => EightBitSub:sub1.x[3]
+x[4] => EightBitSub:sub1.x[4]
+x[5] => EightBitSub:sub1.x[5]
+x[6] => EightBitSub:sub1.x[6]
+x[7] => EightBitSub:sub1.x[7]
+x[8] => EightBitSub:sub2.x[0]
+x[9] => EightBitSub:sub2.x[1]
+x[10] => EightBitSub:sub2.x[2]
+x[11] => EightBitSub:sub2.x[3]
+x[12] => EightBitSub:sub2.x[4]
+x[13] => EightBitSub:sub2.x[5]
+x[14] => EightBitSub:sub2.x[6]
+x[15] => EightBitSub:sub2.x[7]
+y[0] => EightBitSub:sub1.y[0]
+y[1] => EightBitSub:sub1.y[1]
+y[2] => EightBitSub:sub1.y[2]
+y[3] => EightBitSub:sub1.y[3]
+y[4] => EightBitSub:sub1.y[4]
+y[5] => EightBitSub:sub1.y[5]
+y[6] => EightBitSub:sub1.y[6]
+y[7] => EightBitSub:sub1.y[7]
+y[8] => EightBitSub:sub2.y[0]
+y[9] => EightBitSub:sub2.y[1]
+y[10] => EightBitSub:sub2.y[2]
+y[11] => EightBitSub:sub2.y[3]
+y[12] => EightBitSub:sub2.y[4]
+y[13] => EightBitSub:sub2.y[5]
+y[14] => EightBitSub:sub2.y[6]
+y[15] => EightBitSub:sub2.y[7]
+sign_bit <= EightBitSub:sub2.do
+z[0] <= EightBitSub:sub1.z[0]
+z[1] <= EightBitSub:sub1.z[1]
+z[2] <= EightBitSub:sub1.z[2]
+z[3] <= EightBitSub:sub1.z[3]
+z[4] <= EightBitSub:sub1.z[4]
+z[5] <= EightBitSub:sub1.z[5]
+z[6] <= EightBitSub:sub1.z[6]
+z[7] <= EightBitSub:sub1.z[7]
+z[8] <= EightBitSub:sub2.z[0]
+z[9] <= EightBitSub:sub2.z[1]
+z[10] <= EightBitSub:sub2.z[2]
+z[11] <= EightBitSub:sub2.z[3]
+z[12] <= EightBitSub:sub2.z[4]
+z[13] <= EightBitSub:sub2.z[5]
+z[14] <= EightBitSub:sub2.z[6]
+z[15] <= EightBitSub:sub2.z[7]
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2
+x[0] => subtractor:bit_1.xi
+x[1] => subtractor:bit_2.xi
+x[2] => subtractor:bit_3.xi
+x[3] => subtractor:bit_4.xi
+x[4] => subtractor:bit_5.xi
+x[5] => subtractor:bit_6.xi
+x[6] => subtractor:bit_7.xi
+x[7] => subtractor:bit_8.xi
+y[0] => subtractor:bit_1.yi
+y[1] => subtractor:bit_2.yi
+y[2] => subtractor:bit_3.yi
+y[3] => subtractor:bit_4.yi
+y[4] => subtractor:bit_5.yi
+y[5] => subtractor:bit_6.yi
+y[6] => subtractor:bit_7.yi
+y[7] => subtractor:bit_8.yi
+di => subtractor:bit_1.di
+do <= subtractor:bit_8.do
+z[0] <= subtractor:bit_1.so
+z[1] <= subtractor:bit_2.so
+z[2] <= subtractor:bit_3.so
+z[3] <= subtractor:bit_4.so
+z[4] <= subtractor:bit_5.so
+z[5] <= subtractor:bit_6.so
+z[6] <= subtractor:bit_7.so
+z[7] <= subtractor:bit_8.so
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_1
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_2
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_3
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_4
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_5
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_6
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_7
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_8
+di => do.IN1
+di => myXOR:out_instance_2.y
+xi => myXOR:out_instance_1.x
+xi => do.IN0
+yi => do.IN1
+yi => myXOR:out_instance_1.y
+do <= do.DB_MAX_OUTPUT_PORT_TYPE
+so <= myXOR:out_instance_2.s
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_1
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|countdown:next_count|sub16:main|EightBitSub:sub2|subtractor:bit_8|myXOR:out_instance_2
+x => s.IN0
+x => s.IN0
+y => s.IN1
+y => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count
+mx1[0] => mux8:mux82.mx[0]
+mx1[1] => mux8:mux82.mx[1]
+mx1[2] => mux8:mux82.mx[2]
+mx1[3] => mux8:mux82.mx[3]
+mx1[4] => mux8:mux82.mx[4]
+mx1[5] => mux8:mux82.mx[5]
+mx1[6] => mux8:mux82.mx[6]
+mx1[7] => mux8:mux82.mx[7]
+mx1[8] => mux8:mux81.mx[0]
+mx1[9] => mux8:mux81.mx[1]
+mx1[10] => mux8:mux81.mx[2]
+mx1[11] => mux8:mux81.mx[3]
+mx1[12] => mux8:mux81.mx[4]
+mx1[13] => mux8:mux81.mx[5]
+mx1[14] => mux8:mux81.mx[6]
+mx1[15] => mux8:mux81.mx[7]
+my1[0] => mux8:mux82.my[0]
+my1[1] => mux8:mux82.my[1]
+my1[2] => mux8:mux82.my[2]
+my1[3] => mux8:mux82.my[3]
+my1[4] => mux8:mux82.my[4]
+my1[5] => mux8:mux82.my[5]
+my1[6] => mux8:mux82.my[6]
+my1[7] => mux8:mux82.my[7]
+my1[8] => mux8:mux81.my[0]
+my1[9] => mux8:mux81.my[1]
+my1[10] => mux8:mux81.my[2]
+my1[11] => mux8:mux81.my[3]
+my1[12] => mux8:mux81.my[4]
+my1[13] => mux8:mux81.my[5]
+my1[14] => mux8:mux81.my[6]
+my1[15] => mux8:mux81.my[7]
+mo1[0] <= mux8:mux82.mo[0]
+mo1[1] <= mux8:mux82.mo[1]
+mo1[2] <= mux8:mux82.mo[2]
+mo1[3] <= mux8:mux82.mo[3]
+mo1[4] <= mux8:mux82.mo[4]
+mo1[5] <= mux8:mux82.mo[5]
+mo1[6] <= mux8:mux82.mo[6]
+mo1[7] <= mux8:mux82.mo[7]
+mo1[8] <= mux8:mux81.mo[0]
+mo1[9] <= mux8:mux81.mo[1]
+mo1[10] <= mux8:mux81.mo[2]
+mo1[11] <= mux8:mux81.mo[3]
+mo1[12] <= mux8:mux81.mo[4]
+mo1[13] <= mux8:mux81.mo[5]
+mo1[14] <= mux8:mux81.mo[6]
+mo1[15] <= mux8:mux81.mo[7]
+sel1 => mux8:mux81.sel
+sel1 => mux8:mux82.sel
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux81|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_count|mux8:mux82|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:update_count
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q
+mx1[0] => mux8:mux82.mx[0]
+mx1[1] => mux8:mux82.mx[1]
+mx1[2] => mux8:mux82.mx[2]
+mx1[3] => mux8:mux82.mx[3]
+mx1[4] => mux8:mux82.mx[4]
+mx1[5] => mux8:mux82.mx[5]
+mx1[6] => mux8:mux82.mx[6]
+mx1[7] => mux8:mux82.mx[7]
+mx1[8] => mux8:mux81.mx[0]
+mx1[9] => mux8:mux81.mx[1]
+mx1[10] => mux8:mux81.mx[2]
+mx1[11] => mux8:mux81.mx[3]
+mx1[12] => mux8:mux81.mx[4]
+mx1[13] => mux8:mux81.mx[5]
+mx1[14] => mux8:mux81.mx[6]
+mx1[15] => mux8:mux81.mx[7]
+my1[0] => mux8:mux82.my[0]
+my1[1] => mux8:mux82.my[1]
+my1[2] => mux8:mux82.my[2]
+my1[3] => mux8:mux82.my[3]
+my1[4] => mux8:mux82.my[4]
+my1[5] => mux8:mux82.my[5]
+my1[6] => mux8:mux82.my[6]
+my1[7] => mux8:mux82.my[7]
+my1[8] => mux8:mux81.my[0]
+my1[9] => mux8:mux81.my[1]
+my1[10] => mux8:mux81.my[2]
+my1[11] => mux8:mux81.my[3]
+my1[12] => mux8:mux81.my[4]
+my1[13] => mux8:mux81.my[5]
+my1[14] => mux8:mux81.my[6]
+my1[15] => mux8:mux81.my[7]
+mo1[0] <= mux8:mux82.mo[0]
+mo1[1] <= mux8:mux82.mo[1]
+mo1[2] <= mux8:mux82.mo[2]
+mo1[3] <= mux8:mux82.mo[3]
+mo1[4] <= mux8:mux82.mo[4]
+mo1[5] <= mux8:mux82.mo[5]
+mo1[6] <= mux8:mux82.mo[6]
+mo1[7] <= mux8:mux82.mo[7]
+mo1[8] <= mux8:mux81.mo[0]
+mo1[9] <= mux8:mux81.mo[1]
+mo1[10] <= mux8:mux81.mo[2]
+mo1[11] <= mux8:mux81.mo[3]
+mo1[12] <= mux8:mux81.mo[4]
+mo1[13] <= mux8:mux81.mo[5]
+mo1[14] <= mux8:mux81.mo[6]
+mo1[15] <= mux8:mux81.mo[7]
+sel1 => mux8:mux81.sel
+sel1 => mux8:mux82.sel
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux81|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82
+mx[0] => mux:mux_0.n1
+mx[1] => mux:mux_1.n1
+mx[2] => mux:mux_2.n1
+mx[3] => mux:mux_3.n1
+mx[4] => mux:mux_4.n1
+mx[5] => mux:mux_5.n1
+mx[6] => mux:mux_6.n1
+mx[7] => mux:mux_7.n1
+my[0] => mux:mux_0.n0
+my[1] => mux:mux_1.n0
+my[2] => mux:mux_2.n0
+my[3] => mux:mux_3.n0
+my[4] => mux:mux_4.n0
+my[5] => mux:mux_5.n0
+my[6] => mux:mux_6.n0
+my[7] => mux:mux_7.n0
+mo[0] <= mux:mux_0.b
+mo[1] <= mux:mux_1.b
+mo[2] <= mux:mux_2.b
+mo[3] <= mux:mux_3.b
+mo[4] <= mux:mux_4.b
+mo[5] <= mux:mux_5.b
+mo[6] <= mux:mux_6.b
+mo[7] <= mux:mux_7.b
+sel => mux:mux_7.s
+sel => mux:mux_6.s
+sel => mux:mux_5.s
+sel => mux:mux_4.s
+sel => mux:mux_3.s
+sel => mux:mux_2.s
+sel => mux:mux_1.s
+sel => mux:mux_0.s
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_7
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_6
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_5
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_4
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_3
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_2
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_1
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|mux16:reset_Q|mux8:mux82|mux:mux_0
+n1 => b.IN0
+n0 => b.IN0
+s => b.IN1
+s => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:update_Q
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:update_quotient
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|reg16:update_remainder
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DIN[8] => DOUT[8]~reg0.DATAIN
+DIN[9] => DOUT[9]~reg0.DATAIN
+DIN[10] => DOUT[10]~reg0.DATAIN
+DIN[11] => DOUT[11]~reg0.DATAIN
+DIN[12] => DOUT[12]~reg0.DATAIN
+DIN[13] => DOUT[13]~reg0.DATAIN
+DIN[14] => DOUT[14]~reg0.DATAIN
+DIN[15] => DOUT[15]~reg0.DATAIN
+reset => ~NO_FANOUT~
+enable => DOUT[0]~reg0.ENA
+enable => DOUT[1]~reg0.ENA
+enable => DOUT[2]~reg0.ENA
+enable => DOUT[3]~reg0.ENA
+enable => DOUT[4]~reg0.ENA
+enable => DOUT[5]~reg0.ENA
+enable => DOUT[6]~reg0.ENA
+enable => DOUT[7]~reg0.ENA
+enable => DOUT[8]~reg0.ENA
+enable => DOUT[9]~reg0.ENA
+enable => DOUT[10]~reg0.ENA
+enable => DOUT[11]~reg0.ENA
+enable => DOUT[12]~reg0.ENA
+enable => DOUT[13]~reg0.ENA
+enable => DOUT[14]~reg0.ENA
+enable => DOUT[15]~reg0.ENA
+clk => DOUT[0]~reg0.CLK
+clk => DOUT[1]~reg0.CLK
+clk => DOUT[2]~reg0.CLK
+clk => DOUT[3]~reg0.CLK
+clk => DOUT[4]~reg0.CLK
+clk => DOUT[5]~reg0.CLK
+clk => DOUT[6]~reg0.CLK
+clk => DOUT[7]~reg0.CLK
+clk => DOUT[8]~reg0.CLK
+clk => DOUT[9]~reg0.CLK
+clk => DOUT[10]~reg0.CLK
+clk => DOUT[11]~reg0.CLK
+clk => DOUT[12]~reg0.CLK
+clk => DOUT[13]~reg0.CLK
+clk => DOUT[14]~reg0.CLK
+clk => DOUT[15]~reg0.CLK
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[9] <= DOUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[10] <= DOUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[11] <= DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[12] <= DOUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[13] <= DOUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[14] <= DOUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[15] <= DOUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:ready
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:ready|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:ready|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d1
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d1|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d1|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d0
+d => negative_d_latch:master.d
+clk => negative_d_latch:master.clk
+clk => positive_d_latch:slave.clk
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d0|negative_d_latch:master
+d => qsig.IN0
+clk => qsig.IN0
+clk => qsig.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|unsigned_divider:divide|dffi:d0|positive_d_latch:slave
+d => qsig.IN0
+clk => qsig.IN1
+clk => qsig.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+

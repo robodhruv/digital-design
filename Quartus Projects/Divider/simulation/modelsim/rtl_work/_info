@@ -1,0 +1,991 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/simulation/modelsim
+Eandi2
+Z1 w1489747737
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd
+Z5 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd
+l0
+L57
+Vg2g>hAz9iAmRN]5ENVO4A2
+!s100 jn3F5@Xk::4V7XP?ceWQa3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1490449155
+!i10b 1
+Z8 !s108 1490449155.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd|
+Z10 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+DEx4 work 5 andi2 0 22 g2g>hAz9iAmRN]5ENVO4A2
+l62
+L61
+VMBe4l;5Nb<ZWZi>[mk=P02
+!s100 R37:M0HoahDQSEj4Yd@<I1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandi3
+R1
+Z13 DPx4 work 16 ee224_components 0 22 H:g5EXL5@Hhl_DQU5NTgf3
+R2
+R3
+R0
+R4
+R5
+l0
+L87
+V`d:IaamZ?3A?42P^4BVBU1
+!s100 Q:SbFF[P9`Kgb@[T=I`5L3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R13
+R2
+R3
+DEx4 work 5 andi3 0 22 `d:IaamZ?3A?42P^4BVBU1
+l93
+L91
+V:A:54JUM1S[zUdSo5=5Pj0
+!s100 eT>UE`Da7mjm@Nz^o_PfQ2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandi5
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L70
+VG3N]SA8R22O7XGHemR9fH1
+!s100 @jCFQBWE`LPTR5HINMKAH3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R13
+R2
+R3
+DEx4 work 5 andi5 0 22 G3N]SA8R22O7XGHemR9fH1
+l76
+L74
+V`]J6[on=WTG>eE3m6EQzh2
+!s100 ^J2a8Vl5]X5`SW`E]]DGo1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecountdown
+Z14 w1490429931
+R2
+R3
+R13
+R0
+Z15 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd
+Z16 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd
+l0
+L9
+V6oofDA3aA`:;dm=<]6CXU3
+!s100 1E_zjjIR96z[=ljm;Wz0:2
+R6
+31
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd|
+Z18 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd|
+!i113 1
+R11
+R12
+Areduce
+R2
+R3
+R13
+DEx4 work 9 countdown 0 22 6oofDA3aA`:;dm=<]6CXU3
+l21
+L14
+VKVI_O@Z^GZ1ZePi=7llan3
+!s100 R:4a^c@IC;A:5Xjc<_fKI1
+R6
+31
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Edffi
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L162
+Vhe?iczoZn@XlKRkRJfofR2
+!s100 [mSlY6aX>L189cElVGWUz0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astruct
+R13
+R2
+R3
+DEx4 work 4 dffi 0 22 he?iczoZn@XlKRkRJfofR2
+l167
+L165
+V_dE7TLR_J8Bk>cJ0G^R`b0
+!s100 3ej^L_LGQzW2IT::[8D1o2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edffi1
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L180
+V1i>V`_ECD^H?50376:jDW1
+!s100 <bhJZej57i_clz1lcNmaU3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astruct
+R13
+R2
+R3
+DEx4 work 5 dffi1 0 22 1i>V`_ECD^H?50376:jDW1
+l185
+L183
+V74D7f<RB0izbn]o?IBmI:1
+!s100 e;CAO3_G:CE?960hJEPG:2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edut
+Z19 w1490441145
+R2
+R3
+R0
+Z20 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd
+Z21 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd
+l0
+L4
+V<zzgAKIGeFW;>znAIoaGf3
+!s100 dg3=zPLU97_>:fETdlm[33
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd|
+Z23 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd|
+!i113 1
+R11
+R12
+Awrap
+R2
+R3
+DEx4 work 3 dut 0 22 <zzgAKIGeFW;>znAIoaGf3
+l27
+L9
+VS]]?GCXEg3ooo_6W4<F:e0
+!s100 EXX_>H`691CR^K_QncjWL0
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Pee224_components
+R2
+R3
+R1
+R0
+R4
+R5
+l0
+L7
+VH:g5EXL5@Hhl_DQU5NTgf3
+!s100 NPOoMM=gFfhaQKfSzTIz?1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eeightbitsub
+Z24 w1490343292
+R2
+R3
+R0
+Z25 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd
+Z26 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd
+l0
+L4
+VjbGQDfl9AgPF2ez^jc>A>0
+!s100 lz[mgL4L[WR<nnLV9>JQ20
+R6
+31
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd|
+Z28 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd|
+!i113 1
+R11
+R12
+Adiff
+R2
+R3
+DEx4 work 11 eightbitsub 0 22 jbGQDfl9AgPF2ez^jc>A>0
+l19
+L11
+Vzo;c:O;;8n>4:MEQWSZ9Q1
+!s100 _DPbZP1UfdEZiFfTYP4g32
+R6
+31
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Eequate
+Z29 w1490359539
+R2
+R3
+R13
+R0
+Z30 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd
+Z31 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd
+l0
+L8
+V6>eJI6_7Kk=cMR:hBiHYd2
+!s100 UXDoFKY6fS1Rogc`HDz=Y3
+R6
+31
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd|
+Z33 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd|
+!i113 1
+R11
+R12
+Aequality
+R2
+R3
+R13
+DEx4 work 6 equate 0 22 6>eJI6_7Kk=cMR:hBiHYd2
+l21
+L13
+V4F^77`3I?aYTifgb<6lI@1
+!s100 R2S6WXSA]B=ZY1dUNk:K<0
+R6
+31
+R7
+!i10b 1
+R8
+R32
+R33
+!i113 1
+R11
+R12
+Einverter
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L46
+VRN07o;zhN@nF>2@aDGOzf3
+!s100 nbc^o=13BGbVn7Zn;dKLk0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 8 inverter 0 22 RN07o;zhN@nF>2@aDGOzf3
+l51
+L50
+V[M2bFBX?m;AmEKk@jUAm80
+!s100 X_>:c:MGSDkDb4O7QU;K=0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emux
+Z34 w1489749946
+R2
+R3
+R0
+Z35 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd
+Z36 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd
+l0
+L4
+V[W8:0Fb]mnb<SdX87ZI632
+!s100 0nYW4PU]YOWiKW;`A=2BU2
+R6
+31
+R7
+!i10b 1
+Z37 !s108 1490449154.000000
+Z38 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd|
+Z39 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd|
+!i113 1
+R11
+R12
+Achoose
+R2
+R3
+DEx4 work 3 mux 0 22 [W8:0Fb]mnb<SdX87ZI632
+l10
+L9
+ViOW8<lXE_;X8i4T=VR[[D1
+!s100 TVTAJ55RUd`3Wbo:dcN=<1
+R6
+31
+R7
+!i10b 1
+R37
+R38
+R39
+!i113 1
+R11
+R12
+Emux16
+Z40 w1489749971
+R2
+R3
+R0
+Z41 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd
+Z42 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd
+l0
+L4
+VzcZ;K`VNWcX^UK?bI9_>m2
+!s100 5gXf2I89zh;e`Vb7`TVoX1
+R6
+31
+Z43 !s110 1490449154
+!i10b 1
+R37
+Z44 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd|
+Z45 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd|
+!i113 1
+R11
+R12
+Achoose
+R2
+R3
+DEx4 work 5 mux16 0 22 zcZ;K`VNWcX^UK?bI9_>m2
+l16
+L10
+V3NhPXi_0SANn1h8372B481
+!s100 0OaK^^f@OPBhgGi]zR2@N1
+R6
+31
+R43
+!i10b 1
+R37
+R44
+R45
+!i113 1
+R11
+R12
+Emux8
+Z46 w1489749954
+R2
+R3
+R0
+Z47 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd
+Z48 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd
+l0
+L4
+VZJ_4kQbFo91DKgoMPM3E@0
+!s100 SG5am;kWBEHkT>N_dYgDA0
+R6
+31
+R43
+!i10b 1
+R37
+Z49 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd|
+Z50 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd|
+!i113 1
+R11
+R12
+Achoose
+R2
+R3
+DEx4 work 4 mux8 0 22 ZJ_4kQbFo91DKgoMPM3E@0
+l15
+L10
+V4Xg7Y1CDNDWCzYUAbEm7W2
+!s100 9`4Y1[5G:CZkkYD9D5XDB2
+R6
+31
+R43
+!i10b 1
+R37
+R49
+R50
+!i113 1
+R11
+R12
+Emyxor
+Z51 w1490343299
+R2
+R3
+R0
+Z52 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd
+Z53 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd
+l0
+L4
+V0R]YQ:P1Yb9g5DORWMl@l1
+!s100 ME6:8R@akP;KRX3OYDSbW0
+R6
+31
+R43
+!i10b 1
+R37
+Z54 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd|
+Z55 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd|
+!i113 1
+R11
+R12
+Aform
+R2
+R3
+DEx4 work 5 myxor 0 22 0R]YQ:P1Yb9g5DORWMl@l1
+l10
+L9
+VXj2Q9B_kLlXYa7WTUj2mJ1
+!s100 oWlOW7YH>z0ZWKaR<U_942
+R6
+31
+R43
+!i10b 1
+R37
+R54
+R55
+!i113 1
+R11
+R12
+Enandi2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L100
+VdLLTAf]59NKDDK@1b;b:V0
+!s100 43Khl:OjNWfMO3JOeLVzb2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 6 nandi2 0 22 dLLTAf]59NKDDK@1b;b:V0
+l105
+L104
+VMelC2mV9>dHGm>@HV[o<>3
+!s100 _8BJLiSzlcF<e6TZcondz1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enegative_d_latch
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L148
+VCX[LFIM:3D>OJ_jC@]l?Y1
+!s100 d0aEAgb`2GCRihFGX=Pf31
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R13
+R2
+R3
+DEx4 work 16 negative_d_latch 0 22 CX[LFIM:3D>OJ_jC@]l?Y1
+l153
+L151
+VeF7?RHJ[E>BC?k<0EH3_V2
+!s100 CgLjAk8GL<R0A^N7kf@Tn0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enori2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L122
+Vfk2BeZmR=fQKjlHHfaLRK3
+!s100 S3YX^BDDZHMIh]hISi^1I0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 5 nori2 0 22 fk2BeZmR=fQKjlHHfaLRK3
+l127
+L126
+VH1SMLjI4LMRAlD[Xn:VQj1
+!s100 ce^_RZhmzjz;TEfMP`>?V0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eori2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L111
+VE8_^0]6B3^X5TH]L`>ONb3
+!s100 jOW5LO[_lDAIM@X9d20QP3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 4 ori2 0 22 E8_^0]6B3^X5TH]L`>ONb3
+l116
+L115
+VchA1F7e@f>i3I1FXjBllK0
+!s100 d2LA?lMQok;:TAf1agdUJ1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epositive_d_latch
+R1
+R13
+R2
+R3
+R0
+R4
+R5
+l0
+L134
+V97OeF;bG?kmXM7<[jTein3
+!s100 lW51_i==BTEDKJmMg]coS0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R13
+R2
+R3
+DEx4 work 16 positive_d_latch 0 22 97OeF;bG?kmXM7<[jTein3
+l139
+L137
+VbE:7D9L^]2`BA>FQGo1]]1
+!s100 ;MKMIo00K>Y;>CnEQU15b2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ereg16
+Z56 w1490443949
+R2
+R3
+R13
+R0
+Z57 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd
+Z58 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd
+l0
+L8
+VGBBM;4Z9Yca[kYJ]EaD2m1
+!s100 ?RCJW7UMm4;gSCZI^CF>S1
+R6
+31
+R7
+!i10b 1
+R8
+Z59 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd|
+Z60 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd|
+!i113 1
+R11
+R12
+Aregister16
+R2
+R3
+R13
+DEx4 work 5 reg16 0 22 GBBM;4Z9Yca[kYJ]EaD2m1
+l23
+L14
+VHWbgQ8]^AP4X=a=>D?[?Q0
+!s100 j^]__P?VDNQZ1^GhEngWA2
+R6
+31
+R7
+!i10b 1
+R8
+R59
+R60
+!i113 1
+R11
+R12
+Esub16
+Z61 w1490345021
+R2
+R3
+R13
+R0
+Z62 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd
+Z63 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd
+l0
+L9
+VYH4gbDUlGQ31;X5`hgkY93
+!s100 69TQ@bCAef4GLCYcOLi<K3
+R6
+31
+R7
+!i10b 1
+R8
+Z64 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd|
+Z65 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd|
+!i113 1
+R11
+R12
+Asubractor
+R2
+R3
+R13
+DEx4 work 5 sub16 0 22 YH4gbDUlGQ31;X5`hgkY93
+l24
+L15
+VOcS0RnUziY<7Ac9j[mIhY2
+!s100 ;J]nOH85Ze]z<hD6WQz[_0
+R6
+31
+R7
+!i10b 1
+R8
+R64
+R65
+!i113 1
+R11
+R12
+Esubtractor
+Z66 w1490343359
+R2
+R3
+R0
+Z67 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd
+Z68 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd
+l0
+L4
+V>^_faY2zSk<hzog7X1LOF0
+!s100 E6gWilkhVANX8XUngBEhC2
+R6
+31
+R43
+!i10b 1
+R37
+Z69 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd|
+Z70 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd|
+!i113 1
+R11
+R12
+Aform
+R2
+R3
+DEx4 work 10 subtractor 0 22 >^_faY2zSk<hzog7X1LOF0
+l16
+L9
+V?dnZbN5Jb9l:cBJ8VbTno3
+!s100 R`GlI1=]cM8WL4ZHf<0SE2
+R6
+31
+R43
+!i10b 1
+R37
+R69
+R70
+!i113 1
+R11
+R12
+Etestbench
+Z71 w1490449051
+R3
+R2
+R0
+Z72 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd
+Z73 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd
+l0
+L6
+V@1DQ?cZ=m_l@jj6FL0;5;3
+!s100 7ZbCB^hWbHJQbj^[8jgN]2
+R6
+31
+R7
+!i10b 1
+R8
+Z74 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd|
+Z75 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/Divider/../../EE214 - Experiment 8/Testbench.vhd|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 @1DQ?cZ=m_l@jj6FL0;5;3
+l66
+L8
+V_d7a@UScDkUA`inE2HcAd2
+!s100 37S?enQTH<m?iOL^]mSc70
+R6
+31
+R7
+!i10b 1
+R8
+R74
+R75
+!i113 1
+R11
+R12
+Eunsigned_divider
+Z76 w1490448553
+Z77 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R13
+R0
+Z78 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd
+Z79 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd
+l0
+L9
+V_HYHSHUM:O>FcOXkKm;=h2
+!s100 QEEh271Yl7n[i4lX;WFO@0
+R6
+31
+R7
+!i10b 1
+R8
+Z80 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd|
+Z81 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd|
+!i113 1
+R11
+R12
+Adivision
+R77
+R2
+R3
+R13
+DEx4 work 16 unsigned_divider 0 22 _HYHSHUM:O>FcOXkKm;=h2
+l71
+L33
+VizP?[3SJc8k;;iZWS;C9b2
+!s100 2T5U21`g=TVJScAcOO9O53
+R6
+31
+R7
+!i10b 1
+R8
+R80
+R81
+!i113 1
+R11
+R12

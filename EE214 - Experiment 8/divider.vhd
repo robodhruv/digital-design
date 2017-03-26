@@ -126,9 +126,13 @@ begin
 
 	-- Actions in the outs state. This can be assigned without delays as
 	-- quotient and remainder outputs were changed at count0! Saved a clk! :D
-	output_ready <= outs;
-	update_quotient: reg16 port map (nQ, '0', compute_done, clk, quotient);
-	update_remainder: reg16 port map (nR, '0', compute_done, clk, remainder);
+
+	--output_ready <= outs;
+	--update_quotient: reg16 port map (nQ, '0', compute_done, clk, quotient);
+	--update_remainder: reg16 port map (nR, '0', compute_done, clk, remainder);
+
+	quotient <= Q;
+	remainder <= R;
 
 	-- The below are not preferrable as one clock delay for output ready
 	--update_quotient: reg16 port map (Q, '0', output_ready, clk, quotient);

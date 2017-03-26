@@ -1,0 +1,614 @@
+Analysis & Synthesis report for DUT
+Sat Mar 25 19:08:16 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "unsigned_divider:divide|reg16:update_remainder"
+ 12. Port Connectivity Checks: "unsigned_divider:divide|reg16:update_quotient"
+ 13. Port Connectivity Checks: "unsigned_divider:divide|reg16:update_Q"
+ 14. Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_Q"
+ 15. Port Connectivity Checks: "unsigned_divider:divide|reg16:update_count"
+ 16. Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_count"
+ 17. Port Connectivity Checks: "unsigned_divider:divide|countdown:next_count|sub16:main"
+ 18. Port Connectivity Checks: "unsigned_divider:divide|reg16:update_R"
+ 19. Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_R"
+ 20. Port Connectivity Checks: "unsigned_divider:divide|mux:update_Qs"
+ 21. Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1"
+ 22. Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub"
+ 23. Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate"
+ 24. Port Connectivity Checks: "unsigned_divider:divide|reg16:load_dividend"
+ 25. Port Connectivity Checks: "unsigned_divider:divide|reg16:load_divisor"
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Mar 25 19:08:16 2017       ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 131                                         ;
+; Total pins                  ; 70                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; DUT                ; DUT                ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++---------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                  ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++---------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; ../../EE214 - Experiment 8/xor.vhd                ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd                ;         ;
+; ../../EE214 - Experiment 8/subtractor.vhd         ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd         ;         ;
+; ../../EE214 - Experiment 8/sub16.vhd              ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd              ;         ;
+; ../../EE214 - Experiment 8/reg16.vhd              ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd              ;         ;
+; ../../EE214 - Experiment 8/mux16.vhd              ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd              ;         ;
+; ../../EE214 - Experiment 8/mux8.vhd               ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd               ;         ;
+; ../../EE214 - Experiment 8/mux.vhd                ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd                ;         ;
+; ../../EE214 - Experiment 8/equal.vhd              ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd              ;         ;
+; ../../EE214 - Experiment 8/EightBitSubtractor.vhd ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd ;         ;
+; ../../EE214 - Experiment 8/EE224.vhd              ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd              ;         ;
+; ../../EE214 - Experiment 8/DUT.vhd                ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd                ;         ;
+; ../../EE214 - Experiment 8/divider.vhd            ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd            ;         ;
+; ../../EE214 - Experiment 8/countdown.vhd          ; yes             ; User VHDL File  ; /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd          ;         ;
++---------------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Total logic elements                        ; 131              ;
+;     -- Combinational with no register       ; 66               ;
+;     -- Register only                        ; 47               ;
+;     -- Combinational with a register        ; 18               ;
+;                                             ;                  ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 32               ;
+;     -- 3 input functions                    ; 49               ;
+;     -- 2 input functions                    ; 2                ;
+;     -- 1 input functions                    ; 1                ;
+;     -- 0 input functions                    ; 0                ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 131              ;
+;     -- arithmetic mode                      ; 0                ;
+;     -- qfbk mode                            ; 0                ;
+;     -- register cascade mode                ; 0                ;
+;     -- synchronous clear/load mode          ; 0                ;
+;     -- asynchronous clear/load mode         ; 0                ;
+;                                             ;                  ;
+; Total registers                             ; 65               ;
+; I/O pins                                    ; 70               ;
+; Maximum fan-out node                        ; input_vector[35] ;
+; Maximum fan-out                             ; 71               ;
+; Total fan-out                               ; 476              ;
+; Average fan-out                             ; 2.37             ;
++---------------------------------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                              ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node            ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                               ; Entity Name      ; Library Name ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------+------------------+--------------+
+; |DUT                                  ; 131 (0)     ; 65           ; 0          ; 70   ; 0            ; 66 (0)       ; 47 (0)            ; 18 (0)           ; 0 (0)           ; 0 (0)      ; |DUT                                                                                              ; DUT              ; work         ;
+;    |unsigned_divider:divide|          ; 131 (5)     ; 65           ; 0          ; 0    ; 0            ; 66 (5)       ; 47 (0)            ; 18 (0)           ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide                                                                      ; unsigned_divider ; work         ;
+;       |dffi:d0|                       ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d0                                                              ; dffi             ; work         ;
+;          |negative_d_latch:master|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d0|negative_d_latch:master                                      ; negative_d_latch ; work         ;
+;          |positive_d_latch:slave|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d0|positive_d_latch:slave                                       ; positive_d_latch ; work         ;
+;       |dffi:d1|                       ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d1                                                              ; dffi             ; work         ;
+;          |negative_d_latch:master|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d1|negative_d_latch:master                                      ; negative_d_latch ; work         ;
+;          |positive_d_latch:slave|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:d1|positive_d_latch:slave                                       ; positive_d_latch ; work         ;
+;       |dffi:ready|                    ; 3 (1)       ; 0            ; 0          ; 0    ; 0            ; 3 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:ready                                                           ; dffi             ; work         ;
+;          |negative_d_latch:master|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:ready|negative_d_latch:master                                   ; negative_d_latch ; work         ;
+;          |positive_d_latch:slave|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|dffi:ready|positive_d_latch:slave                                    ; positive_d_latch ; work         ;
+;       |equate:countdown_predicate|    ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|equate:countdown_predicate                                           ; equate           ; work         ;
+;       |mux16:reset_R|                 ; 15 (0)      ; 0            ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R                                                        ; mux16            ; work         ;
+;          |mux8:mux81|                 ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81                                             ; mux8             ; work         ;
+;             |mux:mux_0|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_0                                   ; mux              ; work         ;
+;             |mux:mux_1|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_1                                   ; mux              ; work         ;
+;             |mux:mux_2|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_2                                   ; mux              ; work         ;
+;             |mux:mux_3|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_3                                   ; mux              ; work         ;
+;             |mux:mux_4|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_4                                   ; mux              ; work         ;
+;             |mux:mux_5|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_5                                   ; mux              ; work         ;
+;             |mux:mux_6|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux81|mux:mux_6                                   ; mux              ; work         ;
+;          |mux8:mux82|                 ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82                                             ; mux8             ; work         ;
+;             |mux:mux_0|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_0                                   ; mux              ; work         ;
+;             |mux:mux_1|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_1                                   ; mux              ; work         ;
+;             |mux:mux_2|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_2                                   ; mux              ; work         ;
+;             |mux:mux_3|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_3                                   ; mux              ; work         ;
+;             |mux:mux_4|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_4                                   ; mux              ; work         ;
+;             |mux:mux_5|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_5                                   ; mux              ; work         ;
+;             |mux:mux_6|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_6                                   ; mux              ; work         ;
+;             |mux:mux_7|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|mux16:reset_R|mux8:mux82|mux:mux_7                                   ; mux              ; work         ;
+;       |reg16:load_dividend|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:load_dividend                                                  ; reg16            ; work         ;
+;       |reg16:load_divisor|            ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:load_divisor                                                   ; reg16            ; work         ;
+;       |reg16:update_R|                ; 15 (15)     ; 15           ; 0          ; 0    ; 0            ; 0 (0)        ; 15 (15)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:update_R                                                       ; reg16            ; work         ;
+;       |reg16:update_count|            ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:update_count                                                   ; reg16            ; work         ;
+;       |reg16:update_quotient|         ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:update_quotient                                                ; reg16            ; work         ;
+;       |reg16:update_remainder|        ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 15 (15)           ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|reg16:update_remainder                                               ; reg16            ; work         ;
+;       |sub16:fullsub|                 ; 29 (0)      ; 0            ; 0          ; 0    ; 0            ; 29 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub                                                        ; sub16            ; work         ;
+;          |EightBitSub:sub1|           ; 14 (0)      ; 0            ; 0          ; 0    ; 0            ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1                                       ; EightBitSub      ; work         ;
+;             |subtractor:bit_2|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_2|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_3|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_3|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_4|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_4|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_5|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_5|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_6|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_6|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_7|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_7|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_8|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub1|subtractor:bit_8|myXOR:out_instance_2 ; myXOR            ; work         ;
+;          |EightBitSub:sub2|           ; 15 (0)      ; 0            ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2                                       ; EightBitSub      ; work         ;
+;             |subtractor:bit_1|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_1|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_2|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_2|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_3|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_3|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_4|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_4|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_5|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_5|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_6|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_6|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_7|        ; 2 (1)       ; 0            ; 0          ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7                      ; subtractor       ; work         ;
+;                |myXOR:out_instance_2| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_7|myXOR:out_instance_2 ; myXOR            ; work         ;
+;             |subtractor:bit_8|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|unsigned_divider:divide|sub16:fullsub|EightBitSub:sub2|subtractor:bit_8                      ; subtractor       ; work         ;
++---------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                     ;
++--------------------------------------------------------------+---+
+; Logic Cell Name                                              ;   ;
++--------------------------------------------------------------+---+
+; unsigned_divider:divide|dffi:d1|positive_d_latch:slave|q     ;   ;
+; unsigned_divider:divide|dffi:d0|positive_d_latch:slave|q     ;   ;
+; unsigned_divider:divide|dffi:ready|positive_d_latch:slave|q  ;   ;
+; unsigned_divider:divide|dffi:d1|negative_d_latch:master|q    ;   ;
+; unsigned_divider:divide|dffi:d0|negative_d_latch:master|q    ;   ;
+; unsigned_divider:divide|dffi:ready|negative_d_latch:master|q ;   ;
+; Number of logic cells representing combinational loops       ; 6 ;
++--------------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-----------------------------------------------------------+----------------------------------------+
+; Register name                                             ; Reason for Removal                     ;
++-----------------------------------------------------------+----------------------------------------+
+; unsigned_divider:divide|reg16:update_quotient|DOUT[1..15] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 15                    ;                                        ;
++-----------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 65    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:update_remainder" ;
++-------+-------+----------+-------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                         ;
++-------+-------+----------+-------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                    ;
++-------+-------+----------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:update_quotient" ;
++-------+-------+----------+------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                        ;
++-------+-------+----------+------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                   ;
++-------+-------+----------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:update_Q"                                              ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; reset ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dout  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_Q" ;
++------------+-------+----------+-----------------------------------+
+; Port       ; Type  ; Severity ; Details                           ;
++------------+-------+----------+-----------------------------------+
+; mx1        ; Input ; Info     ; Stuck at GND                      ;
+; my1[15..1] ; Input ; Info     ; Stuck at GND                      ;
++------------+-------+----------+-----------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:update_count" ;
++-------+-------+----------+---------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                     ;
++-------+-------+----------+---------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                ;
++-------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_count" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; mx1  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|countdown:next_count|sub16:main"                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[15..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; y[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sign_bit ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:update_R"                                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; reset    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dout[15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|mux16:reset_R" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; mx1  ; Input ; Info     ; Stuck at GND                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|mux:update_Qs" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; n1   ; Input ; Info     ; Stuck at GND                            ;
+; n0   ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1" ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; di   ; Input ; Info     ; Stuck at GND                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; sign_bit ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|equate:countdown_predicate" ;
++------+-------+----------+------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                              ;
++------+-------+----------+------------------------------------------------------+
+; y    ; Input ; Info     ; Stuck at GND                                         ;
++------+-------+----------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:load_dividend"                                               ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; reset       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dout[15..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "unsigned_divider:divide|reg16:load_divisor" ;
++-------+-------+----------+---------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                     ;
++-------+-------+----------+---------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                ;
++-------+-------+----------+---------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Sat Mar 25 19:07:40 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Divider -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd
+    Info (12022): Found design unit 1: myXOR-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd Line: 9
+    Info (12023): Found entity 1: myXOR File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/xor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd
+    Info (12022): Found design unit 1: subtractor-Form File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd Line: 9
+    Info (12023): Found entity 1: subtractor File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd
+    Info (12022): Found design unit 1: sub16-subractor File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd Line: 15
+    Info (12023): Found entity 1: sub16 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd
+    Info (12022): Found design unit 1: reg16-register16 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd Line: 14
+    Info (12023): Found entity 1: reg16 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg16.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg4.vhd
+    Info (12022): Found design unit 1: reg4-register4 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg4.vhd Line: 14
+    Info (12023): Found entity 1: reg4 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/reg4.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd
+    Info (12022): Found design unit 1: mux16-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd Line: 10
+    Info (12023): Found entity 1: mux16 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd
+    Info (12022): Found design unit 1: mux8-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd Line: 10
+    Info (12023): Found entity 1: mux8 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux8.vhd Line: 4
+Warning (12090): Entity "mux" obtained from "../../EE214 - Experiment 8/mux.vhd" instead of from Quartus Prime megafunction library File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd
+    Info (12022): Found design unit 1: mux-choose File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd Line: 9
+    Info (12023): Found entity 1: mux File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd
+    Info (12022): Found design unit 1: equate-equality File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd Line: 13
+    Info (12023): Found entity 1: equate File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd
+    Info (12022): Found design unit 1: EightBitSub-Diff File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd Line: 11
+    Info (12023): Found entity 1: EightBitSub File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd Line: 4
+Info (12021): Found 23 design units, including 11 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd
+    Info (12022): Found design unit 1: EE224_Components File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 7
+    Info (12022): Found design unit 2: INVERTER-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 50
+    Info (12022): Found design unit 3: andi2-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 61
+    Info (12022): Found design unit 4: andi5-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 74
+    Info (12022): Found design unit 5: andi3-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 91
+    Info (12022): Found design unit 6: Nandi2-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 104
+    Info (12022): Found design unit 7: ori2-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 115
+    Info (12022): Found design unit 8: Nori2-Behave File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 126
+    Info (12022): Found design unit 9: positive_d_latch-Equations File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 137
+    Info (12022): Found design unit 10: negative_d_latch-Equations File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 151
+    Info (12022): Found design unit 11: dffi-Struct File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 165
+    Info (12022): Found design unit 12: dffi1-Struct File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 183
+    Info (12023): Found entity 1: INVERTER File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 46
+    Info (12023): Found entity 2: andi2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 57
+    Info (12023): Found entity 3: andi5 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 70
+    Info (12023): Found entity 4: andi3 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 87
+    Info (12023): Found entity 5: Nandi2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 100
+    Info (12023): Found entity 6: ori2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 111
+    Info (12023): Found entity 7: Nori2 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 122
+    Info (12023): Found entity 8: positive_d_latch File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 134
+    Info (12023): Found entity 9: negative_d_latch File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 148
+    Info (12023): Found entity 10: dffi File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 162
+    Info (12023): Found entity 11: dffi1 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 180
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd
+    Info (12022): Found design unit 1: DUT-WRAP File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 9
+    Info (12023): Found entity 1: DUT File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd
+    Info (12022): Found design unit 1: unsigned_divider-division File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 33
+    Info (12023): Found entity 1: unsigned_divider File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd
+    Info (12022): Found design unit 1: countdown-reduce File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd Line: 14
+    Info (12023): Found entity 1: countdown File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/comparator.vhd
+    Info (12022): Found design unit 1: compare-compare16 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/comparator.vhd Line: 13
+    Info (12023): Found entity 1: compare File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/comparator.vhd Line: 8
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "unsigned_divider" for hierarchy "unsigned_divider:divide" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at divider.vhd(36): object "count_int" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at divider.vhd(37): object "Q" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 37
+Warning (10873): Using initial value X (don't care) for net "Qs[15..1]" at divider.vhd(37) File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 37
+Info (12128): Elaborating entity "reg16" for hierarchy "unsigned_divider:divide|reg16:load_divisor" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 81
+Info (12128): Elaborating entity "equate" for hierarchy "unsigned_divider:divide|equate:countdown_predicate" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 87
+Warning (10036): Verilog HDL or VHDL warning at equal.vhd(15): object "b" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd Line: 15
+Info (12128): Elaborating entity "sub16" for hierarchy "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/equal.vhd Line: 23
+Info (12128): Elaborating entity "EightBitSub" for hierarchy "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/sub16.vhd Line: 26
+Info (12128): Elaborating entity "subtractor" for hierarchy "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EightBitSubtractor.vhd Line: 21
+Info (12128): Elaborating entity "myXOR" for hierarchy "unsigned_divider:divide|equate:countdown_predicate|sub16:fullsub|EightBitSub:sub1|subtractor:bit_1|myXOR:out_instance_1" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/subtractor.vhd Line: 17
+Info (12128): Elaborating entity "mux" for hierarchy "unsigned_divider:divide|mux:update_Qs" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 103
+Info (12128): Elaborating entity "mux16" for hierarchy "unsigned_divider:divide|mux16:next_R" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 110
+Info (12128): Elaborating entity "mux8" for hierarchy "unsigned_divider:divide|mux16:next_R|mux8:mux81" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/mux16.vhd Line: 17
+Info (12128): Elaborating entity "countdown" for hierarchy "unsigned_divider:divide|countdown:next_count" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 117
+Warning (10036): Verilog HDL or VHDL warning at countdown.vhd(15): object "etc" assigned a value but never read File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/countdown.vhd Line: 15
+Info (12128): Elaborating entity "dffi" for hierarchy "unsigned_divider:divide|dffi:ready" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/divider.vhd Line: 138
+Info (12128): Elaborating entity "negative_d_latch" for hierarchy "unsigned_divider:divide|dffi:ready|negative_d_latch:master" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 168
+Info (12128): Elaborating entity "positive_d_latch" for hierarchy "unsigned_divider:divide|dffi:ready|positive_d_latch:slave" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/EE224.vhd Line: 170
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output_vector[18]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[19]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[20]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[21]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[22]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[23]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[24]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[25]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[26]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[27]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[28]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[29]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[30]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[31]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+    Warning (13410): Pin "output_vector[32]" is stuck at GND File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 6
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input_vector[19]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[20]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[21]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[22]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[23]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[24]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[25]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[26]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[27]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[28]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[29]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[30]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[31]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[32]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+    Warning (15610): No output dependent on input pin "input_vector[33]" File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/DUT.vhd Line: 5
+Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 131 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 942 megabytes
+    Info: Processing ended: Sat Mar 25 19:08:16 2017
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:02
+
+
