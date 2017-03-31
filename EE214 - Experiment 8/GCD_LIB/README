@@ -1,0 +1,24 @@
+Contents
+	divider.vhdl
+		implementation of a divider.
+	dregister.vhdl
+		implementation of a data register.
+
+	GCDCOMPONENTS.vhdl
+		component declarations
+		(see descriptions of functionality inside the file).
+
+	synch_mem.vhdl
+		synchronous memory.
+
+	test_bench.vhdl
+		test bench
+
+	unsigned_adder.vhdl
+		unsigned adder.
+
+	unsigned_comparator.vhdl
+		unsigned comparator.
+
+	unsigned_subtractor.vhdl
+		unsigned subtractor.

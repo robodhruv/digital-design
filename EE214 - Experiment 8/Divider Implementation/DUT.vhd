@@ -27,8 +27,8 @@ architecture WRAP of DUT is
 begin
 	
 	divide: unsigned_divider port map (
-		clk => input_vector(35),
-		reset => input_vector(34),
+		clk => input_vector(34),
+		reset => input_vector(35),
 		dividend => input_vector(33 downto 18),
 		divisor => input_vector(17 downto 2),
 		inputs_ready => input_vector(1),
