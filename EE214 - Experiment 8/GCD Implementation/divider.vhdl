@@ -9,12 +9,11 @@ entity Divider16 is
 	  dividend: in bit_vector(15 downto 0);
  	  quotient: out bit_vector(15 downto 0);
  	  remainder: out bit_vector(15 downto 0);
-          div_start: in bit;
+    div_start: in bit;
 	  div_done: out bit;
-          clk: in bit;
-          reset: in bit);
+    clk: in bit;
+    reset: in bit);
 end entity;
-
 
 -- architecture
 architecture Behave of Divider16 is
