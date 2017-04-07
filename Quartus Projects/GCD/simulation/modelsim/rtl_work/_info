@@ -1,0 +1,480 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/simulation/modelsim
+Ebitadder
+Z1 w1475190377
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd
+Z5 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd
+l0
+L5
+Vn4L^kBQ6f_OF>YJH=dBOL3
+!s100 YV^k`Yk_BhSN4@NYC5le61
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1491564171
+!i10b 1
+Z8 !s108 1491564171.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd|
+Z10 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Asimple
+R2
+R3
+DEx4 work 8 bitadder 0 22 n4L^kBQ6f_OF>YJH=dBOL3
+l10
+L9
+VP2W;4Vfa0Kk<1G[R<aT2W3
+!s100 ?RBSaUX9QZ]kK<XInF2dg2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecomparer
+R1
+R2
+R3
+Z13 DPx4 work 10 thepackage 0 22 eo[R`Y<9hV`F3YGAMh9W31
+R0
+Z14 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd
+Z15 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd
+l0
+L7
+V`:ZKbLhj;5RGK`P8d>8DA1
+!s100 1MDGPmB=7I>LaVBoUJzP02
+R6
+31
+Z16 !s110 1491564172
+!i10b 1
+Z17 !s108 1491564172.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd|
+Z19 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 8 comparer 0 22 `:ZKbLhj;5RGK`P8d>8DA1
+l14
+L12
+V:1b3b61oBB>aN9VQXU<S?3
+!s100 Y6hm;e8m9J@a4X<[T=zmO1
+R6
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Econtrolpath
+R1
+R2
+R3
+R13
+R0
+Z20 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd
+Z21 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd
+l0
+L7
+VE7@ZZf;LcCA8F;J>0lW5O3
+!s100 Y]3Jo<iMG^[InTk?<Fl;<2
+R6
+31
+R16
+!i10b 1
+R17
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd|
+Z23 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 11 controlpath 0 22 E7@ZZf;LcCA8F;J>0lW5O3
+l20
+L17
+Vm6ZTG1@Y2Mc[aikTg[[eb0
+!s100 [_dkiNz@2DOd8Qj1PW=2X2
+R6
+31
+R16
+!i10b 1
+R17
+R22
+R23
+!i113 1
+R11
+R12
+Edatapath
+R1
+R2
+R3
+R13
+R0
+Z24 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd
+Z25 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd
+l0
+L6
+VQbd;Og2l9I`NoIGR3Yh1j3
+!s100 @Xf@EQO==0bOCgc]NzQb:0
+R6
+31
+R16
+!i10b 1
+R17
+Z26 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd|
+Z27 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd|
+!i113 1
+R11
+R12
+Amixed
+R2
+R3
+R13
+DEx4 work 8 datapath 0 22 Qbd;Og2l9I`NoIGR3Yh1j3
+l30
+L16
+VL7eP?6<2J8HVA[oL2M^GP3
+!s100 X3=QT?2ZdnZTn7_UagiBM0
+R6
+31
+R16
+!i10b 1
+R17
+R26
+R27
+!i113 1
+R11
+R12
+Edataregister
+R1
+R2
+R3
+R13
+R0
+Z28 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd
+Z29 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd
+l0
+L6
+Vi;G?OOnlZg`hNSl:JC2F73
+!s100 PXJNQ2U9HQKT2hNj9IFGK3
+R6
+31
+R16
+!i10b 1
+R17
+Z30 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd|
+Z31 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 12 dataregister 0 22 i;G?OOnlZg`hNSl:JC2F73
+l13
+L12
+V0X5nK`lM?`1mkU9ee=meV3
+!s100 7d<9Q`BaciRZiaW12=;kI2
+R6
+31
+R16
+!i10b 1
+R17
+R30
+R31
+!i113 1
+R11
+R12
+Egcd_controlpath
+R1
+R2
+R3
+R13
+R0
+Z32 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd
+Z33 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd
+l0
+L7
+V`=SmOz1Y5_GYSg_nE1BZZ1
+!s100 [DG9cKc=lhn@4<e7K9g6H0
+R6
+31
+R16
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd|
+Z35 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 15 gcd_controlpath 0 22 `=SmOz1Y5_GYSg_nE1BZZ1
+l22
+L19
+VDGh8084RL6[LRz7AMR:D>0
+!s100 T=T]dAUEU[iT>7gN55g;=2
+R6
+31
+R16
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
+Egcd_datapath
+R1
+R2
+R3
+R13
+R0
+Z36 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd
+Z37 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd
+l0
+L7
+V6@FQXNI_?AQn0IclXKzOF0
+!s100 H=h;S8zoT]DPdPNHNZMZF1
+R6
+31
+R7
+!i10b 1
+R8
+Z38 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd|
+Z39 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd|
+!i113 1
+R11
+R12
+Amixed
+R2
+R3
+R13
+DEx4 work 12 gcd_datapath 0 22 6@FQXNI_?AQn0IclXKzOF0
+l32
+L17
+VX9XE8ezl3gYggm`R@0iN32
+!s100 W^W_?hUE^>`[z_QzCnRA^0
+R6
+31
+R7
+!i10b 1
+R8
+R38
+R39
+!i113 1
+R11
+R12
+Esixteenbitsubtract
+R1
+R2
+R3
+R13
+R0
+Z40 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd
+Z41 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd
+l0
+L7
+VM[0OXRGHCSmh8VHb9<zGR2
+!s100 5R`aD;NznNL9XG00la]kR1
+R6
+31
+R7
+!i10b 1
+R8
+Z42 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd|
+Z43 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd|
+!i113 1
+R11
+R12
+Abasic
+R2
+R3
+R13
+DEx4 work 18 sixteenbitsubtract 0 22 M[0OXRGHCSmh8VHb9<zGR2
+l14
+L11
+V7BaBAUKk>9Am3OLfAO[610
+!s100 8i4>kZi6>SFM@KhBgY@^^0
+R6
+31
+R7
+!i10b 1
+R8
+R42
+R43
+!i113 1
+R11
+R12
+Esystem
+R1
+R2
+R3
+R13
+R0
+Z44 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd
+Z45 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd
+l0
+L6
+VOUn5oUcHSL<GOCngz5PAi2
+!s100 :]B9MG[FGc2o1lo;``N3M0
+R6
+31
+R7
+!i10b 1
+R8
+Z46 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd|
+Z47 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 6 system 0 22 OUn5oUcHSL<GOCngz5PAi2
+l20
+L17
+Vdbf6I`@:MeAIgzz;[I5<F1
+!s100 1YKj[64LWRYY35:aKZYUg0
+R6
+31
+R7
+!i10b 1
+R8
+R46
+R47
+!i113 1
+R11
+R12
+Etestbench
+Z48 w1491564074
+Z49 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R2
+R3
+R0
+Z50 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd
+Z51 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd
+l0
+L7
+Vd29m2dV_3D]Z>4fG37SDO3
+!s100 2_?anKH_OeYVNGecM:7j_0
+R6
+31
+R16
+!i10b 1
+R17
+Z52 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd|
+Z53 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd|
+!i113 1
+R11
+R12
+Abehave
+R49
+R2
+R3
+DEx4 work 9 testbench 0 22 d29m2dV_3D]Z>4fG37SDO3
+l30
+L10
+VF2b0FUn59Png>QG?V:Iaa2
+!s100 3E^U`27PBNzYlfm]0nR611
+R6
+31
+R16
+!i10b 1
+R17
+R52
+R53
+!i113 1
+R11
+R12
+Pthepackage
+R2
+R3
+R1
+R0
+8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd
+F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd
+l0
+L5
+Veo[R`Y<9hV`F3YGAMh9W31
+!s100 BTWXUJZ@LBa2V3j0@IGBo3
+R6
+31
+R7
+!i10b 1
+R8
+!s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd|
+!s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd|
+!i113 1
+R11
+R12
+Eunsigned_divider
+R1
+R2
+R3
+R13
+R0
+Z54 8/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd
+Z55 F/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd
+l0
+L7
+V<Yl1YEQk4b>89R^W[D3T13
+!s100 nA?J=UBIz01H<X0khEkK^0
+R6
+31
+R7
+!i10b 1
+R8
+Z56 !s90 -reportprogress|300|-93|-work|work|/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd|
+Z57 !s107 /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+R13
+DEx4 work 16 unsigned_divider 0 22 <Yl1YEQk4b>89R^W[D3T13
+l31
+L25
+Vf4i[DZj^FPZ_eJ?9EHUR82
+!s100 K]4`Xz]OSeg^j=S]zUg3O0
+R6
+31
+R7
+!i10b 1
+R8
+R56
+R57
+!i113 1
+R11
+R12

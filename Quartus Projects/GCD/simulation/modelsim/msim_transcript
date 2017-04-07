@@ -1,0 +1,194 @@
+# do System_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/dhruv-shah/intelFPGA_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/thepackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package thepackage
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/bitAdder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bitAdder
+# -- Compiling architecture simple of bitAdder
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/unsigned_divider.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity unsigned_divider
+# -- Compiling architecture Behave of unsigned_divider
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/System.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity System
+# -- Compiling architecture behave of System
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/sixteenBitSubtract.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity sixteenBitSubtract
+# -- Compiling architecture basic of sixteenBitSubtract
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity GCD_datapath
+# -- Compiling architecture Mixed of GCD_datapath
+# End time: 16:52:51 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:51 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/GCD_controlpath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity GCD_controlpath
+# -- Compiling architecture Behave of GCD_controlpath
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:52 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/dataregister.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity dataregister
+# -- Compiling architecture Behave of dataregister
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:52 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity datapath
+# -- Compiling architecture Mixed of datapath
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:52 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/controlpath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity controlpath
+# -- Compiling architecture Behave of controlpath
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:52 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/comparer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package thepackage
+# -- Compiling entity comparer
+# -- Compiling architecture behave of comparer
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:52:52 on Apr 07,2017
+# vcom -reportprogress 300 -93 -work work /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 16:52:52 on Apr 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 16:52:52 on Apr 07,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench(behave)
+# ** Warning: (vsim-7) Failed to open VHDL file "home/dhruv-shah/Tracefiles/TRACEFILE.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench
+# ** Warning: (vsim-7) Failed to open VHDL file "home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/EE214 - Experiment 8/Reference/GCD/Tracefiles/OUTPUTS.txt" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench
+# Loading work.thepackage
+# Loading work.system(behave)
+# Loading work.gcd_controlpath(behave)
+# Loading work.gcd_datapath(mixed)
+# Loading work.dataregister(behave)
+# Loading work.unsigned_divider(behave)
+# Loading work.controlpath(behave)
+# Loading work.datapath(mixed)
+# Loading work.sixteenbitsubtract(basic)
+# Loading work.bitadder(simple)
+# Loading work.comparer(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Fatal: (vsim-7) Failed to open VHDL file "home/dhruv-shah/Tracefiles/TRACEFILE.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 10 ns  Iteration: 0  Process: /testbench/line__42 File: /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd
+# Fatal error in Process line__42 at /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd line 58
+# 
+# HDL call sequence:
+# Stopped at /home/dhruv-shah/Desktop/IIT Bombay 2015-19/Sem 4/EE214/Quartus Projects/GCD/../../EE214 - Experiment 8/Reference/GCD/testbench.vhd 58 Process line__42
+# 

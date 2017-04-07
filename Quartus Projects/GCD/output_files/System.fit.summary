@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Apr  7 16:52:21 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : System
+Top-level Entity Name : System
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 167 / 1,270 ( 13 % )
+Total pins : 38 / 114 ( 33 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
