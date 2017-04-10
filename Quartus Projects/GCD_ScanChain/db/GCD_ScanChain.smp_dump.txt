@@ -1,0 +1,26 @@
+
+State Machine - |TopLevel|System:dut|GCD_datapath:data|unsigned_divider:divider|controlpath:control|fsm_state
+Name fsm_state.donestate fsm_state.doing fsm_state.subtracting fsm_state.comparing fsm_state.leftshift fsm_state.phi 
+fsm_state.phi 0 0 0 0 0 0 
+fsm_state.leftshift 0 0 0 0 1 1 
+fsm_state.comparing 0 0 0 1 0 1 
+fsm_state.subtracting 0 0 1 0 0 1 
+fsm_state.doing 0 1 0 0 0 1 
+fsm_state.donestate 1 0 0 0 0 1 
+
+State Machine - |TopLevel|System:dut|GCD_controlpath:control|fsm_state
+Name fsm_state.donestate fsm_state.checkRem fsm_state.doDivide fsm_state.input2 fsm_state.input1 fsm_state.phi 
+fsm_state.phi 0 0 0 0 0 0 
+fsm_state.input1 0 0 0 0 1 1 
+fsm_state.input2 0 0 0 1 0 1 
+fsm_state.doDivide 0 0 1 0 0 1 
+fsm_state.checkRem 0 1 0 0 0 1 
+fsm_state.donestate 1 0 0 0 0 1 
+
+State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+Name current_state.s_update current_state.s_shift current_state.s_capture current_state.s_DR current_state.s_idle 
+current_state.s_idle 0 0 0 0 0 
+current_state.s_DR 0 0 0 1 1 
+current_state.s_capture 0 0 1 0 1 
+current_state.s_shift 0 1 0 0 1 
+current_state.s_update 1 0 0 0 1 

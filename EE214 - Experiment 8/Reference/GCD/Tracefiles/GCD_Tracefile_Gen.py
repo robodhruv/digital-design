@@ -8,7 +8,7 @@ from random import random
 
 f = open('Tracefile.txt','w')
 serial_stream = 16 # Length of the stream (> 2)
-num_cases = 1000 # Number of test cases
+num_cases = 1 # Number of test cases
 
 def gcd(a,b):
     while b!=0:

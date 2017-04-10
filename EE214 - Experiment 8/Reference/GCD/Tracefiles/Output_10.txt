@@ -1,0 +1,10 @@
+CORRECT: in RESULT, line 1
+CORRECT: in RESULT, line 2
+CORRECT: in RESULT, line 3
+CORRECT: in RESULT, line 4
+CORRECT: in RESULT, line 5
+CORRECT: in RESULT, line 6
+CORRECT: in RESULT, line 7
+CORRECT: in RESULT, line 8
+CORRECT: in RESULT, line 9
+CORRECT: in RESULT, line 10
