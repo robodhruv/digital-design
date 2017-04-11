@@ -2,9 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 library std;
 use std.textio.all;
+use ieee.STD_LOGIC_TEXTIO.all;
 
-library work;
-use work.STD_LOGIC_TEXTIO.all;
+--library work;
+--use work.STD_LOGIC_TEXTIO.all;
 
 entity Testbench_GCD is
 end entity;
@@ -62,8 +63,8 @@ begin
 
   process 
     variable err_flag : boolean := false;
-    File INFILE: text open read_mode is "Tracefiles/Input.txt";
-    FILE OUTFILE: text  open write_mode is "Tracefiles/Output.txt";
+    File INFILE: text open read_mode is "~/Tracefiles/Input.txt";
+    FILE OUTFILE: text  open write_mode is "~/Tracefiles/Output.txt";
 
     ---------------------------------------------------
     -- edit the next few lines to customize

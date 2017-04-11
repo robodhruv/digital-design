@@ -72,6 +72,6 @@ begin
   clk <= scan_chain_parallel_in(16);
 	din <= scan_chain_parallel_in(15 downto 0);
   
-   scan_chain_parallel_out <= dout;
+  scan_chain_parallel_out <= dout;
 
 end Struct;
