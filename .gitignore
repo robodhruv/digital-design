@@ -3,6 +3,8 @@
 *.cf
 *.bak
 
+# Scan Chain LF
+*.txt
 
 # Latex Files
 *.aux
